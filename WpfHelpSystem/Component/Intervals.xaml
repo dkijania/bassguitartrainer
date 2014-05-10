@@ -1,0 +1,25 @@
+﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Calibri">
+    <Paragraph FontSize="24">Overview</Paragraph>
+    <Paragraph>Interval component is designed to view on fretboard (or play) notes intervals.
+    </Paragraph>
+    <Paragraph FontSize="24">Structure</Paragraph>
+    <Paragraph>Interval component is represented by a table. Each row represents different interval with information os its:</Paragraph>
+    <List>
+        <ListItem>
+            <Paragraph>Identifier</Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph>Name</Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph>Distance in semitones</Paragraph>
+        </ListItem>
+    </List>
+    <Paragraph>Last two columns of each row contains button "Show" and "Play". First button presents note on fretboard, second play root and interval note.
+   Above table, button "Show selected" will print on fretboard all selected intervals in interval table.</Paragraph>
+    <Paragraph FontSize="24">Behavior</Paragraph>
+    <Paragraph>Interval component require at least one note selected on fretboard (root note). If more then one note is selected then interval will be shown
+   for lowest note. When excercise mode is enabled then interval component will look a bit different. It will contains buttons instead of table. Each button
+   will contains a label with name of interval. This panel is used to enable user to provide an anwser e.g. which interval is shown or heard.</Paragraph>
+
+</FlowDocument>

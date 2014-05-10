@@ -1,0 +1,784 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AmCharts.Windows.QuickCharts</name>
+    </assembly>
+    <members>
+        <member name="T:AmCharts.Windows.QuickCharts.Balloon">
+            <summary>
+                Represents a value balloon (tooltip).
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.Balloon.TextProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.Balloon.Text"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.Balloon.#ctor">
+            <summary>
+                Instantiates Balloon.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Balloon.Text">
+            <summary>
+                Gets or sets balloon text.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.BindingEvaluator">
+            <summary>
+                Utility class to facilitate temporary binding evaluation
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.BindingEvaluator.EvaluatorProperty">
+            <summary>
+                Dependency property used to evaluate values.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.BindingEvaluator.#ctor(System.String)">
+            <summary>
+                Created binding evaluator and set path to the property which's value should be evaluated.
+            </summary>
+            <param name="propertyPath">Path to the property</param>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.BindingEvaluator.Eval(System.Object)">
+            <summary>
+                Returns evaluated value of property on provided object source.
+            </summary>
+            <param name="source">Object for which property value should be evaluated</param>
+            <returns>Value of the property</returns>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.ColumnGraph">
+            <summary>
+                Facilitates rendering of column graphs.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.SerialGraph">
+            <summary>
+                Base class for graphs in serial chart.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.ILegendItem">
+            <summary>
+                Interface which should be implemented by classes used as legend items.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.ILegendItem.Title">
+            <summary>
+                Gets or sets title shown in Legend.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.ILegendItem.Brush">
+            <summary>
+                Gets or sets brush for the Legend key.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialGraph.ValueMemberPathProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialGraph.ValueMemberPath"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialGraph.TitleProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialGraph.Title"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialGraph.BrushProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialGraph.Brush"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.SerialGraph.SetPointLocations(System.Windows.Media.PointCollection,System.Double)">
+            <summary>
+                Sets point coordinates and ground level.
+            </summary>
+            <param name="locations">Locations (coordinates) of data points for the graph.</param>
+            <param name="groundLevel">Y-coordinate of 0 value or value closest to 0.</param>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.SerialGraph.Render">
+            <summary>
+                When implemented in inheriting classes, renders the graphs visual.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialGraph.ValueMemberPath">
+            <summary>
+                Gets or sets path to the member in the DataSource holding values for this graph.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialGraph.Locations">
+            <summary>
+                Gets locations (coordinates) of data points for the graph.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialGraph.GroundLevel">
+            <summary>
+                Gets Y-coordinate of 0 or a value closest to 0.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialGraph.XStep">
+            <summary>
+                Gets single x-axis step size (the distance between 2 neighbor data points).
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialGraph.Title">
+            <summary>
+                Gets or sets the title of the graph.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialGraph.Brush">
+            <summary>
+                Gets or sets brush for the graph.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="E:AmCharts.Windows.QuickCharts.SerialGraph.ValueMemberPathChanged">
+            <summary>
+                Event is raised when ValueMemberPath changes.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.ColumnGraph.ColumnWidthAllocationProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.ColumnGraph.ColumnWidthAllocation"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ColumnGraph.#ctor">
+            <summary>
+                Creates ColumnGraph object.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ColumnGraph.OnApplyTemplate">
+            <summary>
+                Applies control template.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ColumnGraph.Render">
+            <summary>
+                Renders graph.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.ColumnGraph.ColumnWidthAllocation">
+            <summary>
+                Get or sets coefficient for allocation of space between 2 data points to a single column.
+                This is a dependency property.
+            </summary>
+            <remarks>
+                A value between 0 and 1 is expected. 0 means no space and 1 means the column will occupy the whole space between 2
+                neighboring data points.
+            </remarks>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.CategoryAxis">
+            <summary>
+                Represents category axis in serial chart (usually x-axis)
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.CategoryAxis.#ctor">
+            <summary>
+                Instantiates CategoryAxis object
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.CategoryAxis.OnApplyTemplate">
+            <summary>
+                Applies control template
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.CategoryAxis.MeasureOverride(System.Windows.Size)">
+            <summary>
+                Measures desired size for the axis.
+            </summary>
+            <param name="constraint">Constraint</param>
+            <returns>Desired size</returns>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.CategoryAxis.ArrangeOverride(System.Windows.Size)">
+            <summary>
+                Arranges axis labels
+            </summary>
+            <param name="arrangeBounds">Arrange bounds</param>
+            <returns>Arranged bounds</returns>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.CategoryAxis.SetValues(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+                Sets values to be displayed as axis labels
+            </summary>
+            <param name="values">Values</param>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.CategoryAxis.SetLocations(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+                Set's locations of value labels (ticks) on the axis.
+            </summary>
+            <param name="locations">Value locations (coordinates)</param>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.AreaGraph">
+            <summary>
+                Facilitates rendering of area graphs.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.AreaGraph.#ctor">
+            <summary>
+                Instantiates AreaGraph.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.AreaGraph.OnApplyTemplate">
+            <summary>
+                Applies control template.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.AreaGraph.Render">
+            <summary>
+                Renders area graph.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.DataPathEventArgs">
+            <summary>
+                Represents arguments for event raised when Path related properties change.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.DataPathEventArgs.#ctor(System.String)">
+            <summary>
+                Instantiates class with specified new path.
+            </summary>
+            <param name="newPath"></param>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.DataPathEventArgs.NewPath">
+            <summary>
+                Gets or sets new path.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.DiscreetClearObservableCollection`1">
+            <summary>
+                A version of <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/> which on call to Clear() removes items one-by-one.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.DiscreetClearObservableCollection`1.ClearItems">
+            <summary>
+                Removes items from the collection one-by-one.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.Indicator">
+            <summary>
+                Represents and indicator of current data point in serial chart.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.Indicator.FillProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.Indicator.Fill"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.Indicator.StrokeProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.Indicator.Stroke"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.Indicator.TextProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.Indicator.Text"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.Indicator.#ctor">
+            <summary>
+                Creates Indicator instance.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.Indicator.SetPosition(System.Windows.Point)">
+            <summary>
+                Positions indicator.
+            </summary>
+            <param name="position">Data point coordinates.</param>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Indicator.Fill">
+            <summary>
+                Gets or sets filling Brush for the indicator.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Indicator.Stroke">
+            <summary>
+                Gets or sets stroke (outline) Brush for the indicator.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Indicator.Text">
+            <summary>
+                Gets or sets balloon text.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.Legend">
+            <summary>
+                Represents chart legend.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.Legend.#ctor">
+            <summary>
+                Instantiates Legend.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Legend.LegendItemsSource">
+            <summary>
+                Gets or sets legend item source.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.LegendItem">
+            <summary>
+                Represents a single chart legend item.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.LegendItem.TitleProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.LegendItem.Title"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.LegendItem.BrushProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.LegendItem.Brush"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.LegendItem.#ctor(AmCharts.Windows.QuickCharts.ILegendItem)">
+            <summary>
+                Instantiates new LegendItem object and binds it to the original chart items.
+            </summary>
+            <param name="originalItem"></param>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.LegendItem.OriginalItem">
+            <summary>
+                Gets or sets original source object for this item.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.LegendItem.Title">
+            <summary>
+                Gets or sets the title of the slice.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.LegendItem.Brush">
+            <summary>
+                Gets or sets brush for the slice.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.LineGraph">
+            <summary>
+                Facilitates rendering of line graphs.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.LineGraph.StrokeThicknessProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.LineGraph.StrokeThickness"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.LineGraph.#ctor">
+            <summary>
+                Instantiates LineGraph.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.LineGraph.OnApplyTemplate">
+            <summary>
+                Applies control template.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.LineGraph.Render">
+            <summary>
+                Renders line graph.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.LineGraph.StrokeThickness">
+            <summary>
+                Gets or sets stroke thickness for a line graph line.
+                This is a dependency property.
+                The default is 2.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.PieChart">
+            <summary>
+                Displays pie charts.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.PieChart.#ctor">
+            <summary>
+                Instantiates PieChart.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.PieChart.LegendVisibilityProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.PieChart.LegendVisibility"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.PieChart.DataSourceProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.PieChart.DataSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.PieChart.TitleMemberPathProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.PieChart.TitleMemberPath"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.PieChart.ValueMemberPathProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.PieChart.ValueMemberPath"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.PieChart.OnApplyTemplate">
+            <summary>
+                Applies control template.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.PieChart.SetBalloonBrush(System.Windows.Media.Brush)">
+            <summary>
+                Set the Brush that is to be used when drawing a Balloon
+            </summary>
+            <param name="brush">A non-null Brush object</param>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.PieChart.LegendVisibility">
+            <summary>
+                Gets or sets visibility of the chart legend.
+                This is a dependency property.
+                The default is Visible.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.PieChart.DataSource">
+            <summary>
+                Gets or sets data source for the chart.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.PieChart.TitleMemberPath">
+            <summary>
+                Gets or sets path to the property holding slice titles in data source.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.PieChart.ValueMemberPath">
+            <summary>
+                Gets or sets path to the member in the DataSource holding values for the slice.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.PieChart.Brushes">
+            <summary>
+                Gets a collection of preset brushes used for slices.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.SerialChart">
+            <summary>
+                Displays serial charts (line, column, etc.).
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.SerialChart.#ctor">
+            <summary>
+                Instantiates SerialChart.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.SerialChart.OnApplyTemplate">
+            <summary>
+                Assigns template parts
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.SerialChart.SetBalloonBrush(System.Windows.Media.Brush)">
+            <summary>
+                Set the Balloon's Brush
+            </summary>
+            <param name="brush">Brush to use when drawing the Balloon</param>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.DataSourceProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.DataSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.CategoryValueMemberPathProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.CategoryValueMemberPath"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.MinimumValueGridStepProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.MinimumValueGridStep"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.MinimumCategoryGridStepProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.MinimumCategoryGridStep"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.PlotAreaBackgroundProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.PlotAreaBackground"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.LegendVisibilityProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.LegendVisibility"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.AxisForegroundProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.AxisForeground"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.CategoryFormatStringProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.CategoryFormatString"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.GridStrokeProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.GridStroke"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.SerialChart.ValueFormatStringProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.SerialChart.ValueFormatString"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.Graphs">
+            <summary>
+                Gets collection of <see cref="T:AmCharts.Windows.QuickCharts.SerialGraph"/> objects representing graphs for this chart.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.DataSource">
+            <summary>
+                Gets or sets data source for the chart.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.CategoryValueMemberPath">
+            <summary>
+                Gets or sets path to the property holding category values in data source.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.PresetBrushes">
+            <summary>
+                Gets a collection of preset brushes used for graphs when their Brush property isn't set explicitly.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.MinimumValueGridStep">
+            <summary>
+                Gets or sets minimum size of a single step in value grid/value axis values.
+                This is a dependency property.
+                The default is 30.
+            </summary>
+            <remarks>
+                When chart is resized and distance between grid lines becomes lower than value of MinimumValueGridStep
+                chart decreases number of grid lines.
+            </remarks>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.MinimumCategoryGridStep">
+            <summary>
+                Gets or sets minimum distance between 2 value tick on category axis.
+                This is a dependency property.
+                The default is 70.
+            </summary>
+            <remarks>
+                When chart is resized and distance between grid lines becomes lower than value of MinimumCategoryGridStep
+                chart decreases number of grid lines.
+            </remarks>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.PlotAreaBackground">
+            <summary>
+                Gets or sets a brush used as a background for plot area (the area inside of axes).
+                This is a dependency property.
+                The default is White.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.LegendVisibility">
+            <summary>
+                Gets or sets visibility of the chart legend.
+                This is a dependency property.
+                The default is Visible.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.AxisForeground">
+            <summary>
+                Gets or sets foreground color of the axes.
+                This is a dependency property.
+                The default is Black.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.CategoryFormatString">
+            <summary>
+                Gets or sets the format string to be used to format the category values.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.GridStroke">
+            <summary>
+                Gets or sets stroke brush for the value grid lines.
+                This is a dependency property.
+                The default is LightGray.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.SerialChart.ValueFormatString">
+            <summary>
+                Gets or sets the format string used to format values on axes and in tooltips.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.Slice">
+            <summary>
+                Facilitates rendering of pie chart slices.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.Slice.TitleProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.Slice.Title"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.Slice.BrushProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.Slice.Brush"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.Slice.#ctor">
+            <summary>
+                Instantiates Slice.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.Slice.OnApplyTemplate">
+            <summary>
+                Applies control template.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.Slice.SetDimensions(System.Double,System.Double)">
+            <summary>
+                Sets slice dimensions and renders it.
+            </summary>
+            <param name="radius">Slice radius.</param>
+            <param name="percentage">Percentage of the pie occupied by the slice (as 0-1 value).</param>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Slice.ToolTipText">
+            <summary>
+                Gets or sets tool tip (Balloon) text.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Slice.Title">
+            <summary>
+                Gets or sets the title of the slice.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.Slice.Brush">
+            <summary>
+                Gets or sets brush for the slice.
+                This is a dependency property.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.TextBlockHelper">
+            <summary>
+                Helps unify handling of differing aspects of TextBlock in SilverLight and WPF.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.TextBlockHelper.GetDesiredSize(System.Windows.Controls.TextBlock)">
+            <summary>
+                Workaround for a Silverlight issue when DesiredSize is not set after a call to Measure()
+                but ActualWidth and ActualHeight are set instead.
+            </summary>
+            <param name="textBlock">TextBlock</param>
+            <returns>Size of the TextBlock</returns>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.TreeHelper">
+            <summary>
+                Helper class to unify certain aspects of navigating VisualTree in WPF and SilverLight.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.TreeHelper.TemplateFindName(System.String,System.Windows.FrameworkElement)">
+            <summary>
+                Finds object in control's template by it's name.
+            </summary>
+            <param name="name">Objects name.</param>
+            <param name="templatedParent">Templated parent.</param>
+            <returns>Object reference if found, null otherwise.</returns>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.ValueAxis">
+            <summary>
+                Represents value axis (y-axis in serial chart).
+            </summary>
+        </member>
+        <member name="F:AmCharts.Windows.QuickCharts.ValueAxis.ValueFormatStringProperty">
+            <summary>
+                Identifies <see cref="P:AmCharts.Windows.QuickCharts.ValueAxis.ValueFormatString"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueAxis.#ctor">
+            <summary>
+                Initializes a new instance of ValueAxis class.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueAxis.OnApplyTemplate">
+            <summary>
+                Applies template.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueAxis.MeasureOverride(System.Windows.Size)">
+            <summary>
+                Calculates desired size for the axis.
+            </summary>
+            <param name="constraint">Size constraint.</param>
+            <returns>Desired size.</returns>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueAxis.ArrangeOverride(System.Windows.Size)">
+            <summary>
+                Arranges axis elements.
+            </summary>
+            <param name="arrangeBounds">Arrange bounds.</param>
+            <returns>Arranged size.</returns>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueAxis.SetValues(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+                Sets values displayed on axis.
+            </summary>
+            <param name="values">Values.</param>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueAxis.SetLocations(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+                Sets locations of axis values and value marks (ticks).
+            </summary>
+            <param name="locations">Locations (coordinates).</param>
+        </member>
+        <member name="P:AmCharts.Windows.QuickCharts.ValueAxis.ValueFormatString">
+            <summary>
+                Gets or sets the format string used to format values on the axis.
+                This is a depenency property.
+            </summary>
+        </member>
+        <member name="T:AmCharts.Windows.QuickCharts.ValueGrid">
+            <summary>
+                Represents grid in serial chart.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueGrid.#ctor">
+            <summary>
+                Initializes a new instance of ValueGrid class.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueGrid.OnApplyTemplate">
+            <summary>
+                Assigns control template parts.
+            </summary>
+        </member>
+        <member name="M:AmCharts.Windows.QuickCharts.ValueGrid.SetLocations(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+                Sets locations (coordinates) of grid lines.
+            </summary>
+            <param name="locations">Locations (coordinates) of grid lines.</param>
+        </member>
+    </members>
+</doc>

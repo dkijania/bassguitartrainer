@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Quick.Charts.WPF</id>
+    <version>1.2</version>
+    <title>Quick Charts for WPF</title>
+    <authors>amCharts, ailon, Mike Mayer</authors>
+    <owners>amCharts, ailon, Mike Mayer</owners>
+    <licenseUrl>https://github.com/ailon/amCharts-Quick-Charts/blob/master/QuickChartsWPF/docs/license.txt</licenseUrl>
+    <projectUrl>https://github.com/MikeMayer/amCharts-Quick-Charts</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Free, open source (licensed under MS-PL) charting controls for WPF &amp; Silverlight</description>
+    <releaseNotes>- Can change the Brush colors for a few charts in WPF
+- Updated to .NET 4.0</releaseNotes>
+  </metadata>
+</package>

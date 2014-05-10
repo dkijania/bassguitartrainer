@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09E42C2E-FBB5-4CF6-8210-AED129168D0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BassNotesMasterApi</RootNamespace>
+    <AssemblyName>BassNotesMasterApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bass\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Const\FretBoardOptions.cs" />
+    <Compile Include="Const\FretBoardShow.cs" />
+    <Compile Include="Const\IFretBoardMapping.cs" />
+    <Compile Include="Const\NotesFinder\ScaleNoteFinder.cs" />
+    <Compile Include="Const\NotesInfo.cs" />
+    <Compile Include="Const\NotesToStringFretBoardMapping.cs" />
+    <Compile Include="Const\ScaleStructureProvider.cs" />
+    <Compile Include="Const\ScaleType.cs" />
+    <Compile Include="ExcerciseLauncher.cs" />
+    <Compile Include="Excercise\BaseExcercise.cs" />
+    <Compile Include="Excercise\Collection\FindNotationForPosition.cs" />
+    <Compile Include="Excercise\Collection\FindNoteInScale.cs" />
+    <Compile Include="Excercise\Collection\FindNoteOnFretboard.cs" />
+    <Compile Include="Excercise\Collection\FindNoteOnFretboardFromNotesView.cs" />
+    <Compile Include="Excercise\Collection\IdentifyNoteOnFretboard.cs" />
+    <Compile Include="Excercise\Collection\IdentifyNoteOnNotesViewFromNotation.cs" />
+    <Compile Include="Excercise\Collection\IntervalsExcercise.cs" />
+    <Compile Include="Excercise\DefaultSelectionSetter.cs" />
+    <Compile Include="Excercise\ExcerciseException.cs" />
+    <Compile Include="Excercise\ExcercisesDictionary.cs" />
+    <Compile Include="Excercise\IExcercise.cs" />
+    <Compile Include="Excercise\IExcerciseOptionGuiManager.cs" />
+    <Compile Include="Excercise\OnlyValidRootsSelectionSetter.cs" />
+    <Compile Include="Excercise\Options.cs" />
+    <Compile Include="Excercise\RandomItemGenerator.cs" />
+    <Compile Include="Excercise\Tutorial.cs" />
+    <Compile Include="Fretboard\BadStateOfFretManager.cs" />
+    <Compile Include="Fretboard\CoordinatesOutsideTheFretBoardException.cs" />
+    <Compile Include="Fretboard\FretBoard.cs" />
+    <Compile Include="Fretboard\FretboardEventHandler.cs" />
+    <Compile Include="Fretboard\FretBoardException.cs" />
+    <Compile Include="Fretboard\FretboardManager.cs" />
+    <Compile Include="Fretboard\FretBoardModel.cs" />
+    <Compile Include="Fretboard\IFretBoardGuiBuilder.cs" />
+    <Compile Include="Fretboard\IFretboardListener.cs" />
+    <Compile Include="Fretboard\ISelectionSetter.cs" />
+    <Compile Include="Fretboard\Manager.cs" />
+    <Compile Include="Fretboard\SelectionManager\IGuiSelector.cs" />
+    <Compile Include="Fretboard\SelectionManager\IMouseSelectionManager.cs" />
+    <Compile Include="Fretboard\SelectionManager\ScaleSelectionManager.cs" />
+    <Compile Include="Fretboard\SelectionManager\SelectionManager.cs" />
+    <Compile Include="Fretboard\SelectionManager\StringFretSelectionManager.cs" />
+    <Compile Include="IManagerModeChangeListener.cs" />
+    <Compile Include="IManagersLocatorConfiguration.cs" />
+    <Compile Include="Interval\IExcerciseIntervalListener.cs" />
+    <Compile Include="Interval\IIntervalListener.cs" />
+    <Compile Include="Interval\IntervalCalculator.cs" />
+    <Compile Include="Interval\IntervalData.cs" />
+    <Compile Include="Interval\IntervalEventHandler.cs" />
+    <Compile Include="Interval\IntervalGuiBuilder.cs" />
+    <Compile Include="Interval\IntervalManager.cs" />
+    <Compile Include="Interval\IntervalRow.cs" />
+    <Compile Include="ManagersLocator.cs" />
+    <Compile Include="ManagersLocatorException.cs" />
+    <Compile Include="Notation\IMusicNotationListener.cs" />
+    <Compile Include="Notation\MusicNotation.cs" />
+    <Compile Include="Notation\MusicNotationEventHandler.cs" />
+    <Compile Include="Notation\MusicNotationGraphicObjectsManager.cs" />
+    <Compile Include="NotePlayer\IBassNotesPlayer.cs" />
+    <Compile Include="NotesView\INotesViewListener.cs" />
+    <Compile Include="NotesView\NotesViewEventHandler.cs" />
+    <Compile Include="NotesView\NotesViewGuiBuilder.cs" />
+    <Compile Include="NotesView\NotesViewManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AudioSamplesProvider.cs" />
+    <Compile Include="Resources\ResourceNotFoundException.cs" />
+    <Compile Include="Resources\ResourcesManager.cs" />
+    <Compile Include="Settings\ISettingListener.cs" />
+    <Compile Include="Settings\ISettingsConfigurator.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\UndoManager.cs" />
+    <Compile Include="Statistics\IStatisticsGuiManager.cs" />
+    <Compile Include="Statistics\StatisticRow.cs" />
+    <Compile Include="Statistics\StatisticsManager.cs" />
+    <Compile Include="Utils\ComponentId.cs" />
+    <Compile Include="Utils\IVisibilityManager.cs" />
+    <Compile Include="Utils\Keyboard\AbstractKeyboardEventManager.cs" />
+    <Compile Include="Utils\Keyboard\ICombinationPressedListener.cs" />
+    <Compile Include="Utils\ManagerMode.cs" />
+    <Compile Include="Utils\Note.cs" />
+    <Compile Include="Utils\NotesConverter.cs" />
+    <Compile Include="Utils\ResultSerializer\IResultSerializer.cs" />
+    <Compile Include="Utils\ResultSerializer\SerializerExcerciseData.cs" />
+    <Compile Include="Utils\ResultSerializer\SerializerRoot.cs" />
+    <Compile Include="Utils\ResultSerializer\SerializerStatisticRow.cs" />
+    <Compile Include="Utils\StringFretPair.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Sounds\A#1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\A#2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\A1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\A2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\B1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\B2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\C#2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\C#3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\C2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\C3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\D#2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\D#3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\D2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\D3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\E1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\E2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\E3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\F#1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\F#2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\F#3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\F1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\F2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\F3.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\G#1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\G#2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\G1.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\G2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

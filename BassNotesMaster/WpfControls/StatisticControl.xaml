@@ -1,0 +1,49 @@
+<UserControl x:Class="BassNotesMaster.WpfControls.StatisticControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:amq="http://schemas.amcharts.com/quick/wpf/2010/xaml" mc:Ignorable="d" d:DesignHeight="270" d:DesignWidth="400">
+    <Grid HorizontalAlignment="Stretch" Name="StatsGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" Name="StatsTable" AutoGenerateColumns="False" ItemsSource="{Binding}"
+                  IsReadOnly="False" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Excercise" Binding="{Binding Path=Excercise}" />
+                <DataGridTextColumn Header="Questions" Binding="{Binding Path=Questions}" />
+                <DataGridTextColumn Header="Correct" Binding="{Binding Path=Correct}" />
+                <DataGridTextColumn Header="Wrong" Binding="{Binding Path=Wrong}" />
+                <DataGridTextColumn Header="Skipped" Binding="{Binding Path=Skipped}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="2" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        <Button Content="Show Last Test" Grid.Column="0" Height="50"  Name="ShowLast" Click="ShowLast_Click"/>
+        <Button Content="Show History" Grid.Column="1" Height="50"  Name="ShowHistory" Click="ShowHistory_Click" />
+        </Grid>
+        <Button Content="Back" Style="{DynamicResource MetroCircleButtonStyle}" Grid.Row="0" Name="Back" Height="50" Visibility="Visible" Click="Back_Click" />
+        <Label Name="ChartTitle" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20" Margin="-120,0,0,0" HorizontalAlignment="Center"/>
+        <amq:PieChart Grid.Row="1" x:Name="PieChart" Grid.RowSpan="4" Grid.ColumnSpan="3" Background="Transparent" LegendVisibility="Visible"
+                         Foreground="White">
+        </amq:PieChart>
+        <amq:SerialChart Grid.Row="1" x:Name="LineChart" Grid.RowSpan="4" Grid.ColumnSpan="3" Background="Transparent" LegendVisibility="Visible"
+                        AxisForeground="White" Foreground="White" CategoryValueMemberPath="TestNo">
+            <amq:SerialChart.Graphs>
+                <amq:AreaGraph x:Name="Area" ValueMemberPath="SuccessRate" Brush="Red" />
+            </amq:SerialChart.Graphs>
+        </amq:SerialChart>
+
+    </Grid>
+</UserControl>
