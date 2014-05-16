@@ -1,5 +1,0 @@
-﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Calibri">
-    <Paragraph FontSize="24">Overview</Paragraph>
-    <Paragraph>Notes button shows all notes defined in music notation. By clicking note button user can hear it, check positions on fretboard which sounds
-    like pressed note or see it music representation</Paragraph>
-</FlowDocument>

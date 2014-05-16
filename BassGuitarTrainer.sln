@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4D0CD7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BassNotesMasterApi", "BassNotesMasterApi\BassNotesMasterApi.csproj", "{09E42C2E-FBB5-4CF6-8210-AED129168D0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHelpSystem", "WpfHelpSystem\WpfHelpSystem.csproj", "{1EC8BDB4-B82C-4C38-9192-837A3D6443D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpSystemResources", "HelpSystemResources\HelpSystemResources.csproj", "{1EC8BDB4-B82C-4C38-9192-837A3D6443D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumMachine", "DrumMachine\DrumMachine.csproj", "{FC512A61-47EB-493C-AF7F-BC357694BFA8}"
 EndProject

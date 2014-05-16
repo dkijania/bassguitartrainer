@@ -354,7 +354,7 @@
       <Project>{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}</Project>
       <Name>WpfExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WpfHelpSystem\WpfHelpSystem.csproj">
+    <ProjectReference Include="..\HelpSystemResources\HelpSystemResources.csproj">
       <Project>{1ec8bdb4-b82c-4c38-9192-837a3d6443d5}</Project>
       <Name>WpfHelpSystem</Name>
     </ProjectReference>

@@ -1,5 +1,0 @@
-﻿<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Calibri">
-    <Paragraph FontSize="24">Overview</Paragraph>
-    <Paragraph>Player component is designed to repeat recently played note or set volume.
-    </Paragraph>
-</FlowDocument>

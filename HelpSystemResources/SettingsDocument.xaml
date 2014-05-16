@@ -1,0 +1,49 @@
+﻿<FlowDocument    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" FontFamily="Calibri">
+
+   
+    <Paragraph>Settings are accesible from "Setting" button placed in main window title bar or by pressing F1. Below there is a list for each settings with explanation.</Paragraph>
+    <Paragraph FontSize="24" >Rectangle presets</Paragraph>
+    <Paragraph >User can choose style for
+        <Hyperlink NavigateUri="Component\Fretboard.xaml">Fretboard</Hyperlink> position markers. Upper row contains presets that will be shown when user selects
+        <Bold>correct</Bold> position on fretboard. Lower row contains presets that will be shown when user selects
+        <Bold>wrong</Bold> position on fretboard.
+    </Paragraph>
+    <Paragraph FontSize="24">Show</Paragraph>
+    <Paragraph>Options controls which type of notes representations will be shown on components. There are three options available:</Paragraph>
+    <List>
+        <ListItem>
+            <Paragraph>
+                <Bold>Only Sharps</Bold> - e.q. for F#/Gb note F# represetation will be shown
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph>
+                <Bold>Only Flats</Bold> - e.q. for F#/Gb note Gb represetation will be shown
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph>
+                <Bold>Mixed</Bold> - e.q. for F#/Gb note both F# and Gb represetation will be shown
+            </Paragraph>
+        </ListItem>
+    </List>
+    <Paragraph FontSize="24">Note text</Paragraph>
+    <Paragraph>Options controls which family and font size will be used for
+        <Run>Fretboard</Run> markings
+    </Paragraph>
+    <Paragraph>Options controls which family and font size will be used for
+        <Hyperlink NavigateUri="Component\Fretboard.xaml">Fretboard</Hyperlink>
+    </Paragraph>
+    <Paragraph FontSize="24">Excercises</Paragraph>
+    <Paragraph  FontSize="18">Attempts</Paragraph>
+    <Paragraph>Options controls how many tries user have for single check. In example if user provide 3 
+    as a value then after three failures of quessing corrrect note failure (or wrong) position will be 
+    shown and failed "point" will be added to statistics.</Paragraph>
+    <Paragraph  FontSize="18">Show last Hit for [s]</Paragraph>
+    <Paragraph>For how many seconds clicked position will be shown e.g. on
+        <Hyperlink NavigateUri="Component\Fretboard.xaml">Fretboard</Hyperlink> before showing correct result (if set) or next test
+    </Paragraph>
+    <Paragraph  FontSize="18">Show Correct Anwser</Paragraph>
+    <Paragraph>Decide whether show correct anwser (which depends on Excercise type) after wrong anwser (or wrong anwsers if Attempts setting set to more than 1)</Paragraph>
+</FlowDocument>
