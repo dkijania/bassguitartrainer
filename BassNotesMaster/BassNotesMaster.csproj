@@ -350,6 +350,10 @@
       <Project>{FC512A61-47EB-493C-AF7F-BC357694BFA8}</Project>
       <Name>DrumMachine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SimpleHelpSystem\SimpleHelpSystem.csproj">
+      <Project>{0257E82A-D025-47C9-8533-C54CC3D0CD57}</Project>
+      <Name>SimpleHelpSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfExtensions\WpfExtensions.csproj">
       <Project>{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}</Project>
       <Name>WpfExtensions</Name>
@@ -361,6 +365,10 @@
     <ProjectReference Include="..\WpfMetronome\Metronome.csproj">
       <Project>{90837A8E-DD39-4F3F-B981-30749FD1DD24}</Project>
       <Name>Metronome</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfSimpleHelpSystem\WpfSimpleHelpSystem.csproj">
+      <Project>{B7B3521C-BA6E-41B2-B8F8-72188A7D6502}</Project>
+      <Name>WpfSimpleHelpSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

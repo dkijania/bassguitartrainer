@@ -3,46 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" mc:Ignorable="d"
+             xmlns:gui="clr-namespace:WpfSimpleHelpSystem.Gui;assembly=WpfSimpleHelpSystem"
+             mc:Ignorable="d"
              d:DesignWidth="1110">
-    <UserControl.Resources>
-
-        <LinearGradientBrush x:Key="Blue" StartPoint="0,0" EndPoint="0,1">
-            <LinearGradientBrush.GradientStops>
-                <GradientStopCollection>
-                    <GradientStop Color="CornflowerBlue" Offset="0" />
-                    <GradientStop Color="DarkBlue" Offset="1" />
-                </GradientStopCollection>
-            </LinearGradientBrush.GradientStops>
-        </LinearGradientBrush>
-
-        <LinearGradientBrush x:Key="Purple" StartPoint="0,0" EndPoint="0,1">
-            <LinearGradientBrush.GradientStops>
-                <GradientStopCollection>
-                    <GradientStop Color="MediumPurple" Offset="0" />
-                    <GradientStop Color="Purple" Offset="1" />
-                </GradientStopCollection>
-            </LinearGradientBrush.GradientStops>
-        </LinearGradientBrush>
-
-        <LinearGradientBrush x:Key="Red" StartPoint="0,0" EndPoint="0,1">
-            <LinearGradientBrush.GradientStops>
-                <GradientStopCollection>
-                    <GradientStop Color="Salmon" Offset="0" />
-                    <GradientStop Color="Red" Offset="1" />
-                </GradientStopCollection>
-            </LinearGradientBrush.GradientStops>
-        </LinearGradientBrush>
-
-        <LinearGradientBrush x:Key="Green" StartPoint="0,0" EndPoint="0,1">
-            <LinearGradientBrush.GradientStops>
-                <GradientStopCollection>
-                    <GradientStop Color="SpringGreen" Offset="0" />
-                    <GradientStop Color="Green" Offset="1" />
-                </GradientStopCollection>
-            </LinearGradientBrush.GradientStops>
-        </LinearGradientBrush>
-    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -50,15 +13,7 @@
         </Grid.ColumnDefinitions>
         <TabControl>
             <TabItem Header="Menu" Margin="10,0,0,0">
-                <TreeView Width="320" Name="Menu" ItemsSource="{Binding MenuItems}" SelectedItemChanged="Menu_OnSelectedItemChanged">
-                    <TreeView.ItemTemplate>
-                        <HierarchicalDataTemplate ItemsSource="{Binding Path=Children}">
-                            <TextBlock Text="{Binding Header}">
-                                <Hyperlink Command="{Binding SomeCommand}" />
-                            </TextBlock>
-                        </HierarchicalDataTemplate>
-                    </TreeView.ItemTemplate>
-                </TreeView>
+                <gui:HelpMenu Name="Menu" />
             </TabItem>
         </TabControl>
         <Grid Grid.Column="1">
@@ -71,14 +26,12 @@
                 <ColumnDefinition Width="100" />
                 <ColumnDefinition Width="100" />
             </Grid.ColumnDefinitions>
-            <Button Content="Back" Grid.Row="0" Grid.Column="1" Click="HistoryBack_Click" Name="Back"
-                    IsEnabled="{Binding Path=CanUndo}" />
-            <Button Content="Forward" Grid.Row="0" Grid.Column="2" Click="HistoryForward_Click" Name="Forward"
-                    IsEnabled="{Binding Path=CanRedo}" />
-            <TabControl Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3">
-                       <TabItem >
-                            <FlowDocumentScrollViewer Name="Viewer" />
-                        </TabItem>
+            <gui:HistoryBackButton Grid.Row="0" Grid.Column="1" Name="Back" />
+            <gui:HistoryForwardButton Grid.Row="0" Grid.Column="2" Name="Forward" />
+            <TabControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <TabItem>
+                    <gui:ContentViewer Name="Viewer" />
+                </TabItem>
             </TabControl>
         </Grid>
     </Grid>
