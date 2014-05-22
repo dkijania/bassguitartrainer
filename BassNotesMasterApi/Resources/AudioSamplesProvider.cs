@@ -24,7 +24,7 @@ namespace BassNotesMasterApi.Resources
 
         private void LoadWavStreamsToMemory()
         {
-            var fretBoardMapping = new NotesToStringFretBoardMapping();
+            var fretBoardMapping = NotesToStringFretBoardMapping.Instance;
             foreach (var note in fretBoardMapping.ValuesDistinct)
             {
                 var file = GetFile(note);

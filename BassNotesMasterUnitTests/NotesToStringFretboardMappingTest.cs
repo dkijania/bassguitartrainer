@@ -8,7 +8,7 @@ namespace BassNotesMasterUnitTests
     [TestFixture]
     public class NotesToStringFretboardMappingTest
     {
-        readonly NotesToStringFretBoardMapping _fretBoardMapping = new NotesToStringFretBoardMapping(); 
+        readonly NotesToStringFretBoardMapping _fretBoardMapping = NotesToStringFretBoardMapping.Instance; 
 
         [Test]
         public void TestGetNote()

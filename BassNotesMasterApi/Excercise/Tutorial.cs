@@ -1,6 +1,7 @@
 using BassNotesMasterApi.Const;
 using BassNotesMasterApi.Fretboard;
 using BassNotesMasterApi.Interval;
+using BassNotesMasterApi.Interval.Data;
 using BassNotesMasterApi.Notation;
 using BassNotesMasterApi.NotesView;
 using BassNotesMasterApi.Utils;
@@ -63,7 +64,7 @@ namespace BassNotesMasterApi.Excercise
    */ public class Tutorial : AbstractTutorial, IFretboardListener, INotesViewListener, IMusicNotationListener,
                             IIntervalListener
     {
-        private readonly NotesToStringFretBoardMapping _fretBoardMapping = new NotesToStringFretBoardMapping();
+        private readonly NotesToStringFretBoardMapping _fretBoardMapping = NotesToStringFretBoardMapping.Instance;
         private readonly ManagersLocator _managersLocator = ManagersLocator.Instance;
             
 

@@ -7,7 +7,7 @@ namespace BassNotesMasterApi.Const.NotesFinder
 {
     public class ScaleNoteFinder
     {
-        private readonly NotesToStringFretBoardMapping _fretBoardMapping = new NotesToStringFretBoardMapping();
+        private readonly NotesToStringFretBoardMapping _fretBoardMapping = NotesToStringFretBoardMapping.Instance;
 
         public enum FindNextNoteStrategy
         {

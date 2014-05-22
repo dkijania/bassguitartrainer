@@ -6,11 +6,11 @@ namespace BassNotesMasterApi.NotesView
 {
     public class NotesViewManager : Manager, ISettingListener
     {
-        private readonly NotesViewGuiBuilder _guiBuilder;
+        private readonly INotesViewGuiBuilder _guiBuilder;
         private readonly NotesViewEventHandler _eventHandler;
         public FretboardManager FretboardManager { get; set; }
 
-        public NotesViewManager(NotesViewGuiBuilder guiBuilder, NotesViewEventHandler eventHandler,
+        public NotesViewManager(INotesViewGuiBuilder guiBuilder, NotesViewEventHandler eventHandler,
                                 Settings.Settings settings,
                                 FretboardManager fretboardManager)
         {

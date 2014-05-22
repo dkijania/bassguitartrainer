@@ -4,6 +4,7 @@ using System.Linq;
 using BassNotesMasterApi.Const;
 using BassNotesMasterApi.Fretboard;
 using BassNotesMasterApi.Interval;
+using BassNotesMasterApi.Interval.Data;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Excercise.Collection

@@ -20,7 +20,6 @@ namespace BassNotesMaster.ShowSelectViewManager
             _fretboardManager = fretboardManager;
         }
 
-
         public override void Init()
         {
             PrepareShowPanel();

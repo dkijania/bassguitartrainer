@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>..\packages\NAudio.1.7\lib\net35\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -85,24 +88,26 @@
     <Compile Include="Fretboard\SelectionManager\StringFretSelectionManager.cs" />
     <Compile Include="IManagerModeChangeListener.cs" />
     <Compile Include="IManagersLocatorConfiguration.cs" />
+    <Compile Include="Interval\Data\IntervalData.cs" />
+    <Compile Include="Interval\Data\IntervalRow.cs" />
     <Compile Include="Interval\IExcerciseIntervalListener.cs" />
     <Compile Include="Interval\IIntervalListener.cs" />
     <Compile Include="Interval\IntervalCalculator.cs" />
-    <Compile Include="Interval\IntervalData.cs" />
     <Compile Include="Interval\IntervalEventHandler.cs" />
     <Compile Include="Interval\IntervalGuiBuilder.cs" />
     <Compile Include="Interval\IntervalManager.cs" />
-    <Compile Include="Interval\IntervalRow.cs" />
     <Compile Include="ManagersLocator.cs" />
     <Compile Include="ManagersLocatorException.cs" />
     <Compile Include="Notation\IMusicNotationListener.cs" />
     <Compile Include="Notation\MusicNotation.cs" />
     <Compile Include="Notation\MusicNotationEventHandler.cs" />
     <Compile Include="Notation\MusicNotationGraphicObjectsManager.cs" />
-    <Compile Include="NotePlayer\IBassNotesPlayer.cs" />
+    <Compile Include="NotePlayer\BassNotesPlayer.cs" />
+    <Compile Include="NotePlayer\WavPlayer.cs" />
     <Compile Include="NotesView\INotesViewListener.cs" />
+    <Compile Include="NotesView\NotesModel.cs" />
     <Compile Include="NotesView\NotesViewEventHandler.cs" />
-    <Compile Include="NotesView\NotesViewGuiBuilder.cs" />
+    <Compile Include="NotesView\INotesViewGuiBuilder.cs" />
     <Compile Include="NotesView\NotesViewManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AudioSamplesProvider.cs" />
@@ -122,6 +127,7 @@
     <Compile Include="Utils\ManagerMode.cs" />
     <Compile Include="Utils\Note.cs" />
     <Compile Include="Utils\NotesConverter.cs" />
+    <Compile Include="Utils\PropertyChangedNotifier.cs" />
     <Compile Include="Utils\ResultSerializer\IResultSerializer.cs" />
     <Compile Include="Utils\ResultSerializer\SerializerExcerciseData.cs" />
     <Compile Include="Utils\ResultSerializer\SerializerRoot.cs" />
@@ -211,7 +217,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WpfExtensions\WpfExtensions.csproj">
+      <Project>{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}</Project>
+      <Name>WpfExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

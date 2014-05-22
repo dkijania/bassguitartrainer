@@ -16,7 +16,7 @@ namespace BassNotesMasterApi.Excercise
     {
         protected List<StringFretPair> StringFretPairs;
         protected readonly RandomItemGenerator Generator;
-        protected readonly NotesToStringFretBoardMapping FretBoardMapping = new NotesToStringFretBoardMapping();
+        protected readonly NotesToStringFretBoardMapping FretBoardMapping = NotesToStringFretBoardMapping.Instance;
         protected readonly FretboardManager FretBoardManager;
         protected Note NoteToFind;
         protected IExcerciseOptionGuiManager GuiManager;

@@ -82,7 +82,6 @@
     </ApplicationDefinition>
     <Compile Include="AppViewManager\ShowManager.cs" />
     <Compile Include="KeyboardEventManager.cs" />
-    <Compile Include="NotePlayer\WavPlayer.cs" />
     <Compile Include="ResultSerializer\XmlSerializerExcerciseData.cs" />
     <Compile Include="ResultSerializer\WpfSerializerRoot.cs" />
     <Compile Include="ResultSerializer\XmlSerializerStatisticRow.cs" />
@@ -130,8 +129,7 @@
     <Compile Include="Notation\WpfMusicNotationGraphicObjectsManager.cs" />
     <Compile Include="Notation\MusicNotationGraphicProperties.cs" />
     <Compile Include="Notation\WpfMusicNotationEventHandler.cs" />
-    <Compile Include="NotePlayer\BassNotesPlayer.cs" />
-    <Compile Include="NotePlayer\SliderExtensions.cs" />
+    <Compile Include="NotePlayer\BassNotesPlayerModelView.cs" />
     <Compile Include="NotesView\WpfNotesViewEventHandler.cs" />
     <Compile Include="NotesView\WpfNotesViewGuiBuilder.cs" />
     <Compile Include="Resources\WpfGraphicResourceAdder.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BassNotesMasterApi.Const;
 using BassNotesMasterApi.Fretboard;
+using BassNotesMasterApi.Interval.Data;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Interval
@@ -12,7 +13,7 @@ namespace BassNotesMasterApi.Interval
         public readonly IntervalGuiBuilder GuiBuilder;
         private readonly IntervalEventHandler _eventHandler;
         private readonly IntervalCalculator _intervalCalculator = new IntervalCalculator();
-        private readonly NotesToStringFretBoardMapping _fretBoardMapping = new NotesToStringFretBoardMapping();
+        private readonly NotesToStringFretBoardMapping _fretBoardMapping = NotesToStringFretBoardMapping.Instance;
         private readonly IntervalData _data = new IntervalData();
         private ManagerMode _mode;
 

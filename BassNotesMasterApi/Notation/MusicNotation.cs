@@ -9,7 +9,7 @@ namespace BassNotesMasterApi.Notation
     public class MusicNotation : Manager
     {
         private readonly MusicNotationEventHandler _musicNotationEventHandler;
-        private readonly NotesToStringFretBoardMapping _fretBoardMapping = new NotesToStringFretBoardMapping();
+        private readonly NotesToStringFretBoardMapping _fretBoardMapping = NotesToStringFretBoardMapping.Instance;
         private readonly NotesInfo _notesInfo = new NotesInfo();
         public readonly MusicNotationGraphicObjectsManager GraphicObjectsManager;
         private readonly Settings.Settings _settings;

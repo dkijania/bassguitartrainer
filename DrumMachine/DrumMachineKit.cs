@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Windows.Input;
 using DrumMachine.Audio;
 using DrumMachine.Engine.Model;
 using DrumMachine.Engine.Pattern;

@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using BassNotesMaster.NotePlayer;
 using BassNotesMaster.WpfViews.Metronome;
+using BassNotesMasterApi.NotePlayer;
 using DrumMachine.Audio;
 using DrumMachine.Engine.Pattern;
 using MahApps.Metro.Controls;

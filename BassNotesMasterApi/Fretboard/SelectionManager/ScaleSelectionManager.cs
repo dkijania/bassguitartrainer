@@ -9,7 +9,7 @@ namespace BassNotesMasterApi.Fretboard.SelectionManager
 {
     public class ScaleSelectionManager
     {
-        private readonly NotesToStringFretBoardMapping _notesMapping = new NotesToStringFretBoardMapping();
+        private readonly NotesToStringFretBoardMapping _notesMapping = NotesToStringFretBoardMapping.Instance;
         private readonly ScaleStructureProvider _scaleStructureProvider = new ScaleStructureProvider();
         private readonly ScaleNoteFinder _scaleNoteFinder = new ScaleNoteFinder();
         

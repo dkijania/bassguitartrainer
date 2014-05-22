@@ -1,9 +1,9 @@
-using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using BassNotesMasterApi.Excercise;
 using BassNotesMasterApi.Interval;
+using BassNotesMasterApi.Interval.Data;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
@@ -43,7 +43,6 @@ namespace BassNotesMaster.Intervals
         {
             try
             {
-
                 foreach (var item in _dataGrid.SelectedItems)
                 {
                     RaiseShowEvent((IntervalRow)item);
@@ -55,7 +54,6 @@ namespace BassNotesMaster.Intervals
         
             }
         }
-
 
         public IntervalRow FindRowOfEvent(object sender)
         {

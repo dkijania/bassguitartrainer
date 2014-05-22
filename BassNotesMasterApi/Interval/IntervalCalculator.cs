@@ -7,7 +7,7 @@ namespace BassNotesMasterApi.Interval
     public class IntervalCalculator
     {
         private readonly NotesInfo _notesInfo = new NotesInfo();
-        private readonly IFretBoardMapping _fretBoardMapping = new NotesToStringFretBoardMapping();
+        private readonly IFretBoardMapping _fretBoardMapping = NotesToStringFretBoardMapping.Instance;
 
 
         public Note Calculate(Note root,int semitone)

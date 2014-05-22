@@ -17,12 +17,12 @@ using BassNotesMasterApi.Fretboard;
 using BassNotesMasterApi.Fretboard.SelectionManager;
 using BassNotesMasterApi.Interval;
 using BassNotesMasterApi.Notation;
+using BassNotesMasterApi.NotePlayer;
 using BassNotesMasterApi.NotesView;
 using BassNotesMasterApi.Settings;
 using BassNotesMasterApi.Statistics;
 using BassNotesMasterApi.Utils;
 using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
 
 namespace BassNotesMaster.WpfViews
 {
@@ -71,7 +71,9 @@ namespace BassNotesMaster.WpfViews
             ManagersLocator.Instance.NotesViewManager = new NotesViewManager(notesViewGuiBuilder, notesViewEventHandler,
                                                                              settings,
                                                                              fretboardManager);
-            ManagersLocator.Instance.PlayerManager = new BassNotesPlayer(PlayerControl.PlayAgain, PlayerControl.Volume, PlayerControl.Mute, settings);
+            ManagersLocator.Instance.PlayerManager =  new BassNotesPlayer(settings);
+            PlayerControl.DataContext = new BassNotesPlayerModelView(ManagersLocator.Instance.PlayerManager);
+         
             var guiOptionManager = new ExcerciseOptionGuiManager(ExcerciseControl.ExcerciseOptions);
 
             ManagersLocator.Instance.ShowSelectManager = new ShowSelectViewManager.ShowSelectViewManager(SelectionControl, fretboardManager);

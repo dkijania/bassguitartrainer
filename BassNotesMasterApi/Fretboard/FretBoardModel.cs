@@ -16,7 +16,7 @@ namespace BassNotesMasterApi.Fretboard
 
         public FretBoardModel()
         {
-            _notesToStringFretBoardMapping = new NotesToStringFretBoardMapping();
+            _notesToStringFretBoardMapping = NotesToStringFretBoardMapping.Instance;
         }
 
         public IEnumerable<StringFretPair> GetAllStringFretPairs()

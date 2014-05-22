@@ -11,7 +11,7 @@ using Settings = BassNotesMasterApi.Settings.Settings;
 
 namespace BassNotesMaster.NotesView
 {
-    public class WpfNotesViewGuiBuilder : NotesViewGuiBuilder
+    public class WpfNotesViewGuiBuilder : INotesViewGuiBuilder
     {
         private readonly Dictionary<Note, Button> _notesButtons = new Dictionary<Note, Button>();
 
@@ -35,7 +35,7 @@ namespace BassNotesMaster.NotesView
             }
         }
 
-        public override void EnableAllButtons()
+        public void EnableAllButtons()
         {
             foreach (var notesButton in _notesButtons.Values)
             {
@@ -43,13 +43,13 @@ namespace BassNotesMaster.NotesView
             }
         }
 
-        public override void EnableButtonsExclusive(Note[] notes)
+        public void EnableButtonsExclusive(Note[] notes)
         {
             DisableAllButtons();
             EnableButtons(notes);
         }
 
-        public override void EnableButtons(Note[] notes)
+        public void EnableButtons(Note[] notes)
         {
             foreach (
                 var buttonNotPair in
@@ -59,7 +59,7 @@ namespace BassNotesMaster.NotesView
             }
         }
 
-        public override void DisableAllButtons()
+        public void DisableAllButtons()
         {
             foreach (var notesButton in _notesButtons.Values)
             {
@@ -67,13 +67,13 @@ namespace BassNotesMaster.NotesView
             }
         }
 
-        public override Note GetSenderAsNote(object sender)
+        public Note GetSenderAsNote(object sender)
         {
             var clickedButton = (Button) sender;
             return _notesButtons.FirstOrDefault(x => x.Value.Name.Equals(clickedButton.Name)).Key;
         }
 
-        public override void HandleShowChange(FretBoardOptions fretboardOptions)
+        public void HandleShowChange(FretBoardOptions fretboardOptions)
         {
             switch (fretboardOptions.Show)
             {
@@ -102,33 +102,33 @@ namespace BassNotesMaster.NotesView
             }
         }
 
-        public override void ShowButtonExclusive(Note note)
+        public void ShowButtonExclusive(Note note)
         {
             HideAllButtons();
             var button = _notesButtons.First(x => x.Key.EqualsWithoutOctaveNumber(note)).Value;
             button.Visibility = Visibility.Visible;
         }
 
-        public override void HideAllButtons()
+        public void HideAllButtons()
         {
             foreach (var button in _notesButtons.Values)
                 button.Visibility = Visibility.Hidden;
         }
 
-        public override void ShowAllButtons()
+        public void ShowAllButtons()
         {
             foreach (var button in _notesButtons.Values)
                 button.Visibility = Visibility.Visible;
         }
 
-        public override void SetTextForButton(Note note, Note text, bool withOctaveNumber)
+        public void SetTextForButton(Note note, Note text, bool withOctaveNumber)
         {
             var button = _notesButtons.First(x => x.Key.EqualsWithoutOctaveNumber(note)).Value;
             button.Content = FormatDependingOnShowSettings(text, withOctaveNumber);
             button.FontSize = Settings.Instance.FontSize.Value + 2;
         }
 
-        public override void RevertGui()
+        public void RevertGui()
         {
             ShowAllButtons();
             RevertTextForAllButtons();

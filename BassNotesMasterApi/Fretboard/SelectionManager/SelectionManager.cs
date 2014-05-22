@@ -12,7 +12,7 @@ namespace BassNotesMasterApi.Fretboard.SelectionManager
         public readonly ScaleSelectionManager ScaleSelectionManager;
         public IGuiSelector GuiSelector { get; set; }
         private readonly List<StringFretPair> _selected;
-        private NotesToStringFretBoardMapping _notesToStringFretBoardMapping = new NotesToStringFretBoardMapping();
+        private readonly NotesToStringFretBoardMapping _notesToStringFretBoardMapping = NotesToStringFretBoardMapping.Instance;
 
         public SelectionManager(IGuiSelector guiSelector,
                                 IMouseSelectionManager mouseSelectionManager)
@@ -56,7 +56,7 @@ namespace BassNotesMasterApi.Fretboard.SelectionManager
 
         public void SelectItems(Note[] notesToSelect, int startFret, int endFret)
         {
-            var fretBoardMapping = new NotesToStringFretBoardMapping();
+            var fretBoardMapping = NotesToStringFretBoardMapping.Instance;
             var lower = Math.Min(startFret, endFret);
             var higer = Math.Max(startFret, endFret);
 

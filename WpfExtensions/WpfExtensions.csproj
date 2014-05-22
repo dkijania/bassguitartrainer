@@ -48,6 +48,7 @@
     <Compile Include="DependencyExtension.cs" />
     <Compile Include="EnumBooleanConverter.cs" />
     <Compile Include="FrameworkElementExtension.cs" />
+    <Compile Include="InverseBooleanConverter.cs" />
     <Compile Include="ProgressBarSmoother.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleExtension.cs" />

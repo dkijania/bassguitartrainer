@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using BassNotesMasterApi.Fretboard;
 using BassNotesMasterApi.Interval;
+using BassNotesMasterApi.NotePlayer;
 using BassNotesMasterApi.NotesView;
 using BassNotesMasterApi.Statistics;
 using BassNotesMasterApi.Utils;
@@ -18,7 +19,7 @@ namespace BassNotesMasterApi
         public Notation.MusicNotation MusicNotationManager { get; set; }
         public NotesViewManager NotesViewManager { get; set; }
         public Manager ShowSelectManager { get; set; }
-        public NotePlayer.IBassNotesPlayer PlayerManager { get; set; }
+        public BassNotesPlayer PlayerManager { get; set; }
         public ExcerciseLauncher Launcher { get; set; }
         public IResultSerializer ResultSerializer { get; set; }
         public AbstractKeyboardEventManager KeyboardEventManager { get; set; }

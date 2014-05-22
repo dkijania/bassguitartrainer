@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using BassNotesMasterApi.Utils;
 
@@ -8,10 +9,21 @@ namespace BassNotesMasterApi.Const
 {
     public class NotesToStringFretBoardMapping : IFretBoardMapping
     {
+        private static NotesToStringFretBoardMapping _instance;
+
+        public static NotesToStringFretBoardMapping Instance
+        {
+            get
+            {
+                return _instance ?? (_instance = new NotesToStringFretBoardMapping());
+            }
+        }
+
+
         protected readonly Dictionary<StringFretPair, Note> FretBoardMapping =
             new Dictionary<StringFretPair, Note>();
 
-        public NotesToStringFretBoardMapping()
+        private NotesToStringFretBoardMapping()
         {
             InitializeMapping();
         }

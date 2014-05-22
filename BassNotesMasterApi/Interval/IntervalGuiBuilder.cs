@@ -1,3 +1,4 @@
+using BassNotesMasterApi.Interval.Data;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Interval

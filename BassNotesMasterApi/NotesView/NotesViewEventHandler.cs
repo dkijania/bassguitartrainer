@@ -5,7 +5,7 @@ namespace BassNotesMasterApi.NotesView
 {
     public abstract class NotesViewEventHandler
     {
-        public NotesViewGuiBuilder Builder { get; set; }
+        public INotesViewGuiBuilder Builder { get; set; }
         public FretboardManager FretboardManager { get; set; }
         public event OnButtonClick OnButtonClickEvent;
 

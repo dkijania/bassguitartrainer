@@ -1,15 +1,15 @@
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace WpfExtensions
+namespace BassNotesMasterApi.Utils
 {
-    public abstract class BindingDataContextBase : INotifyPropertyChanged
+    public abstract class PropertyChangedNotifier : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(
-                [CallerMemberName] String propertyName = "")
+            [CallerMemberName] String propertyName = "")
         {
             var handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
