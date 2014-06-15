@@ -22,6 +22,7 @@ namespace WpfSimpleHelpSystem
         public HelpSystemViewModel(IDocumentPresenter<FlowDocument> presenter,
             HelpResourcesDescriptor helpResourcesDescriptor)
         {
+
             Presenter = presenter;
             _abstractDocumentLoader = new DocumentLoader<FlowDocument>(helpResourcesDescriptor, _helpHistory,Presenter);
 
