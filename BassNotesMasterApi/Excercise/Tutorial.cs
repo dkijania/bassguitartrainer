@@ -8,60 +8,7 @@ using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Excercise
 {
-      /*public class ExcerciseSubscriptionManager
-    {
-        private readonly AttributeReader _attributeReader = new AttributeReader();
-        
-        public void SubscribeExcerciseToManagers(IExcercise excercise)
-        {
-            var componentsToSubscribe = _attributeReader.ReadClassAttribute(excercise);
-            
-        }
-    }
-
-
-
-
-
-    public class UsingManager : Attribute
-    {
-        public ComponentId[] Components { get; private set; }
-
-        public UsingManager(params ComponentId[] components)
-        {
-            Components = components;
-        }
-    }
-
-    public class AttributeReaderException : Exception
-    {
-        public AttributeReaderException(string message) : base(message)
-        {
-        }
-
-        public AttributeReaderException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
-    }
-
-    public class AttributeReader
-    {
-        public ComponentId[] ReadClassAttribute(object attributeOwner)
-        {
-            var attributeOwnerType = attributeOwner.GetType(); 
-            foreach (var usingAttribute in attributeOwnerType.GetCustomAttributes(true).OfType<UsingManager>())
-            {
-                return usingAttribute.Components;
-            }
-            throw new AttributeReaderException("Couldn't find UsingManager class attribute for type" + attributeOwnerType.FullName);
-        }
-    }
-
-  [UsingManager(ComponentId.NotesView,
-        ComponentId.Notation,
-        ComponentId.Intervals,
-        ComponentId.Fretboard)]
-   */ public class Tutorial : AbstractTutorial, IFretboardListener, INotesViewListener, IMusicNotationListener,
+    public class Tutorial : AbstractTutorial, IFretboardListener, INotesViewListener, IMusicNotationListener,
                             IIntervalListener
     {
         private readonly NotesToStringFretBoardMapping _fretBoardMapping = NotesToStringFretBoardMapping.Instance;
