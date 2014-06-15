@@ -29,7 +29,14 @@ namespace BassNotesMaster.Intervals
         public void ShowSelectedIntervalClick(object sender, RoutedEventArgs e)
         {
             var intervalRow = FindRowOfEvent(sender);
-            RaiseShowEvent(intervalRow);
+            try
+            {
+                RaiseShowEvent(intervalRow);
+            }
+            catch (ExcerciseException ex)
+            {
+                _metroWindow.ShowMessageAsync(ex.Message,"Excercise Exception");
+            }
         }
 
         public void ExcerciseButtonClick(object sender, RoutedEventArgs e)
