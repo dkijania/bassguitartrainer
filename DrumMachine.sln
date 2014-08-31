@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumMachine", "DrumMachine\DrumMachine.csproj", "{FC512A61-47EB-493C-AF7F-BC357694BFA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumMachine.UI.WPF", "DrumMachine.UI.WPF\DrumMachine.UI.WPF.csproj", "{E476EF72-C530-47EC-8474-4A183B2D5446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumMachineUnitTests", "DrumMachineUnitTests\DrumMachineUnitTests.csproj", "{6892E3DC-83B1-4B56-B50D-D5014B250A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExtensions", "WpfExtensions\WpfExtensions.csproj", "{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumMachine.UI.WPF.Demo", "DrumMachine.UI.WPF.Demo\DrumMachine.UI.WPF.Demo.csproj", "{A59B668E-89D1-4DCF-B596-95E8B64C74B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WavPlayer", "WavPlayer\WavPlayer.csproj", "{1673B8B5-3F16-471D-A373-C8BEB638FD47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC512A61-47EB-493C-AF7F-BC357694BFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC512A61-47EB-493C-AF7F-BC357694BFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC512A61-47EB-493C-AF7F-BC357694BFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC512A61-47EB-493C-AF7F-BC357694BFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E476EF72-C530-47EC-8474-4A183B2D5446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E476EF72-C530-47EC-8474-4A183B2D5446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E476EF72-C530-47EC-8474-4A183B2D5446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E476EF72-C530-47EC-8474-4A183B2D5446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6892E3DC-83B1-4B56-B50D-D5014B250A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6892E3DC-83B1-4B56-B50D-D5014B250A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6892E3DC-83B1-4B56-B50D-D5014B250A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6892E3DC-83B1-4B56-B50D-D5014B250A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A59B668E-89D1-4DCF-B596-95E8B64C74B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59B668E-89D1-4DCF-B596-95E8B64C74B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59B668E-89D1-4DCF-B596-95E8B64C74B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59B668E-89D1-4DCF-B596-95E8B64C74B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

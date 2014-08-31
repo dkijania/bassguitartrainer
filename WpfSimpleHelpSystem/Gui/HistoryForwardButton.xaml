@@ -1,8 +1,0 @@
-﻿<UserControl x:Class="WpfSimpleHelpSystem.Gui.HistoryForwardButton"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             >
-    <Button Content="Forward" Command="{Binding Path=HistoryForwardCommand}"
-                    IsEnabled="{Binding Path=CanRedo}" />
-
-</UserControl>

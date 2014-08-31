@@ -1,0 +1,18 @@
+﻿<controls:MetroWindow x:Class="Metronome.UI.WPF.CounterDialog"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" Title="CounterDialog" WindowStyle="None"
+                      ShowInTaskbar="False" ShowTitleBar="False" WindowState="Maximized" ResizeMode="NoResize" >
+    <Grid Name="MainGrid" Focusable="True">
+
+        <Border Background="{x:Null}" >
+            <TextBlock TextWrapping="Wrap" Name="Presenter" FontSize="500" VerticalAlignment="Center" HorizontalAlignment="Center" 
+             Text="{Binding Path=ProgressMessage, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+          </TextBlock>
+        </Border>
+        <TextBlock FontSize="20" KeyDown="MainGrid_KeyDown">
+            Esc - Quit <LineBreak />
+            SpaceBar - Pause/Continue
+        </TextBlock>
+    </Grid>
+</controls:MetroWindow>

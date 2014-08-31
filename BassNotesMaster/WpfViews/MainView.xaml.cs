@@ -51,8 +51,7 @@ namespace BassNotesMaster.WpfViews
             ManagersLocator.Instance.MusicNotationManager = new MusicNotation(musicNotationHandler,
                                                                               notationObjectBuilder, settings);
 
-            var fretBoardModel = new FretBoardModel();
-            var guiBuilder = new FretBoardGuiBuilder(settings, FretboardControl.MainDrawingArena, FretboardControl.Container, fretBoardModel);
+            var guiBuilder = new FretBoardGuiBuilder(settings, FretboardControl.MainDrawingArena, FretboardControl.Container);
             var fretboard = new BassNotesMasterApi.Fretboard.FretBoard(guiBuilder);
             var borderStyleCollection = BorderStyleCollection.Instance;
             var guiSelector = new GuiSelector(Settings.Instance, fretboard.FretBoardGuiBuilder);

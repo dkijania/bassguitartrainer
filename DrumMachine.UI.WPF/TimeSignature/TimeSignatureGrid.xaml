@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="DrumMachine.UI.WPF.TimeSignature.TimeSignatureGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:timeSignature="clr-namespace:DrumMachine.UI.WPF.TimeSignature">
+    <UserControl.Resources>
+        <timeSignature:BooleanAndConverter x:Key="BooleanAndConverter" />
+        <timeSignature:BooleanOnlyFirstConverter x:Key="BooleanOnlyFirstConverter" />
+    </UserControl.Resources>
+    <Grid Name="TimeSignature">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="170" />
+            <RowDefinition Height="150" />
+
+        </Grid.RowDefinitions>
+        <CheckBox Content="Enable" Grid.Column="0" Grid.Row="0" Name="EnableTimeSignature" IsChecked="{Binding EnableTimeSignature,Mode=TwoWay}"/>
+
+        <GroupBox Header="Standard" Grid.Column="0" Grid.Row="1" x:Name="StandardGroupBox" >
+           <Grid Name="StandardGrid">
+                <Grid.IsEnabled>
+                    <MultiBinding Converter="{StaticResource BooleanOnlyFirstConverter}">
+                        <Binding ElementName="EnableTimeSignature" Path="IsChecked" />
+                        <Binding ElementName="EnableCustom" Path="IsChecked" />
+                    </MultiBinding>
+                </Grid.IsEnabled>
+                <Grid.Resources>
+                    <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+                        <Style.Setters>
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style.Setters>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <RadioButton Content="2/2" Grid.Column="0" Grid.Row="0"
+                                         Command="{Binding SetStandardSignature}" CommandParameter="2/2" />
+                <RadioButton Content="2/4" Grid.Column="1" Grid.Row="0"
+                                         Command="{Binding SetStandardSignature}" CommandParameter="2/4" />
+                <RadioButton Content="3/4" Grid.Column="2" Grid.Row="0"
+                                         Command="{Binding SetStandardSignature}" CommandParameter="3/4" />
+                <RadioButton Content="4/4" Grid.Column="0" Grid.Row="1"
+                                         Command="{Binding SetStandardSignature}" CommandParameter="4/4" />
+                <RadioButton Content="6/8" Grid.Column="1" Grid.Row="1"
+                                         Command="{Binding SetStandardSignature}" CommandParameter="6/8" />
+                <RadioButton Content="12/8" Grid.Column="2" Grid.Row="1"
+                                         Command="{Binding SetStandardSignature}" CommandParameter="12/8" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Column="0" Grid.Row="2" x:Name="CustomGroupBox" >
+           <GroupBox.Header>
+                <CheckBox x:Name="EnableCustom" FontSize="13">
+                    <CheckBox.IsChecked>
+                        <Binding Path="UseCustomTimeSignature" Mode="TwoWay" />
+                    </CheckBox.IsChecked>
+                    <CheckBox.IsEnabled>
+                        <Binding Path="EnableTimeSignature" Mode="OneWay" />
+                    </CheckBox.IsEnabled>
+                    CUSTOM
+                </CheckBox>
+            </GroupBox.Header>
+            <Grid Name="CustomGrid">
+                <Grid.IsEnabled>
+                    <MultiBinding Converter="{StaticResource BooleanAndConverter}">
+                        <Binding ElementName="EnableTimeSignature" Path="IsChecked" />
+                        <Binding ElementName="EnableCustom" Path="IsChecked" />
+                    </MultiBinding>
+                </Grid.IsEnabled>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <ComboBox Name="NotesPerMeasureCombobox"
+                                      ItemsSource="{Binding PossibleNotesCountPerMeasure}" SelectedItem="{Binding Mode=OneWayToSource, Path=CustomUpper}"
+                                      SelectedIndex="0" Grid.Column="0" Grid.Row="0" />
+                <GridSplitter Grid.Column="0" Grid.Row="1" />
+                <ComboBox Name="NotesTypesCombobox" ItemsSource="{Binding PosibleNotesTypes}"
+                                      SelectedIndex="0" SelectedItem="{Binding Mode=OneWayToSource, Path=CustomLower}" Grid.Column="1" Grid.Row="2" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+
+</UserControl>

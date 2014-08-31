@@ -50,7 +50,7 @@ namespace BassNotesMasterApi.NotePlayer
         private StringFretPair[] _lastPlayedPositions;
 
         private readonly ResourcesManager _resourcesManager = ResourcesManager.Instance;
-        private readonly WavPlayer _player = new WavPlayer();
+        private readonly WavPlayer.WavPlayer _player = new WavPlayer.WavPlayer();
 
         public BassNotesPlayer(Settings.Settings settings)
         {

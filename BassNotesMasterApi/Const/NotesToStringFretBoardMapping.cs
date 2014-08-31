@@ -28,7 +28,7 @@ namespace BassNotesMasterApi.Const
             InitializeMapping();
         }
 
-        public ICollection Keys
+        public ICollection<StringFretPair> Keys
         {
             get { return FretBoardMapping.Keys; }
         }

@@ -19,9 +19,7 @@ namespace BassNotesMasterApi.Fretboard
         {
             _fretBoardGuiBuilder = fretBoardGuiBuilder;
         }
-
-
-
+        
         public void Refresh()
         {
            

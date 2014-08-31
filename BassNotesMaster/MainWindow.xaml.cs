@@ -1,7 +1,8 @@
 ﻿using System.Windows.Input;
-using BassNotesMaster.WpfViews;
-using DrumMachineView = BassNotesMaster.WpfViews.DrumMachine.DrumMachineView;
-using MetronomeView = BassNotesMaster.WpfViews.Metronome.MetronomeView;
+using DrumMachine.UI.WPF;
+using Metronome.UI.WPF;
+using SimpleHelpSystem.UI.WPF;
+using WpfExtensions;
 using Settings = BassNotesMasterApi.Settings.Settings;
 
 
@@ -29,9 +30,9 @@ namespace BassNotesMaster
             WindowsCommands.DataContext = this;
             _mainContent = new MainView {MetroWindow = this};
             _mainContent.Init();
-            _metronomeView = new MetronomeView(this);
-            _helpView = new HelpView(this);
-            _drumMachineView = new DrumMachineView {MetroWindow = this};
+            _metronomeView = new MetronomeView {MetroWindow = this};
+            _helpView = new HelpView();
+            _drumMachineView = new DrumMachineView();
 
             VisualSettingsControl.Init(Settings.Instance);
 
@@ -39,9 +40,9 @@ namespace BassNotesMaster
             ShowMetronome = new DelegateCommand(OpenMetronome);
             ShowOptions = new DelegateCommand(OpenOptions);
             ShowDrumMachine = new DelegateCommand(OpenDrumMachine);
-            ShowMain = new DelegateCommand(GotoMain);
+            ShowMain = new DelegateCommand(OpenMain);
 
-            GotoMain();
+            OpenMain();
         }
 
         private void OpenDrumMachine()
@@ -50,7 +51,7 @@ namespace BassNotesMaster
             Main.Children.Add(_drumMachineView);
         }
 
-        private void GotoMain()
+        private void OpenMain()
         {
             Main.Children.Clear();
             Main.Children.Add(_mainContent);

@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Bass\Release\</OutputPath>
+    <OutputPath>..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -70,13 +70,13 @@
     <Compile Include="Excercise\Options.cs" />
     <Compile Include="Excercise\RandomItemGenerator.cs" />
     <Compile Include="Excercise\Tutorial.cs" />
+    <Compile Include="Fretboard\AlwaysRedrawCollection.cs" />
     <Compile Include="Fretboard\BadStateOfFretManager.cs" />
     <Compile Include="Fretboard\CoordinatesOutsideTheFretBoardException.cs" />
     <Compile Include="Fretboard\FretBoard.cs" />
     <Compile Include="Fretboard\FretboardEventHandler.cs" />
     <Compile Include="Fretboard\FretBoardException.cs" />
     <Compile Include="Fretboard\FretboardManager.cs" />
-    <Compile Include="Fretboard\FretBoardModel.cs" />
     <Compile Include="Fretboard\IFretBoardGuiBuilder.cs" />
     <Compile Include="Fretboard\IFretboardListener.cs" />
     <Compile Include="Fretboard\ISelectionSetter.cs" />
@@ -103,7 +103,6 @@
     <Compile Include="Notation\MusicNotationEventHandler.cs" />
     <Compile Include="Notation\MusicNotationGraphicObjectsManager.cs" />
     <Compile Include="NotePlayer\BassNotesPlayer.cs" />
-    <Compile Include="NotePlayer\WavPlayer.cs" />
     <Compile Include="NotesView\INotesViewListener.cs" />
     <Compile Include="NotesView\NotesModel.cs" />
     <Compile Include="NotesView\NotesViewEventHandler.cs" />
@@ -218,6 +217,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WavPlayer\WavPlayer.csproj">
+      <Project>{BF9DA8E5-D9AD-4115-A146-FD1BA9340CE3}</Project>
+      <Name>WavPlayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfExtensions\WpfExtensions.csproj">
       <Project>{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}</Project>
       <Name>WpfExtensions</Name>

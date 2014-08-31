@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="SimpleHelpSystem.UI.WPF.Gui.HelpMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:gui="clr-namespace:SimpleHelpSystem.UI.WPF.Gui">
+    <TreeView Width="320"  ItemsSource="{Binding MenuItems}" SelectedValuePath="Menu_OnSelectedItemChanged">
+       <i:Interaction.Behaviors>
+            <gui:BindableSelectedItemBehavior SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+        </i:Interaction.Behaviors>
+        <TreeView.ItemTemplate>
+            <HierarchicalDataTemplate ItemsSource="{Binding Path=Children}">
+                <TextBlock Text="{Binding Header}">
+                                <Hyperlink Command="{Binding SomeCommand}" />
+                </TextBlock>
+            </HierarchicalDataTemplate>
+        </TreeView.ItemTemplate>
+    </TreeView>
+</UserControl>

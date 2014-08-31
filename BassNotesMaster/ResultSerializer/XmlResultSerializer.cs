@@ -8,7 +8,7 @@ namespace BassNotesMaster.ResultSerializer
 {
     public class XmlResultSerializer : IResultSerializer
     {
-        public FileInfo File = new FileInfo(@"C:\file.xml");
+        public FileInfo File = new FileInfo(@".\save.xml");
       
         public void Save(StatisticRow statisticData)
         {

@@ -36,7 +36,7 @@ namespace WpfExtensions
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
-            return canExecute == null ? true : canExecute(parameter);
+            return canExecute == null || canExecute(parameter);
         }
 
         public event EventHandler CanExecuteChanged
@@ -50,72 +50,72 @@ namespace WpfExtensions
             execute(parameter);
         }
     }
-}
 
-public class DelegateCommand : ICommand
-{
-    private readonly Action action;
-    private readonly ICommandExceptionHandler _handler;
-    private bool isEnabled;
-
-    public DelegateCommand(Action action,ICommandExceptionHandler handler)
+    public class DelegateCommand : ICommand
     {
-        this.action = action;
-        _handler = handler;
-        isEnabled = true;
-    }
+        private readonly Action action;
+        private readonly ICommandExceptionHandler _handler;
+        private bool isEnabled;
 
-    public DelegateCommand(Action action)
-    {
-        this.action = action;
-        isEnabled = true;
-    }
-
-
-    public void Execute(object parameter)
-    {
-        try
+        public DelegateCommand(Action action,ICommandExceptionHandler handler)
         {
-            action();
+            this.action = action;
+            _handler = handler;
+            isEnabled = true;
         }
-        catch (Exception ex)
+
+        public DelegateCommand(Action action)
         {
-            if (_handler == null)
+            this.action = action;
+            isEnabled = true;
+        }
+
+
+        public void Execute(object parameter)
+        {
+            try
             {
-                throw new Exception(ex.Message,ex);
+                action();
             }
-            _handler.OnErrorRaised(ex);
-        }
-    }
-
-    public bool CanExecute(object parameter)
-    {
-        return isEnabled;
-    }
-
-    public bool IsEnabled
-    {
-        get { return isEnabled; }
-        set
-        {
-            if (isEnabled != value)
+            catch (Exception ex)
             {
-                isEnabled = value;
-                OnCanExecuteChanged();
+                if (_handler == null)
+                {
+                    throw new Exception(ex.Message,ex);
+                }
+                _handler.OnErrorRaised(ex);
             }
         }
+
+        public bool CanExecute(object parameter)
+        {
+            return isEnabled;
+        }
+
+        public bool IsEnabled
+        {
+            get { return isEnabled; }
+            set
+            {
+                if (isEnabled != value)
+                {
+                    isEnabled = value;
+                    OnCanExecuteChanged();
+                }
+            }
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        protected virtual void OnCanExecuteChanged()
+        {
+            EventHandler handler = CanExecuteChanged;
+            if (handler != null) handler(this, EventArgs.Empty);
+        }
     }
 
-    public event EventHandler CanExecuteChanged;
-
-    protected virtual void OnCanExecuteChanged()
+    public interface ICommandExceptionHandler
     {
-        EventHandler handler = CanExecuteChanged;
-        if (handler != null) handler(this, EventArgs.Empty);
+        void OnErrorRaised(Exception exception);
     }
-}
-
-public interface ICommandExceptionHandler
-{
-    void OnErrorRaised(Exception exception);
 }

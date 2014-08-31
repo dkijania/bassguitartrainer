@@ -10,7 +10,7 @@ namespace DrumMachineUnitTests
         [Test]
         public void TimeSignatureGivesCorrectResultFor4Per4()
         {
-            var timeSignature = new TimeSignatureOptions(4, TimeSignatureOptions.NoteTypeEnum.Quarter);
+            var timeSignature = new TimeSignatureOptions(4, NoteTypeEnum.Quarter);
             var drumPattern = timeSignature.ToDrumPattern();
             var expectedArray = new byte[2, 16];
             expectedArray[0, 0] = 0;
@@ -52,7 +52,7 @@ namespace DrumMachineUnitTests
         [Test]
         public void TimeSignatureGivesCorrectResultFor3Per4()
         {
-            var timeSignature = new TimeSignatureOptions(3, TimeSignatureOptions.NoteTypeEnum.Quarter);
+            var timeSignature = new TimeSignatureOptions(3, NoteTypeEnum.Quarter);
             var drumPattern = timeSignature.ToDrumPattern();
             var expectedArray = new byte[2, 12];
             expectedArray[0, 0] = 0;

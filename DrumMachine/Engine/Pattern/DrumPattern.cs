@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using DrumMachine.TimeSignature;
 
 namespace DrumMachine.Engine.Pattern
@@ -37,7 +38,15 @@ namespace DrumMachine.Engine.Pattern
         public int Steps { get; private set; }
         public int Interval { get; private set; }
         public int NumberOfHits{get { return GetHitsIndices().Length; }}
-        
+
+        public int[] HitsColumns
+        {
+            get
+            {
+                return GetHitsIndices().Select(x => x/Interval).ToArray();
+            }
+        }
+
         public int[] GetHitsIndices()
         {
             var list = new List<int>();
@@ -52,7 +61,7 @@ namespace DrumMachine.Engine.Pattern
             }
             return list.ToArray();
         }
-
+        
         public byte this[int note, int step]
         {
             get { return _hits[note, step]; }

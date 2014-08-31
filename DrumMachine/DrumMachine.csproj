@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,7 +26,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\Bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -55,7 +55,10 @@
     <Compile Include="Engine\Sample\MusicSampleProvider.cs" />
     <Compile Include="Engine\Sample\SampleSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeSignature\NoteTypeEnum.cs" />
     <Compile Include="TimeSignature\TimeSignature.cs" />
+    <Compile Include="TimeSignature\TimeSignatureOptions.cs" />
+    <Compile Include="TimeSignature\TimeSignatureException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Audio\Samples\closed-hat-trimmed.wav">

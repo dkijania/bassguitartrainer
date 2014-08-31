@@ -17,19 +17,15 @@ namespace BassNotesMaster.FretBoard.FretBoardView
         private static Settings _settings;
         public readonly Canvas DrawArea;
         public readonly Panel Container;
-        private readonly FretBoardModel _boardModel;
         private readonly BorderStyleCollection _borderStyleCollection = BorderStyleCollection.Instance;
         private readonly FretBoardGuiCalculator _boardGuiCalculator;
 
         public AlwaysRedrawCollection AlwaysRedrawCollection { get; set; }
         public bool HideNoteLabel { get; set; }
 
-
-
-        public FretBoardGuiBuilder(Settings settings, Canvas mainDrawingArea, Panel container, FretBoardModel boardModel)
+        public FretBoardGuiBuilder(Settings settings, Canvas mainDrawingArea, Panel container)
         {
             Container = container;
-            _boardModel = boardModel;
             DrawArea = mainDrawingArea;
             _settings = settings;
             _boardGuiCalculator =
@@ -123,9 +119,10 @@ namespace BassNotesMaster.FretBoard.FretBoardView
 
         private IEnumerable<UIElement> GetAllGraphicNoteRepresentation()
         {
-            var keys = _boardModel.GetAllStringFretPairs();
+            var mapping = NotesToStringFretBoardMapping.Instance; 
+            var keys = mapping.Keys;
             return (from stringFretPair in keys
-                    let note = _boardModel.NotesToStringFretBoardMapping.GetNote(stringFretPair)
+                    let note = mapping.GetNote(stringFretPair)
                     select CreateAndGetRectangleToDrawBasedOnStringFretPair(stringFretPair, note)).
                 Cast<UIElement>().ToList();
         }
@@ -170,7 +167,7 @@ namespace BassNotesMaster.FretBoard.FretBoardView
         {
             try
             {
-                return _boardModel.GetNote(new StringFretPair(cords));
+                return NotesToStringFretBoardMapping.Instance.GetNote(new StringFretPair(cords));
             }
             catch (CoordinatesOutsideTheFretBoardException ex)
             {

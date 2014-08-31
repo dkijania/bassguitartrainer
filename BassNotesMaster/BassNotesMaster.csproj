@@ -22,7 +22,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>BassGuitarTrainer\Debug\</OutputPath>
+    <OutputPath>..\Bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -32,7 +32,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\BassGuitarTrainer\Release\</OutputPath>
+    <OutputPath>..\Bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -49,8 +49,9 @@
     <Reference Include="AmCharts.Windows.QuickCharts">
       <HintPath>..\packages\Quick.Charts.WPF.1.2\lib\net40\AmCharts.Windows.QuickCharts.dll</HintPath>
     </Reference>
-    <Reference Include="MahApps.Metro">
-      <HintPath>..\packages\MahApps.Metro.0.13.0.103-ALPHA\lib\net45\MahApps.Metro.dll</HintPath>
+    <Reference Include="MahApps.Metro, Version=0.14.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MahApps.Metro.0.14.0.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="NAudio">
       <HintPath>..\packages\NAudio.1.7\lib\net35\NAudio.dll</HintPath>
@@ -61,7 +62,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.0.13.0.103-ALPHA\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\MahApps.Metro.0.14.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,7 +82,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppViewManager\ShowManager.cs" />
+    <Compile Include="IViewControl.cs" />
     <Compile Include="KeyboardEventManager.cs" />
+    <Compile Include="MainView.xaml.cs" />
     <Compile Include="ResultSerializer\XmlSerializerExcerciseData.cs" />
     <Compile Include="ResultSerializer\WpfSerializerRoot.cs" />
     <Compile Include="ResultSerializer\XmlSerializerStatisticRow.cs" />
@@ -143,32 +146,6 @@
     <Compile Include="WpfControls\TimerControl.xaml.cs">
       <DependentUpon>TimerControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WpfViews\DrumMachine\DrumMachineView.xaml.cs">
-      <DependentUpon>DrumMachineView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WpfViews\DrumMachine\DrumMachineViewModel.cs" />
-    <Compile Include="WpfViews\DrumMachine\EnumValuesExtension.cs" />
-    <Compile Include="WpfViews\DrumMachine\IPatternTilesManipulator.cs" />
-    <Compile Include="WpfViews\DrumMachine\SelectableBorder.cs" />
-    <Compile Include="WpfViews\IViewControl.cs" />
-    <Compile Include="WpfViews\HelpView.xaml.cs">
-      <DependentUpon>HelpView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WpfViews\MainView.xaml.cs">
-      <DependentUpon>MainView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WpfViews\Metronome\CounterDialog.xaml.cs">
-      <DependentUpon>CounterDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WpfViews\Metronome\CounterModel.cs" />
-    <Compile Include="WpfViews\Metronome\ITimeSignatureView.cs" />
-    <Compile Include="WpfViews\Metronome\MetronomeView.xaml.cs">
-      <DependentUpon>MetronomeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WpfViews\Metronome\TimeSignatureGrid.xaml.cs">
-      <DependentUpon>TimeSignatureGrid.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WpfViews\Metronome\TimeSignatureViewModel.cs" />
     <!--<None Include="MainWindow_wpf.xaml_bck">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -176,6 +153,10 @@
 	 <Compile Include="MainWindow_wpf.xaml.cs">
       <DependentUpon>MainWindow_wpf.xaml_bck</DependentUpon>
     </Compile>-->
+    <Page Include="MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="VisualSettings\VisualSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -227,30 +208,6 @@
     <Page Include="WpfControls\TimerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WpfViews\DrumMachine\DrumMachineView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="WpfViews\HelpView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WpfViews\MainView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WpfViews\Metronome\CounterDialog.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="WpfViews\Metronome\MetronomeView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="WpfViews\Metronome\TimeSignatureGrid.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -344,9 +301,21 @@
       <Project>{09E42C2E-FBB5-4CF6-8210-AED129168D0D}</Project>
       <Name>BassNotesMasterApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DrumMachine.UI.WPF\DrumMachine.UI.WPF.csproj">
+      <Project>{E476EF72-C530-47EC-8474-4A183B2D5446}</Project>
+      <Name>DrumMachine.UI.WPF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DrumMachine\DrumMachine.csproj">
       <Project>{FC512A61-47EB-493C-AF7F-BC357694BFA8}</Project>
       <Name>DrumMachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Metronome.UI.WPF\Metronome.UI.WPF.csproj">
+      <Project>{7A23E4E1-0F9D-43BE-B957-5F9637BF5C91}</Project>
+      <Name>Metronome.UI.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleHelpSystem.UI.WPF\SimpleHelpSystem.UI.WPF.csproj">
+      <Project>{B7B3521C-BA6E-41B2-B8F8-72188A7D6502}</Project>
+      <Name>SimpleHelpSystem.UI.WPF</Name>
     </ProjectReference>
     <ProjectReference Include="..\SimpleHelpSystem\SimpleHelpSystem.csproj">
       <Project>{0257E82A-D025-47C9-8533-C54CC3D0CD57}</Project>
@@ -359,14 +328,6 @@
     <ProjectReference Include="..\HelpSystemResources\HelpSystemResources.csproj">
       <Project>{1ec8bdb4-b82c-4c38-9192-837a3d6443d5}</Project>
       <Name>WpfHelpSystem</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WpfMetronome\Metronome.csproj">
-      <Project>{90837A8E-DD39-4F3F-B981-30749FD1DD24}</Project>
-      <Name>Metronome</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WpfSimpleHelpSystem\WpfSimpleHelpSystem.csproj">
-      <Project>{B7B3521C-BA6E-41B2-B8F8-72188A7D6502}</Project>
-      <Name>WpfSimpleHelpSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
