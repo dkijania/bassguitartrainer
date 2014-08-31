@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metronome", "Metronome\Metronome.csproj", "{90837A8E-DD39-4F3F-B981-30749FD1DD24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metronome.UI.WPF", "Metronome.UI.WPF\Metronome.UI.WPF.csproj", "{7A23E4E1-0F9D-43BE-B957-5F9637BF5C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumMachine", "DrumMachine\DrumMachine.csproj", "{FC512A61-47EB-493C-AF7F-BC357694BFA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metronome.UI.WPF.Demo", "Metronome.UI.WPF.Demo\Metronome.UI.WPF.Demo.csproj", "{42306C22-85FF-4065-8A87-5736BD9B74EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExtensions", "WpfExtensions\WpfExtensions.csproj", "{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumMachine.UI.WPF", "DrumMachine.UI.WPF\DrumMachine.UI.WPF.csproj", "{E476EF72-C530-47EC-8474-4A183B2D5446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WavPlayer", "WavPlayer\WavPlayer.csproj", "{1673B8B5-3F16-471D-A373-C8BEB638FD47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90837A8E-DD39-4F3F-B981-30749FD1DD24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90837A8E-DD39-4F3F-B981-30749FD1DD24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90837A8E-DD39-4F3F-B981-30749FD1DD24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90837A8E-DD39-4F3F-B981-30749FD1DD24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A23E4E1-0F9D-43BE-B957-5F9637BF5C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A23E4E1-0F9D-43BE-B957-5F9637BF5C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A23E4E1-0F9D-43BE-B957-5F9637BF5C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A23E4E1-0F9D-43BE-B957-5F9637BF5C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC512A61-47EB-493C-AF7F-BC357694BFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC512A61-47EB-493C-AF7F-BC357694BFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC512A61-47EB-493C-AF7F-BC357694BFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC512A61-47EB-493C-AF7F-BC357694BFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42306C22-85FF-4065-8A87-5736BD9B74EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42306C22-85FF-4065-8A87-5736BD9B74EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42306C22-85FF-4065-8A87-5736BD9B74EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42306C22-85FF-4065-8A87-5736BD9B74EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E476EF72-C530-47EC-8474-4A183B2D5446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E476EF72-C530-47EC-8474-4A183B2D5446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E476EF72-C530-47EC-8474-4A183B2D5446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E476EF72-C530-47EC-8474-4A183B2D5446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
