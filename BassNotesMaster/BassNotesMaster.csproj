@@ -230,9 +230,9 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest" />
-    <None Include="BassNotesMaster.exe.config">
+    <Content Include="BassNotesMaster.exe.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
