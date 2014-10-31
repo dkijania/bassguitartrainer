@@ -119,7 +119,6 @@
     </Compile>
     <Compile Include="ShowSelectViewManager\ShowSelectViewManager.cs" />
     <Compile Include="FretBoard\SelectionManager\GuiShowSelector.cs" />
-    <Compile Include="MetroThemes.cs" />
     <Compile Include="Excercises\ExcerciseOptionGuiManager.cs" />
     <Compile Include="FretBoard\BorderStyleCollection.cs" />
     <Compile Include="FretBoard\FretBoardView\FretBoardGuiBuilder.cs" />

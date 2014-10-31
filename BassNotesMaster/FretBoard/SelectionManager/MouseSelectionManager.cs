@@ -17,7 +17,6 @@ namespace BassNotesMaster.FretBoard.SelectionManager
         private readonly Panel _container;
         private readonly Border _selectionBorder;
         private const String SelectedCanvasName = "SelectionCanvas";
-        private readonly BorderStyleCollection _borderStyleCollection = BorderStyleCollection.Instance;
         public readonly List<Border> SelectedBorderList = new List<Border>();
         private readonly FretBoardGuiBuilder _boardGuiBuilder;
 
@@ -26,10 +25,8 @@ namespace BassNotesMaster.FretBoard.SelectionManager
         public MouseSelectionManager(BassNotesMasterApi.Fretboard.FretBoard fretBoard,
                                      BorderStyleCollection borderStyleCollection)
         {
-            _borderStyleCollection = borderStyleCollection;
-
             var canvas = new Canvas {Name = SelectedCanvasName};
-            var border = _borderStyleCollection.SelectedBorderStyle;
+            var border = borderStyleCollection.SelectedBorderStyle;
             _boardGuiBuilder = (FretBoardGuiBuilder) fretBoard.FretBoardGuiBuilder;
             canvas.Children.Add(border);
             _container = _boardGuiBuilder.Container;

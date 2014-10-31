@@ -65,12 +65,13 @@ namespace BassNotesMaster.Intervals
         public IntervalRow FindRowOfEvent(object sender)
         {
             for (var vis = sender as Visual; vis != null; vis = VisualTreeHelper.GetParent(vis) as Visual)
-                if (vis is DataGridRow)
-                {
-                    var row = (DataGridRow) vis;
-                    var intervalRow = row.Item as IntervalRow;
-                    return intervalRow;
-                }
+            {
+                var gridRow = vis as DataGridRow;
+                if (gridRow == null) continue;
+                var row = gridRow;
+                var intervalRow = row.Item as IntervalRow;
+                return intervalRow;
+            }
             return null;
         }
     }

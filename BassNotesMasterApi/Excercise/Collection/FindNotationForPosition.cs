@@ -11,7 +11,7 @@ namespace BassNotesMasterApi.Excercise.Collection
 
         protected override ComponentId[] ComponentsVisibleDuringExcercise
         {
-            get { return new[] {ComponentId.Notation, ComponentId.Fretboard,}; }
+            get { return new[] {ComponentId.Notation, ComponentId.Fretboard}; }
         }
 
         protected override string[] OptionsToShow

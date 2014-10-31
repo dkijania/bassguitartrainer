@@ -91,7 +91,7 @@ namespace BassNotesMaster.Excercises
 
         private void AddCheckBoxToGrid(bool value)
         {
-            var checkBox = new CheckBox() { IsChecked = value };
+            var checkBox = new CheckBox { IsChecked = value };
             checkBox.SetValue(Grid.ColumnProperty, 1);
             checkBox.SetValue(Grid.RowProperty, _grid.RowDefinitions.Count - 1);
             _grid.Children.Add(checkBox);
@@ -99,7 +99,7 @@ namespace BassNotesMaster.Excercises
 
         private void AddComboBoxToGrid(IEnumerable<string> enumerable)
         {
-            var checkBox = new ComboBox() { ItemsSource= enumerable };
+            var checkBox = new ComboBox { ItemsSource= enumerable };
             checkBox.SetValue(Grid.ColumnProperty, 1);
             checkBox.SetValue(Grid.RowProperty, _grid.ColumnDefinitions.Count - 1);
         }

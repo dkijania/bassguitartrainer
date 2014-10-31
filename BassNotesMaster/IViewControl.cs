@@ -1,6 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 
-namespace BassNotesMaster.WpfViews
+namespace BassNotesMaster
 {
     public interface IViewControl
     {

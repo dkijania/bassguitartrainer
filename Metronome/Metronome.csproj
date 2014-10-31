@@ -59,7 +59,7 @@
     <Compile Include="AudioPresetEnum.cs" />
     <Compile Include="AudioPresets.cs" />
     <Compile Include="Bpm.cs" />
-    <Compile Include="IMetronomeView.cs" />
+    <Compile Include="IMetronomePresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITimeSignatureViewModel.cs" />

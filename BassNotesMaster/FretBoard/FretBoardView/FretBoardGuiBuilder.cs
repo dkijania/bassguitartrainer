@@ -384,8 +384,8 @@ namespace BassNotesMaster.FretBoard.FretBoardView
                                                                        {3, Colors.Brown}
                                                                    };
 
-        protected Dictionary<Note, Color> NoteColorsMapping = new Dictionary<Note, Color>()
-                                                                  {
+        protected Dictionary<Note, Color> NoteColorsMapping = new Dictionary<Note, Color>
+        {
                                                                       {new Note("C"), Colors.Wheat},
                                                                       {new Note("C#"), Colors.Thistle},
                                                                       {new Note("D"), Colors.Violet},

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using BassNotesMasterApi.Fretboard;
 using BassNotesMasterApi.NotesView;
 using BassNotesMasterApi.Utils;
-using BassNotesMasterApi.Utils.Keyboard;
 
 namespace BassNotesMasterApi.Excercise.Collection
 {

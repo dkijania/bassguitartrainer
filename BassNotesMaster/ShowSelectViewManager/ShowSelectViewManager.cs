@@ -1,6 +1,5 @@
 using System.Windows;
 using System.Windows.Controls;
-using BassNotesMaster.FretBoard;
 using BassNotesMaster.FretBoard.SelectionManager;
 using BassNotesMaster.WpfControls;
 using BassNotesMasterApi.Fretboard;
@@ -17,6 +16,7 @@ namespace BassNotesMaster.ShowSelectViewManager
         public ShowSelectViewManager(SelectionControl selectionControl, FretboardManager fretboardManager)
         {
             _selectionControl = selectionControl;
+            _selectionControl.DataContext = this;
             _fretboardManager = fretboardManager;
         }
 

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using BassNotesMasterApi.Fretboard;
 using BassNotesMasterApi.Utils;
-using BassNotesMasterApi.Utils.Keyboard;
 
 namespace BassNotesMasterApi.Excercise.Collection
 {
@@ -12,7 +11,7 @@ namespace BassNotesMasterApi.Excercise.Collection
 
         protected override ComponentId[] ComponentsVisibleDuringExcercise
         {
-            get { return new[] {ComponentId.Notation, ComponentId.Fretboard,}; }
+            get { return new[] {ComponentId.Notation, ComponentId.Fretboard}; }
         }
 
         protected override string[] OptionsToShow

@@ -11,7 +11,6 @@ using BassNotesMaster.Resources;
 using BassNotesMaster.ResultSerializer;
 using BassNotesMaster.SettingsManager;
 using BassNotesMaster.Statistics;
-using BassNotesMaster.WpfViews;
 using BassNotesMasterApi;
 using BassNotesMasterApi.Excercise;
 using BassNotesMasterApi.Fretboard;

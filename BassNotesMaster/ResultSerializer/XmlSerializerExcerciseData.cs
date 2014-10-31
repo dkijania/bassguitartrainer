@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using BassNotesMasterApi.Statistics;
 using BassNotesMasterApi.Utils.ResultSerializer;
 
 namespace BassNotesMaster.ResultSerializer

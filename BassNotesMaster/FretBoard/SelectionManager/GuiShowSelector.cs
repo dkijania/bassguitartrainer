@@ -1,7 +1,5 @@
-﻿using System.Windows.Controls;
-using BassNotesMasterApi.Fretboard;
+﻿using BassNotesMasterApi.Fretboard;
 using BassNotesMasterApi.Fretboard.SelectionManager;
-using BassNotesMasterApi.Settings;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMaster.FretBoard.SelectionManager

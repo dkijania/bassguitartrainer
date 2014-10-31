@@ -14,20 +14,20 @@ namespace WpfMetronome
         private DrumMachineKit _drumMachine;
         public AudioPresetEnum AudioPreset { get; set; }
         
-        public IMetronomeView MetronomeView { get; private set; }
+        public IMetronomePresenter MetronomePresenter { get; private set; }
         public ITimeSignatureViewModel TimeSignature { get; set; }
         private readonly IAudioSamplesPresetCollection _samplesPresetCollection;
 
         public ICommand StopStart { get; private set; }
         public ICommand SetAudioPresetCommand { get; set; }
         
-        public Metronome(IMetronomeView metronomeView,ITimeSignatureViewModel timeSignature )
+        public Metronome(IMetronomePresenter metronomePresenter,ITimeSignatureViewModel timeSignature )
         {
-            MetronomeView = metronomeView;
+            MetronomePresenter = metronomePresenter;
             TimeSignature = timeSignature;
             AudioPreset = AudioPresetEnum.Drum;
             _samplesPresetCollection = new BuiltInAudioSamplePresetCollection();
-           StopStart = new DelegateCommand(PlayStopMetronome,MetronomeView);
+           StopStart = new DelegateCommand(PlayStopMetronome,MetronomePresenter);
             SetAudioPresetCommand = new RelayCommand(SetAudioPreset);
             Bpm = new Bpm();
             Bpm.PropertyChanged += SetTempo;
@@ -49,12 +49,12 @@ namespace WpfMetronome
             if (_drumMachine == null || _drumMachine.IsStopped)
             {
                 PlayMetronome();
-                MetronomeView.OnStartClick();
+                MetronomePresenter.OnStartClick();
             }
             else
             {
                 StopMetronome();
-                MetronomeView.OnStopClick();
+                MetronomePresenter.OnStopClick();
             }
         }
 
@@ -72,7 +72,7 @@ namespace WpfMetronome
 
         void _drumMachine_OnBeatHitEvent(DrumMachine.Engine.Pattern.DrumPattern drumPattern)
         {
-            MetronomeView.OnBeat(drumPattern);
+            MetronomePresenter.OnBeat(drumPattern);
         }
 
         private void CheckIfTimeSignatureIsSet()

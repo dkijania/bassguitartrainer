@@ -4,7 +4,7 @@ using WpfExtensions;
 
 namespace WpfMetronome
 {
-    public interface IMetronomeView : ICommandExceptionHandler
+    public interface IMetronomePresenter : ICommandExceptionHandler
     {
         void OnStartClick();
         void OnStopClick();
