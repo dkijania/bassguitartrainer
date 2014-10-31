@@ -54,11 +54,21 @@
         </TabControl>
         <TabControl Grid.Column="1" Grid.Row="1">
             <TabItem Header="Pattern">
-                <Grid Name="PatternGrid">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton Name="SplitButton" IsChecked="{Binding IsSplitModeEnabled}" Content="Split" FontSize="20"/>
+                <Grid Name="PatternGrid" Grid.Row="1"  Grid.ColumnSpan="2" Grid.Column="0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    
+                </Grid>
                 </Grid>
             </TabItem>
         </TabControl>
