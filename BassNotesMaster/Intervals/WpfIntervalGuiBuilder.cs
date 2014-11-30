@@ -4,8 +4,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
-using BassNotesMasterApi.Interval;
-using BassNotesMasterApi.Interval.Data;
+using BassNotesMasterApi.Components.Interval;
+using BassNotesMasterApi.Components.Interval.Data;
 
 namespace BassNotesMaster.Intervals
 {

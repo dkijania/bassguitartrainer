@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using DrumMachine.UI.WPF.Pattern;
 using DrumMachine.UI.WPF.TimeSignature;
 
 namespace DrumMachine.UI.WPF

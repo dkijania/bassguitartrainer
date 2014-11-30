@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Windows.Controls;
 using BassNotesMaster.FretBoard.FretBoardView;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.Fretboard.SelectionManager;
+using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Components.Fretboard.SelectionManager;
 using BassNotesMasterApi.Settings;
 using BassNotesMasterApi.Utils;
 

@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Threading;
+using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Components.Notation;
 using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.Notation;
 using BassNotesMasterApi.Settings;
 using BassNotesMasterApi.Statistics;
 using BassNotesMasterApi.Utils;
@@ -22,7 +22,7 @@ namespace BassNotesMasterApi.Excercise
         protected IExcerciseOptionGuiManager GuiManager;
         protected IVisibilityManager VisibilityManager;
         protected Options Options = new Options();
-        protected MusicNotation MusicNotationManager;
+        protected MusicNotationManager MusicNotationManager;
         protected IResultSerializer ResultSerializer = ManagersLocator.Instance.ResultSerializer;
 
         public StatisticRow StatisticData { get; set; }
@@ -238,7 +238,7 @@ namespace BassNotesMasterApi.Excercise
 
         protected void SetShowNoteLabelOptions()
         {
-            FretBoardManager.FretBoard.FretBoardGuiBuilder.HideNoteLabel = Options.ShouldHideNoteLabel;
+            FretBoardManager.FretBoard.HideNoteLabel = Options.ShouldHideNoteLabel;
         }
 
 

@@ -2,7 +2,6 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using BassNotesMasterApi.Excercise;
-using BassNotesMasterApi.Fretboard;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Statistics

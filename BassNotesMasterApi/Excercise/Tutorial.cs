@@ -1,9 +1,9 @@
+using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Components.Interval;
+using BassNotesMasterApi.Components.Interval.Data;
+using BassNotesMasterApi.Components.Notation;
+using BassNotesMasterApi.Components.NotesView;
 using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.Interval;
-using BassNotesMasterApi.Interval.Data;
-using BassNotesMasterApi.Notation;
-using BassNotesMasterApi.NotesView;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Excercise
@@ -22,8 +22,7 @@ namespace BassNotesMasterApi.Excercise
             _managersLocator.MusicNotationManager.Subscribe(this);
             _managersLocator.IntervalManager.Subscribe(this);
         }
-
-
+        
         public void IntervalShowEvent(IntervalRow row)
         {
 
@@ -55,7 +54,7 @@ namespace BassNotesMasterApi.Excercise
             var bassNotesPlayer = _managersLocator.PlayerManager;
             
             var collection = _fretBoardMapping.GetAllEquivalentPositions(stringFretPair);
-            fretboard.FretBoard.FretBoardGuiBuilder.RedrawNotes(collection);
+            fretboard.FretBoard.RedrawNotes(collection);
             bassNotesPlayer.PlayNote(stringFretPair);
         }
 
@@ -65,7 +64,7 @@ namespace BassNotesMasterApi.Excercise
             var musicNotation= _managersLocator.MusicNotationManager;
             var bassNotesPlayer = _managersLocator.PlayerManager;
             
-            fretboard.FretBoard.FretBoardGuiBuilder.RedrawNote(stringFretPair, isCorrect: true);
+            fretboard.FretBoard.RedrawNote(stringFretPair, isCorrect: true);
             bassNotesPlayer.PlayNote(stringFretPair);
             musicNotation.RedrawNote(stringFretPair);
         }

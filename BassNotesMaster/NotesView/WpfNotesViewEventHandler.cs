@@ -1,5 +1,5 @@
 using System.Windows;
-using BassNotesMasterApi.NotesView;
+using BassNotesMasterApi.Components.NotesView;
 
 namespace BassNotesMaster.NotesView
 {

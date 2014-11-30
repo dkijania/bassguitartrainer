@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using BassNotesMasterApi.Notation;
+using BassNotesMasterApi.Components.Notation;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Excercise.Collection
@@ -69,7 +69,7 @@ namespace BassNotesMasterApi.Excercise.Collection
         private void RunTestForCurrentStringFret()
         {
             PlaySoundIfEnabled(_stringFretToFind);
-            FretBoardManager.FretBoard.FretBoardGuiBuilder.DrawNote(_stringFretToFind);
+            FretBoardManager.FretBoard.DrawNote(_stringFretToFind);
         }
     }
 }

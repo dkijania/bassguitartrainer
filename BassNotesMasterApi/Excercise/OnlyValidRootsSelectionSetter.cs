@@ -1,5 +1,5 @@
-﻿using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Fretboard;
+﻿using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Const;
 
 namespace BassNotesMasterApi.Excercise
 {
@@ -9,9 +9,9 @@ namespace BassNotesMasterApi.Excercise
         private readonly NotesInfo _notesInfo = new NotesInfo();
         public void InitSelection(FretboardManager fretboardManager)
         {
-            fretboardManager.FretBoard.FretBoardGuiBuilder.IgnoreColoring = true;
-            fretboardManager.FretBoard.FretBoardGuiBuilder.ForceClearView();
-            fretboardManager.FretBoard.FretBoardGuiBuilder.DrawNotes(_boardMapping.GetFullOctaveScalesRootPosition(_notesInfo.OrderWithAccidentals));
+            fretboardManager.FretBoard.IgnoreColoring = true;
+            fretboardManager.FretBoard.ForceClearView();
+            fretboardManager.FretBoard.DrawNotes(_boardMapping.GetFullOctaveScalesRootPosition(_notesInfo.OrderWithAccidentals));
             fretboardManager.SelectionManager.CleanUp();
         }
     }

@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,16 +48,23 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrumMachineTile.cs" />
-    <Compile Include="DrumMachineTileBuilder.cs" />
+    <Compile Include="DrumMachineModel.cs" />
     <Compile Include="DrumMachineView.xaml.cs">
       <DependentUpon>DrumMachineView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DrumMachineViewModel.cs" />
-    <Compile Include="EnumValuesExtension.cs" />
-    <Compile Include="IPatternHighlighter.cs" />
-    <Compile Include="IPatternTilesManipulator.cs" />
-    <Compile Include="PatternHighlighter.cs" />
+    <Compile Include="ImportExport\ImportExport.xaml.cs">
+      <DependentUpon>ImportExport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pattern\Converters\FileDrumPatternConverter.cs" />
+    <Compile Include="Pattern\Converters\UIDrumPatternConverter.cs" />
+    <Compile Include="Pattern\DrumMachineTile.cs" />
+    <Compile Include="Pattern\DrumPatternPart.cs" />
+    <Compile Include="Pattern\IPatternHighlighter.cs" />
+    <Compile Include="Pattern\IPatternTilesManipulator.cs" />
+    <Compile Include="Pattern\PatternHighlighter.cs" />
+    <Compile Include="Pattern\SelectableBorder.cs" />
+    <Compile Include="Pattern\WpfDrumMachinePatternTilesManipulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,14 +78,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SelectableBorder.cs" />
     <Compile Include="TimeSignature\BooleanAndConverter.cs" />
     <Compile Include="TimeSignature\BooleanOnlyFirstConverter.cs" />
     <Compile Include="TimeSignature\TimeSignatureGrid.xaml.cs">
       <DependentUpon>TimeSignatureGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="TimeSignature\TimeSignatureViewModel.cs" />
-    <Compile Include="WpfDrumMachinePatternTilesManipulator.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,6 +101,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ImportExport\ImportExport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TimeSignature\TimeSignatureGrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,6 +124,7 @@
       <Name>WpfExtensions</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

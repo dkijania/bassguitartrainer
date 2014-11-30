@@ -3,8 +3,8 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
+using BassNotesMasterApi.Components.Notation;
 using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Notation;
 
 namespace BassNotesMaster.Notation
 {

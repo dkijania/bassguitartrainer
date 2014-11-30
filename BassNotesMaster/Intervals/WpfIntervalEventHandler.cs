@@ -1,9 +1,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using BassNotesMasterApi.Components.Interval;
+using BassNotesMasterApi.Components.Interval.Data;
 using BassNotesMasterApi.Excercise;
-using BassNotesMasterApi.Interval;
-using BassNotesMasterApi.Interval.Data;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 

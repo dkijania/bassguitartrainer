@@ -65,7 +65,7 @@ namespace BassNotesMasterApi.Excercise.Collection
         private void RunTestForCurrentStringFret()
         {
             PlaySoundIfEnabled(_stringFretToFind);
-            FretBoardManager.FretBoard.FretBoardGuiBuilder.DrawNote(_stringFretToFind);
+            FretBoardManager.FretBoard.DrawNote(_stringFretToFind);
         }
     }
 }

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.Fretboard.SelectionManager;
+using BassNotesMasterApi.Components.Fretboard;
 
 namespace BassNotesMasterApi.Excercise
 {
@@ -12,9 +11,9 @@ namespace BassNotesMasterApi.Excercise
     {
         public void InitSelection(FretboardManager fretboardManager)
         {
-            fretboardManager.FretBoard.FretBoardGuiBuilder.IgnoreColoring = true;
-            fretboardManager.FretBoard.FretBoardGuiBuilder.ForceClearView();
-            fretboardManager.FretBoard.FretBoardGuiBuilder.DrawAllGraphicNoteRepresentation();
+            fretboardManager.FretBoard.IgnoreColoring = true;
+            fretboardManager.FretBoard.ForceClearView();
+            fretboardManager.FretBoard.DrawAllGraphicNoteRepresentation();
             fretboardManager.SelectionManager.CleanUp();
         }
     }

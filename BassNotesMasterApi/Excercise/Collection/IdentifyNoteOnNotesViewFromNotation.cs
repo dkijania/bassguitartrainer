@@ -1,6 +1,6 @@
 ﻿using System;
-using BassNotesMasterApi.Notation;
-using BassNotesMasterApi.NotesView;
+using BassNotesMasterApi.Components.Notation;
+using BassNotesMasterApi.Components.NotesView;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Excercise.Collection
@@ -8,7 +8,7 @@ namespace BassNotesMasterApi.Excercise.Collection
     public class IdentifyNoteOnNotesViewFromNotation : BaseExcercise, INotesViewListener
     {
         private StringFretPair _stringFretToFind;
-        private MusicNotation _musicNotation;
+        private MusicNotationManager _musicNotation;
 
         public IdentifyNoteOnNotesViewFromNotation(Settings.Settings settings, IExcerciseOptionGuiManager guiManager,
                                                    IVisibilityManager visibilityManager)

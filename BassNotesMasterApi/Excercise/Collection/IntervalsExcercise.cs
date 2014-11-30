@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Components.Interval;
+using BassNotesMasterApi.Components.Interval.Data;
 using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.Interval;
-using BassNotesMasterApi.Interval.Data;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Excercise.Collection
@@ -49,7 +49,7 @@ namespace BassNotesMasterApi.Excercise.Collection
         private void SubscribeToManagersEvents()
         {
             IntervalManager.Subscribe(this);
-            FretBoardManager.EventHandler.Subscribe(this);
+            FretBoardManager.Subscribe(this);
         }
 
         private void IntroduceSettings(IEnumerable<StringFretPair> pairs)
@@ -64,7 +64,7 @@ namespace BassNotesMasterApi.Excercise.Collection
         {
             if (Options.ShouldShowTips)
             {
-                FretBoardManager.FretBoard.FretBoardGuiBuilder.AlwaysRedrawCollection = new AlwaysRedrawCollection(pairs)
+                FretBoardManager.FretBoard.AlwaysRedrawCollection = new AlwaysRedrawCollection(pairs)
                 {
                     IsTransparencyEnabled =
                         Options.ShouldShowTips,
@@ -110,7 +110,7 @@ namespace BassNotesMasterApi.Excercise.Collection
             {
                 firstItem = _intervalStartNote;
                 _currentlySeekIndex = 1;
-                FretBoardManager.FretBoard.FretBoardGuiBuilder.DrawNote(firstItem);
+                FretBoardManager.FretBoard.DrawNote(firstItem);
             }
             else
             {
@@ -131,12 +131,12 @@ namespace BassNotesMasterApi.Excercise.Collection
             var endNote = FretBoardMapping.GetNote(_intervalsToFind[1]);
             var result = Math.Abs(_notesInfo.CalculateDistanceFromNote(startNote, endNote)) == row.Semitone;
 
-            IntervalManager.GuiBuilder.SetColorForButtonName(row, result);
+            IntervalManager.SetColorForButtonName(row, result);
 
             EventHandler actionExectutedAfterDelay = (sender, args) =>
                                                          {
                                                              FretBoardManager.FretBoard.ClearView();
-                                                             IntervalManager.GuiBuilder.ResetColorForButtonName(row);
+                                                             IntervalManager.ResetColorForButtonName(row);
                                                              if (!result && ++TryNo != Attempts) return;
                                                              NextTest();
                                                              RegisterResult(result);
@@ -147,7 +147,7 @@ namespace BassNotesMasterApi.Excercise.Collection
         public void OnMouseClick(StringFretPair stringFretPair, FretBoard fretBoard)
         {
             var result = stringFretPair.Equals(_intervalsToFind[_currentlySeekIndex]);
-            FretBoardManager.FretBoard.FretBoardGuiBuilder.RedrawNote(stringFretPair, result);
+            FretBoardManager.FretBoard.RedrawNote(stringFretPair, result);
 
             EventHandler actionExectutedAfterDelay = (sender, args) =>
                                                          {

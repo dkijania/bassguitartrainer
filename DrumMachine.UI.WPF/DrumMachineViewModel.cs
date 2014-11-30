@@ -1,32 +1,69 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using System.Linq;
+using System.ComponentModel;
 using System.Windows.Input;
-using DrumMachine.Audio;
 using DrumMachine.Engine.Pattern;
 using DrumMachine.TimeSignature;
+using DrumMachine.UI.WPF.Pattern;
 using DrumMachine.UI.WPF.TimeSignature;
+using Microsoft.Win32;
 using WpfExtensions;
 
 namespace DrumMachine.UI.WPF
 {
     public class DrumMachineViewModel : BindingDataContextBase
     {
-        private int _tempoValue;
+        private readonly DrumMachineModel _model;
+        private bool _enableOnPropertyChangedEvent = true;
+        private bool _isSplitModeEnabled;
+        private bool _isJoinModeEnabled;
+        private int _measures;
+        private string _selectedNoteType;
         private string _tempoMarker;
+        private int _tempoValue;
+
+        public DrumMachineViewModel(IPatternTilesManipulator tilesManipulator,
+            TimeSignatureViewModel timeSignatureViewModel)
+        {
+            tilesManipulator.OnSelectEvent += drumMachineTile_OnSelectEvent;
+            tilesManipulator.IgnoreMouseEvent += _tilesManipulator_IgnoreMouseEvent;
+            _model = new DrumMachineModel(tilesManipulator);
+            timeSignatureViewModel.PropertyChanged += PropertyChangedHandler;
+            timeSignatureViewModel.StandardTimeChangedEvent += StandardTimeChangedEventHandler;
+            SelectedNoteType = NotesTypes[0];
+
+            MinimumTempo = 20;
+            MaximumTempo = 320;
+            TempoValue = 120;
+            AddBarsCommand = new DelegateCommand(AddBar);
+            RemoveBarsCommand = new DelegateCommand(RemoveBar);
+            PlayCommand = new DelegateCommand(Play);
+            StopCommand = new DelegateCommand(Stop);
+            ImportDrumPattern = new DelegateCommand(ImportDrumPatternFromFile);
+            ExportDrumPattern = new DelegateCommand(ExportDrumPatternToFile);
+            ClearCommand = new DelegateCommand(Clear);
+        }
+
+        private void Clear()
+        {
+            _model.Clear();
+        }
+
         public int MinimumTempo { get; private set; }
         public int MaximumTempo { get; private set; }
         public ICommand AddBarsCommand { get; private set; }
         public ICommand RemoveBarsCommand { get; private set; }
         public ICommand StopCommand { get; private set; }
         public ICommand PlayCommand { get; private set; }
-        private int _noOfBars = 1;
+        public ICommand ImportDrumPattern { get; private set; }
+        public ICommand ExportDrumPattern { get; private set; }
+        public ICommand ClearCommand { get; private set; }
 
         public ObservableCollection<string> NotesTypes
         {
             get
             {
-                var array = Enum.GetNames(typeof(NoteTypeEnum));
+                string[] array = Enum.GetNames(typeof (NoteTypeEnum));
                 var collection = new ObservableCollection<string>();
 
                 foreach (string value in array)
@@ -36,12 +73,6 @@ namespace DrumMachine.UI.WPF
                 return collection;
             }
         }
-
-
-
-        private bool _enableOnPropertyChangedEvent = true;
-
-        private string _selectedNoteType;
 
         public string SelectedNoteType
         {
@@ -55,9 +86,6 @@ namespace DrumMachine.UI.WPF
             }
         }
 
-
-        private int _measures;
-
         public int Measures
         {
             get { return _measures; }
@@ -70,37 +98,25 @@ namespace DrumMachine.UI.WPF
             }
         }
 
-        private readonly IPatternTilesManipulator _tilesManipulator;
-
-        public DrumMachineViewModel(IPatternTilesManipulator tilesManipulator, TimeSignatureViewModel timeSignatureViewModel)
-            : this()
+        public bool IsSplitModeEnabled
         {
-            _tilesManipulator = tilesManipulator;
-            timeSignatureViewModel.PropertyChanged += PropertyChangedHandler;
-            timeSignatureViewModel.StandardTimeChangedEvent += StandardTimeChangedEventHandler;
-            SelectedNoteType = NotesTypes[0];
-        }
-
-        public void StandardTimeChangedEventHandler(string signature)
-        {
-            _enableOnPropertyChangedEvent = false;
-            var items = signature.Split('/');
-            var note = (NoteTypeEnum)int.Parse(items[1]);
-            UpdatePatternStructure(int.Parse(items[0]), note);
-            _enableOnPropertyChangedEvent = true;
-        }
-
-
-        public void PropertyChangedHandler(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            var timeSignatureModel = sender as TimeSignatureViewModel;
-            if (e.PropertyName.Equals("CustomUpper") || e.PropertyName.Equals("CustomLower") ||
-                e.PropertyName.Equals("UseCustomTimeSignature")
-                )
+            get { return _isSplitModeEnabled; }
+            set
             {
-                _enableOnPropertyChangedEvent = false;
-                UpdatePatternStructure((TimeSignatureOptions) timeSignatureModel.TimeSignature.CustomSignature);
-                _enableOnPropertyChangedEvent = true;
+                _isSplitModeEnabled = value;
+                if (_isSplitModeEnabled) IsJoinModeEnabled = false;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsJoinModeEnabled
+        {
+            get { return _isJoinModeEnabled; }
+            set
+            {
+                _isJoinModeEnabled = value;
+                if (_isJoinModeEnabled) IsSplitModeEnabled = false;
+                OnPropertyChanged();
             }
         }
 
@@ -111,7 +127,7 @@ namespace DrumMachine.UI.WPF
             {
                 _tempoValue = value;
                 TempoMarker = "Tempo: " + _tempoValue;
-                if (_drumMachineKit != null) _drumMachineKit.Tempo = _tempoValue;
+                _model.TryToSetTempo(_tempoValue);
                 OnPropertyChanged();
             }
         }
@@ -126,30 +142,53 @@ namespace DrumMachine.UI.WPF
             }
         }
 
-        private DrumMachineViewModel()
+        private void drumMachineTile_OnSelectEvent(int row, int column, bool isSelected)
         {
-            MinimumTempo = 20;
-            MaximumTempo = 320;
-            TempoValue = 120;
-            AddBarsCommand = new DelegateCommand(AddBar);
-            RemoveBarsCommand = new DelegateCommand(RemoveBar);
-            PlayCommand = new DelegateCommand(Play);
-            StopCommand = new DelegateCommand(Stop);
+            if (IsSplitModeEnabled)
+                _model.SplitCell(row, column);
+            else if (IsJoinModeEnabled)
+                _model.JoinCell(row, column);
+            else if (isSelected)
+                _model.PlaySound(row);
+        }
+
+        private bool _tilesManipulator_IgnoreMouseEvent()
+        {
+            return IsSplitModeEnabled || IsJoinModeEnabled;
+        }
+
+        public void StandardTimeChangedEventHandler(string signature)
+        {
+            _enableOnPropertyChangedEvent = false;
+            string[] items = signature.Split('/');
+            var note = (NoteTypeEnum) int.Parse(items[1]);
+            UpdatePatternStructure(int.Parse(items[0]), note);
+            _enableOnPropertyChangedEvent = true;
+        }
+
+
+        public void PropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+        {
+            var timeSignatureModel = sender as TimeSignatureViewModel;
+            if (e.PropertyName.Equals("CustomUpper") || e.PropertyName.Equals("CustomLower") ||
+                e.PropertyName.Equals("UseCustomTimeSignature")
+                )
+            {
+                _enableOnPropertyChangedEvent = false;
+                UpdatePatternStructure(timeSignatureModel.TimeSignature.CustomSignature);
+                _enableOnPropertyChangedEvent = true;
+            }
         }
 
         public void AddBar()
         {
-            _tilesManipulator.AddBar();
-            _noOfBars++;
+            _model.AddBar();
         }
 
         public void RemoveBar()
         {
-            if (_noOfBars == 1) return;
-            _tilesManipulator.RemoveBar();
-            --_noOfBars;
+            _model.RemoveBar();
         }
-
 
         private void UpdatePatternStructure()
         {
@@ -157,70 +196,84 @@ namespace DrumMachine.UI.WPF
                 return;
 
             _enableOnPropertyChangedEvent = false;
-            _noOfBars = 1;
             UpdatePatternStructure(Measures, SelectedNoteType);
             _enableOnPropertyChangedEvent = true;
         }
 
         private void UpdatePatternStructure(TimeSignatureOptions timeSignature)
         {
-            UpdatePatternStructure((int) timeSignature.NotesPerMeasure, (NoteTypeEnum) timeSignature.NoteType);
+            UpdatePatternStructure(timeSignature.NotesPerMeasure, timeSignature.NoteType);
         }
 
         private void UpdatePatternStructure(int measures, NoteTypeEnum note)
         {
-            UpdatePatternStructure(measures, (int)note);
+            UpdatePatternStructure(measures, (int) note);
         }
 
         private void UpdatePatternStructure(int measures, string note)
         {
             UpdatePatternStructure(measures,
-                (int)Enum.Parse(typeof(NoteTypeEnum), note));
+                (int) Enum.Parse(typeof (NoteTypeEnum), note));
         }
 
-        private void UpdatePatternStructure(int measures = 0,int note = 0)
+        private void UpdatePatternStructure(int measures = 0, int note = 0)
         {
             if (measures == 0 || note == 0)
                 return;
 
-
             Measures = measures;
-            SelectedNoteType = Enum.GetName(typeof(NoteTypeEnum),
-                (NoteTypeEnum)note);
-            const int shortestNote = (int)NoteTypeEnum.Sixteen;
-            _tilesManipulator.SetColumnsCount(measures, shortestNote / note);
+            SelectedNoteType = Enum.GetName(typeof (NoteTypeEnum),
+                (NoteTypeEnum) note);
+         _model.UpdatePatternStructure(measures,note);
         }
-
-
-        public DrumPattern ToDrumPattern()
-        {
-            var samplesCount = DefaultAudioSampler.Instance.Samples.Count();
-            var noteType =
-                (NoteTypeEnum)
-                    Enum.Parse(typeof(NoteTypeEnum), SelectedNoteType);
-            var drum = new DrumPattern(samplesCount, new TimeSignatureOptions(Measures * _noOfBars, noteType));
-            _tilesManipulator.FillDrumPattern(drum);
-            return drum;
-        }
-
-        private DrumMachineKit _drumMachineKit;
-
 
         public void Play()
         {
-            _drumMachineKit = new DrumMachineKit(ToDrumPattern()) { Tempo = TempoValue };
-            _drumMachineKit.OnBeatHitEvent += _tilesManipulator.PatternHighlighter.HighlightColumnOnBeat;
-            _drumMachineKit.Play();
-
+            _model.Play(TempoValue, SelectedNoteType, Measures);
         }
 
         public void Stop()
         {
-            if (_drumMachineKit != null)
+            _model.Stop();
+        }
+
+        private void ExportDrumPatternToFile()
+        {
+            var dialog = new SaveFileDialog
             {
-                _drumMachineKit.Stop();
-            }
-            _tilesManipulator.PatternHighlighter.CleanUpHighlight();
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            };
+
+            if (!dialog.ShowDialog().GetValueOrDefault())
+                return;
+
+            _model.ExportDrumPattern(dialog.FileName, SelectedNoteType, Measures, TempoValue);
+        }
+
+        private void ImportDrumPatternFromFile()
+        {
+            var dialog = new OpenFileDialog
+            {
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+            };
+
+            if (!dialog.ShowDialog().GetValueOrDefault())
+                return;
+
+            
+            var drumSettings = _model.ImportDrumPatternAndGetNewSettings(dialog.FileName);
+            UpdateControlPanel(drumSettings);
+        }
+
+        private void UpdateControlPanel(DrumPatternSettings drumPatternSettings)
+        {
+            _enableOnPropertyChangedEvent = false;
+            Measures = drumPatternSettings.Measures;
+            TempoValue = drumPatternSettings.Tempo;
+            SelectedNoteType = drumPatternSettings.NoteType;
+            _enableOnPropertyChangedEvent = true;
         }
     }
 }

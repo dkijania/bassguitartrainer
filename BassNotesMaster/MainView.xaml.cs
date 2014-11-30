@@ -12,13 +12,13 @@ using BassNotesMaster.ResultSerializer;
 using BassNotesMaster.SettingsManager;
 using BassNotesMaster.Statistics;
 using BassNotesMasterApi;
+using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Components.Fretboard.SelectionManager;
+using BassNotesMasterApi.Components.Interval;
+using BassNotesMasterApi.Components.Notation;
+using BassNotesMasterApi.Components.NotesView;
 using BassNotesMasterApi.Excercise;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.Fretboard.SelectionManager;
-using BassNotesMasterApi.Interval;
-using BassNotesMasterApi.Notation;
 using BassNotesMasterApi.NotePlayer;
-using BassNotesMasterApi.NotesView;
 using BassNotesMasterApi.Settings;
 using BassNotesMasterApi.Statistics;
 using BassNotesMasterApi.Utils;
@@ -48,11 +48,11 @@ namespace BassNotesMaster
             var notationObjectBuilder = new WpfMusicNotationGraphicObjectsManager(NotationPanel.Notation);
             var musicNotationHandler = new WpfMusicNotationEventHandler(NotationPanel.Notation, NotationPanel.SharpNotation, NotationPanel.FlatNotation,
                                                                         notationObjectBuilder);
-            ManagersLocator.Instance.MusicNotationManager = new MusicNotation(musicNotationHandler,
+            ManagersLocator.Instance.MusicNotationManager = new MusicNotationManager(musicNotationHandler,
                                                                               notationObjectBuilder, settings);
 
             var guiBuilder = new FretBoardGuiBuilder(settings, FretboardControl.MainDrawingArena, FretboardControl.Container);
-            var fretboard = new BassNotesMasterApi.Fretboard.FretBoard(guiBuilder);
+            var fretboard = new BassNotesMasterApi.Components.Fretboard.FretBoard(guiBuilder);
             var borderStyleCollection = BorderStyleCollection.Instance;
             var guiSelector = new GuiSelector(Settings.Instance, fretboard.FretBoardGuiBuilder);
             var mouseSelectionManager = new MouseSelectionManager(fretboard, borderStyleCollection);
@@ -68,8 +68,7 @@ namespace BassNotesMaster
                                                                  fretboardManager);
 
             ManagersLocator.Instance.NotesViewManager = new NotesViewManager(notesViewGuiBuilder, notesViewEventHandler,
-                                                                             settings,
-                                                                             fretboardManager);
+                                                                             settings);
             ManagersLocator.Instance.PlayerManager =  new BassNotesPlayer(settings);
             PlayerControl.DataContext = new BassNotesPlayerModelView(ManagersLocator.Instance.PlayerManager);
          

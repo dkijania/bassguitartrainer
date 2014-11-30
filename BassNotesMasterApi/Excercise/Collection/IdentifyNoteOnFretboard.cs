@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BassNotesMasterApi.NotesView;
+using BassNotesMasterApi.Components.NotesView;
 using BassNotesMasterApi.Utils;
 using BassNotesMasterApi.Utils.Keyboard;
 
@@ -46,11 +46,11 @@ namespace BassNotesMasterApi.Excercise.Collection
             var result = note.EqualsWithoutOctaveNumber(noteToFind);
             if (result)
             {
-                FretBoardManager.FretBoard.FretBoardGuiBuilder.RedrawNote(_stringFretToFind, true);
+                FretBoardManager.FretBoard.RedrawNote(_stringFretToFind, true);
             }
             else
             {
-                FretBoardManager.FretBoard.FretBoardGuiBuilder.RedrawNoteWithQuestionMark(_stringFretToFind, false);
+                FretBoardManager.FretBoard.RedrawNoteWithQuestionMark(_stringFretToFind, false);
             }
 
             EventHandler actionExectutedAfterDelay = (sender, args) =>
@@ -63,8 +63,7 @@ namespace BassNotesMasterApi.Excercise.Collection
                                                              }
                                                              else
                                                              {
-                                                                 FretBoardManager.FretBoard.FretBoardGuiBuilder.
-                                                                     RedrawNoteWithQuestionMark(_stringFretToFind, true);
+                                                                 FretBoardManager.FretBoard.RedrawNoteWithQuestionMark(_stringFretToFind, true);
                                                              }
                                                          };
 
@@ -75,13 +74,13 @@ namespace BassNotesMasterApi.Excercise.Collection
         {
             _stringFretToFind = GetRandomItem();
             PlaySoundIfEnabled(_stringFretToFind);
-            FretBoardManager.FretBoard.FretBoardGuiBuilder.RedrawNoteWithQuestionMark(_stringFretToFind);
+            FretBoardManager.FretBoard.RedrawNoteWithQuestionMark(_stringFretToFind);
             ResetTryNo();
         }
 
         protected override void ContinuteTest()
         {
-            FretBoardManager.FretBoard.FretBoardGuiBuilder.DrawNoteWithQuestionMark(_stringFretToFind);
+            FretBoardManager.FretBoard.DrawNoteWithQuestionMark(_stringFretToFind);
         }
     }
 }

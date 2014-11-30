@@ -6,8 +6,8 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BassNotesMasterApi.Components.Notation;
 using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Notation;
 using BassNotesMasterApi.Resources;
 using BassNotesMasterApi.Utils;
 using WpfExtensions;
@@ -365,8 +365,5 @@ namespace BassNotesMaster.Notation
                 itemsToDraw.Add(accidental);
             return itemsToDraw;
         }
-
-
-       
     }
 }

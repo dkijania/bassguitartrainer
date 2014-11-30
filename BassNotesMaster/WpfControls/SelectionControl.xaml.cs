@@ -3,8 +3,8 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using BassNotesMasterApi;
+using BassNotesMasterApi.Components.Fretboard.SelectionManager;
 using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Fretboard.SelectionManager;
 using BassNotesMasterApi.Settings;
 
 namespace BassNotesMaster.WpfControls

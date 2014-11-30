@@ -1,5 +1,3 @@
-using BassNotesMasterApi.Fretboard;
-
 namespace BassNotesMasterApi.Utils.Keyboard
 {
     public abstract class AbstractKeyboardEventManager : Manager

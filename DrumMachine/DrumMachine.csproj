@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="NAudio">
@@ -49,7 +50,9 @@
     <Compile Include="Engine\Model\DrumKit.cs" />
     <Compile Include="Engine\Model\DrumMachineModel.cs" />
     <Compile Include="Engine\Pattern\DrumPattern.cs" />
+    <Compile Include="Engine\Pattern\DrumPatternParsingException.cs" />
     <Compile Include="Engine\Pattern\DrumPatternSampleProvider.cs" />
+    <Compile Include="Engine\Pattern\DrumPatternSettings.cs" />
     <Compile Include="Engine\Pattern\PatternSequencer.cs" />
     <Compile Include="Engine\Sample\AbstractBeatNotifier.cs" />
     <Compile Include="Engine\Sample\MusicSampleProvider.cs" />

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using System.Reflection;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.Interval;
+using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Components.Interval;
+using BassNotesMasterApi.Components.Notation;
+using BassNotesMasterApi.Components.NotesView;
 using BassNotesMasterApi.NotePlayer;
-using BassNotesMasterApi.NotesView;
 using BassNotesMasterApi.Statistics;
 using BassNotesMasterApi.Utils;
 using BassNotesMasterApi.Utils.Keyboard;
@@ -16,7 +16,7 @@ namespace BassNotesMasterApi
     {
         public FretboardManager FretboardManager { get; set; }
         public IntervalManager IntervalManager { get; set; }
-        public Notation.MusicNotation MusicNotationManager { get; set; }
+        public MusicNotationManager MusicNotationManager { get; set; }
         public NotesViewManager NotesViewManager { get; set; }
         public Manager ShowSelectManager { get; set; }
         public BassNotesPlayer PlayerManager { get; set; }

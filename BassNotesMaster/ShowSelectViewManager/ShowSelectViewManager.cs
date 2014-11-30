@@ -2,7 +2,8 @@ using System.Windows;
 using System.Windows.Controls;
 using BassNotesMaster.FretBoard.SelectionManager;
 using BassNotesMaster.WpfControls;
-using BassNotesMasterApi.Fretboard;
+using BassNotesMasterApi;
+using BassNotesMasterApi.Components.Fretboard;
 using BassNotesMasterApi.Settings;
 using BassNotesMasterApi.Utils;
 
@@ -91,7 +92,7 @@ namespace BassNotesMaster.ShowSelectViewManager
 
         private void SelectAllClick(object sender, RoutedEventArgs e)
         {
-            _fretboardManager.FretBoard.FretBoardGuiBuilder.ForceClearView();
+            _fretboardManager.FretBoard.ForceClearView();
             _fretboardManager.SelectionManager.SelectAllItems();
         }
 
@@ -108,7 +109,7 @@ namespace BassNotesMaster.ShowSelectViewManager
 
         private void HideAllClick(object sender, RoutedEventArgs e)
         {
-            _fretboardManager.FretBoard.FretBoardGuiBuilder.ForceClearView();
+            _fretboardManager.FretBoard.ForceClearView();
         }
 
         private void StringRangeButtonClick(object sender, RoutedEventArgs e)

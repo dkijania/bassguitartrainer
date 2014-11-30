@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using BassNotesMasterApi.Fretboard;
+using BassNotesMasterApi.Components.Fretboard;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Excercise.Collection
@@ -38,7 +38,7 @@ namespace BassNotesMasterApi.Excercise.Collection
         {
             if (Options.ShouldShowTips)
             {
-                FretBoardManager.FretBoard.FretBoardGuiBuilder.AlwaysRedrawCollection = new AlwaysRedrawCollection(pairs)
+                FretBoardManager.FretBoard.AlwaysRedrawCollection = new AlwaysRedrawCollection(pairs)
                                                                                             {
                                                                                                 IsTransparencyEnabled =
                                                                                                     Options.ShouldShowTips,
@@ -51,7 +51,7 @@ namespace BassNotesMasterApi.Excercise.Collection
 
         protected override void RenewSubscriptions()
         {
-            FretBoardManager.EventHandler.Subscribe(this);
+            FretBoardManager.Subscribe(this);
             ManagersLocator.Instance.KeyboardEventManager.OnCombinationPressedEvent += OnCombinationPressed;
         }
 
@@ -81,7 +81,7 @@ namespace BassNotesMasterApi.Excercise.Collection
 
             var actualNote = FretBoardMapping.GetNote(stringFretPair);
             var result = actualNote.Equals(NoteToFind);
-            fretBoard.FretBoardGuiBuilder.RedrawNote(stringFretPair, result);
+            fretBoard.RedrawNote(stringFretPair, result);
 
             EventHandler actionExectutedAfterDelay =
                 (sender, args) =>

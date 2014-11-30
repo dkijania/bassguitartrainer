@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.NotesView;
+using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Components.NotesView;
 using BassNotesMasterApi.Utils;
 
 namespace BassNotesMasterApi.Excercise.Collection
@@ -21,8 +21,8 @@ namespace BassNotesMasterApi.Excercise.Collection
 
         protected override void RenewSubscriptions()
         {
-            _fretboardManager.FretBoard.FretBoardGuiBuilder.AlwaysRedrawCollection.DrawLabels = false;
-            _fretboardManager.EventHandler.Subscribe(this);
+            _fretboardManager.FretBoard.AlwaysRedrawCollection.DrawLabels = false;
+            _fretboardManager.Subscribe(this);
             ManagersLocator.Instance.NotesViewManager.Subscribe(this);
         }
 
@@ -36,7 +36,7 @@ namespace BassNotesMasterApi.Excercise.Collection
                 return;
             var actualNote = FretBoardMapping.GetNote(stringFretPair);
             var result = CheckResult(actualNote);
-            fretBoard.FretBoardGuiBuilder.RedrawNote(stringFretPair, result);
+            fretBoard.RedrawNote(stringFretPair, result);
 
             EventHandler actionExectutedAfterDelay =
                 (sender, args) =>
@@ -66,7 +66,7 @@ namespace BassNotesMasterApi.Excercise.Collection
 
         private void SetTipsVisibility(IEnumerable<StringFretPair> pairs)
         {
-            FretBoardManager.FretBoard.FretBoardGuiBuilder.AlwaysRedrawCollection = new AlwaysRedrawCollection(pairs)
+            FretBoardManager.FretBoard.AlwaysRedrawCollection = new AlwaysRedrawCollection(pairs)
                                                                                         {
                                                                                             IsTransparencyEnabled =
                                                                                                 Options.ShouldShowTips,

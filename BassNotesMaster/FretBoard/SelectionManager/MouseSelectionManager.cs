@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using BassNotesMaster.FretBoard.FretBoardView;
-using BassNotesMasterApi.Fretboard.SelectionManager;
+using BassNotesMasterApi.Components.Fretboard.SelectionManager;
 using WpfExtensions;
 
 namespace BassNotesMaster.FretBoard.SelectionManager
@@ -20,9 +20,9 @@ namespace BassNotesMaster.FretBoard.SelectionManager
         public readonly List<Border> SelectedBorderList = new List<Border>();
         private readonly FretBoardGuiBuilder _boardGuiBuilder;
 
-        public BassNotesMasterApi.Fretboard.SelectionManager.SelectionManager SelectionManager { get; set; }
+        public BassNotesMasterApi.Components.Fretboard.SelectionManager.SelectionManager SelectionManager { get; set; }
 
-        public MouseSelectionManager(BassNotesMasterApi.Fretboard.FretBoard fretBoard,
+        public MouseSelectionManager(BassNotesMasterApi.Components.Fretboard.FretBoard fretBoard,
                                      BorderStyleCollection borderStyleCollection)
         {
             var canvas = new Canvas {Name = SelectedCanvasName};

@@ -2,8 +2,8 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using BassNotesMasterApi.Components.Fretboard;
 using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Fretboard;
 using Image = System.Windows.Controls.Image;
 using Point = System.Windows.Point;
 

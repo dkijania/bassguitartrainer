@@ -3,9 +3,9 @@ using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using BassNotesMasterApi.Components.Fretboard;
+using BassNotesMasterApi.Components.NotesView;
 using BassNotesMasterApi.Const;
-using BassNotesMasterApi.Fretboard;
-using BassNotesMasterApi.NotesView;
 using BassNotesMasterApi.Utils;
 using Settings = BassNotesMasterApi.Settings.Settings;
 

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using BassNotesMasterApi.Fretboard;
+using BassNotesMasterApi.Components.Fretboard;
 using BassNotesMasterApi.Statistics;
 using BassNotesMasterApi.Utils;
 

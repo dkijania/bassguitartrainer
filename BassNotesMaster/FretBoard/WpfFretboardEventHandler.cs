@@ -1,15 +1,15 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using BassNotesMaster.FretBoard.FretBoardView;
-using BassNotesMasterApi.Fretboard;
+using BassNotesMasterApi.Components.Fretboard;
 
 namespace BassNotesMaster.FretBoard
 {
     public class WpfFretboardEventHandler : FretboardEventHandler
     {
-        public BassNotesMasterApi.Fretboard.SelectionManager.SelectionManager SelectionManager { get; set; }
+        public BassNotesMasterApi.Components.Fretboard.SelectionManager.SelectionManager SelectionManager { get; set; }
 
-        public WpfFretboardEventHandler(BassNotesMasterApi.Fretboard.FretBoard fretboard,BassNotesMasterApi.Fretboard.SelectionManager.SelectionManager selectionManager) : base(fretboard)
+        public WpfFretboardEventHandler(BassNotesMasterApi.Components.Fretboard.FretBoard fretboard,BassNotesMasterApi.Components.Fretboard.SelectionManager.SelectionManager selectionManager) : base(fretboard)
         {
             SelectionManager = selectionManager;
         }
@@ -70,7 +70,7 @@ namespace BassNotesMaster.FretBoard
             try
             {
                 var clikedPoint = e.GetPosition(GetCanvas());
-                var positionOnfretboard = FretBoard.FretBoardGuiBuilder.GetPosition(clikedPoint);
+                var positionOnfretboard = FretBoard.GetPosition(clikedPoint);
                 RaiseOnMouseClickEvent(positionOnfretboard, FretBoard);
             }
             catch (FretBoardException)
@@ -84,7 +84,7 @@ namespace BassNotesMaster.FretBoard
             try
             {
                 var clikedPoint = e.GetPosition(GetCanvas());
-                var positionOnfretboard = FretBoard.FretBoardGuiBuilder.GetPosition(clikedPoint);
+                var positionOnfretboard = FretBoard.GetPosition(clikedPoint);
                 RaiseOnMouseClickEvent(positionOnfretboard, FretBoard);
             }
             catch (FretBoardException)
@@ -108,7 +108,7 @@ namespace BassNotesMaster.FretBoard
             theGrid.MouseMove -= OnMouseMoveForSelectionEvent;
             theGrid.MouseUp -= OnMouseUpForSelectionEvent;
             SelectionManager.MouseSelectionManager.Prepare();
-            FretBoard.FretBoardGuiBuilder.IgnoreColoring = false;
+            FretBoard.IgnoreColoring = false;
         }
     }
 }
