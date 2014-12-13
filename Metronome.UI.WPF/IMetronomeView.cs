@@ -2,7 +2,7 @@
 
 namespace Metronome.UI.WPF
 {
-    public interface IMetronomeView : ICommandExceptionHandler
+    public interface IMetronomeView
     {
         void EnableFullScreenMode();
         void DisableFullScreenMode();

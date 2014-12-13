@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using DrumMachine.Engine.Pattern;
 using DrumMachine.TimeSignature;
+using DrumMachine.UI.WPF.TimeSignature;
 using WpfExtensions;
 
 namespace Metronome.UI.WPF
@@ -18,7 +19,7 @@ namespace Metronome.UI.WPF
         private bool _isFullScreen;
         private bool _showCounter;
         private int _number;
-        
+
         public string ProgressMessage
         {
             get { return _progressMessage; }
@@ -44,7 +45,7 @@ namespace Metronome.UI.WPF
             get { return _showCounter; }
             set
             {
-                _showCounter = value; 
+                _showCounter = value;
                 OnPropertyChanged();
             }
         }
@@ -81,7 +82,7 @@ namespace Metronome.UI.WPF
             {
                 UpdatePresenter(1);
             }
-         }
+        }
 
         public void OnStopClick()
         {
@@ -92,15 +93,21 @@ namespace Metronome.UI.WPF
             ProgressMessage = "START";
             _number = 0;
         }
-        
-        public MetronomeViewModel(IMetronomeView metronomeView,BpmModelView bpmModelView, TimeSignature timeSignature)
+
+        public MetronomeViewModel(IMetronomeView metronomeView, BpmModelView bpmModelView, TimeSignature timeSignature)
         {
             MetronomeView = metronomeView;
             _metronomeModel = new MetronomeModel(timeSignature, bpmModelView.Model);
-            StopStart = new DelegateCommand(PlayStopMetronome, MetronomeView);
+            StopStart = new DelegateCommand(PlayStopMetronome);
             SetAudioPresetCommand = new RelayCommand(_metronomeModel.SetAudioPreset);
             ProgressMessage = "START";
             bpmModelView.PropertyChanged += _metronomeModel.SetTempo;
+        }
+
+        public MetronomeViewModel(IMetronomeView metronomeView, BpmModelView bpmViewModel,
+            TimeSignatureViewModel timeSignatureViewModel)
+            : this(metronomeView, bpmViewModel, timeSignatureViewModel.TimeSignature)
+        {
         }
 
         public void PlayStopMetronome()
@@ -109,7 +116,7 @@ namespace Metronome.UI.WPF
             {
                 _metronomeModel.PlayMetronome(OnBeat);
                 OnStartClick();
-             }
+            }
             else
             {
                 StopMetronome();
