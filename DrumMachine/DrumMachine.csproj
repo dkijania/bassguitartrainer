@@ -40,7 +40,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Audio\DefaultAudioSampler.cs" />
     <Compile Include="DrumMachineKit.cs" />
     <Compile Include="Engine\Model\DrumKit.cs" />
     <Compile Include="Engine\Model\DrumMachineModel.cs" />
@@ -53,43 +52,47 @@
     <Compile Include="Engine\Sample\MusicSampleProvider.cs" />
     <Compile Include="Engine\Sample\SampleSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\DrumMachine\Audio\DefaultAudioSampler.cs" />
     <Compile Include="TimeSignature\NoteTypeEnum.cs" />
     <Compile Include="TimeSignature\TimeSignature.cs" />
     <Compile Include="TimeSignature\TimeSignatureOptions.cs" />
     <Compile Include="TimeSignature\TimeSignatureException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Audio\Samples\closed-hat-trimmed.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\closed-hat-trimmed.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\crash-trimmed.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\crash-trimmed.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\Hi-Mid Tom.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\Hi-Mid Tom.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\High Floor Tom.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\High Floor Tom.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\High Tom.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\High Tom.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\kick-trimmed.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\kick-trimmed.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\Low Floor Tom.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\Low Floor Tom.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\Low Tom.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\Low Tom.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\Low-Mid Tom.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\Low-Mid Tom.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\open-hat-trimmed.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\open-hat-trimmed.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\Samples\snare-trimmed.wav">
+    <Content Include="Resources\DrumMachine\Audio\Samples\snare-trimmed.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DrumMachine\Patterns\SamplePattern.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfMetronome.Properties
+namespace Metronome.Properties
 {
 
 

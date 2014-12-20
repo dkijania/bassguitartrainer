@@ -1,4 +1,4 @@
-﻿namespace WpfMetronome
+﻿namespace Metronome
 {
     public enum AudioPresetEnum
     {

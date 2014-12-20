@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using DrumMachine.Audio;
 using DrumMachine.Engine.Pattern;
+using DrumMachine.Resources.DrumMachine.Audio;
 using DrumMachine.TimeSignature;
 using DrumMachine.UI.WPF.Pattern;
 using DrumMachine.UI.WPF.Pattern.Converters;

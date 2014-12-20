@@ -1,6 +1,6 @@
 using DrumMachine.TimeSignature;
 
-namespace WpfMetronome
+namespace Metronome
 {
     public interface ITimeSignatureViewModel
     {

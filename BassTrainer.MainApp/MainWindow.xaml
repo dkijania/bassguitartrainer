@@ -9,6 +9,7 @@
         <controls:WindowCommands  x:Name="WindowsCommands">
 
             <Button Content="Trainer" Name="Trainer" Command="{Binding ShowMain}" />
+        <!--    <Button Content="Tuner" Name="Tuner" Command="{Binding ShowBassTuner}" />-->
             <Button Content="Drum Machine" Name="DrumMachine" Command="{Binding ShowDrumMachine}" />
             <Button Content="Metronome" Name="Metronome" Command="{Binding ShowMetronome}" />
             <Button Content="Options" Name="Options" Command="{Binding ShowOptions}" />

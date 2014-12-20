@@ -1,0 +1,39 @@
+<FlowDocument    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" FontFamily="Calibri">
+   
+   <Paragraph FontSize="24" >About BassTrainer</Paragraph>
+   <Paragraph>Version: 1.0</Paragraph> 
+   <Paragraph>Author: Dariusz Kijania</Paragraph> 
+   <Paragraph>Contact: dariusz.kijania@gmail.com </Paragraph>
+    <Paragraph>Project site:
+        <Hyperlink NavigateUri="http://bassguitartrainer.codeplex.com">http://bassguitartrainer.codeplex.com</Hyperlink></Paragraph>
+    <Paragraph>License:
+        <Hyperlink NavigateUri="http://bassguitartrainer.codeplex.com/license">license</Hyperlink></Paragraph> 
+   <Paragraph>Open Source libraries used:</Paragraph> 
+    <List>
+        <ListItem>
+            <Paragraph>
+                <Bold>Nunit.framework</Bold> -
+                <Hyperlink NavigateUri="http://www.nunit.org/">http://www.nunit.org/</Hyperlink>
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph>
+                <Bold>NAudio</Bold> -
+                <Hyperlink NavigateUri="http://naudio.codeplex.com/">http://naudio.codeplex.com/</Hyperlink>
+            </Paragraph>
+        </ListItem>
+        <ListItem>
+            <Paragraph>
+                <Bold>MahApps.Metro</Bold> -
+                <Hyperlink NavigateUri="http://mahapps.com/">http://mahapps.com/</Hyperlink>
+            </Paragraph>
+        </ListItem>        
+        <ListItem>
+            <Paragraph>
+                <Bold>AmCharts.Windows.QuickCharts</Bold> -
+                <Hyperlink NavigateUri="https://www.nuget.org/packages/amChartsQuickCharts/">https://www.nuget.org/packages/amChartsQuickCharts/</Hyperlink>
+            </Paragraph>
+        </ListItem>
+    </List>    
+</FlowDocument>

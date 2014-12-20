@@ -12,7 +12,7 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <TabControl>
-          <TabItem Header="Menu" Margin="10,0,0,0">
+          <TabItem Header="Menu">
                 <gui:HelpMenu x:Name="HelpMenuItem" />
             </TabItem>
       </TabControl>

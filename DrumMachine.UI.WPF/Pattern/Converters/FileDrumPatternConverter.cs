@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using DrumMachine.Audio;
 using DrumMachine.Engine.Pattern;
+using DrumMachine.Resources.DrumMachine.Audio;
 
 namespace DrumMachine.UI.WPF.Pattern.Converters
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DrumMachine.Engine.Sample;
 
-namespace WpfMetronome
+namespace Metronome
 {
     public class AudioPresets
     {

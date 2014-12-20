@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metronome.UI.WPF", "Metrono
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BassTrainer.MainApp", "BassTrainer.MainApp\BassTrainer.MainApp.csproj", "{950C079F-B9CD-4E85-8FCA-E890F7F8E9E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BassTuner.UI.WPF", "BassTuner.UI.WPF\BassTuner.UI.WPF.csproj", "{90157EEF-C24B-4107-A4F3-21649C81475E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,6 +103,10 @@ Global
 		{950C079F-B9CD-4E85-8FCA-E890F7F8E9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{950C079F-B9CD-4E85-8FCA-E890F7F8E9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{950C079F-B9CD-4E85-8FCA-E890F7F8E9E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90157EEF-C24B-4107-A4F3-21649C81475E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90157EEF-C24B-4107-A4F3-21649C81475E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90157EEF-C24B-4107-A4F3-21649C81475E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90157EEF-C24B-4107-A4F3-21649C81475E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

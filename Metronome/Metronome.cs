@@ -2,10 +2,10 @@
 using System.Windows.Input;
 using DrumMachine;
 using DrumMachine.TimeSignature;
+using Metronome.Resources.Metronome.AudioSamples;
 using WpfExtensions;
-using WpfMetronome.AdditionalAudioSamples;
 
-namespace WpfMetronome
+namespace Metronome
 {
     public class Metronome : BindingDataContextBase
     {

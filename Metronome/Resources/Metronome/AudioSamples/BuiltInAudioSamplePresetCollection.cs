@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DrumMachine.Audio;
 using DrumMachine.Engine.Sample;
+using DrumMachine.Resources.DrumMachine.Audio;
 
-namespace WpfMetronome.AdditionalAudioSamples
+namespace Metronome.Resources.Metronome.AudioSamples
 {
     public class BuiltInAudioSamplePresetCollection : IAudioSamplesPresetCollection
     {
         private readonly AudioPresets _audioPresets = new AudioPresets();
+        const string Root = @"Resources\Metronome\AudioSamples";
+        const string DrumStickRoot = Root + @"\DrumStick";
+        const string PercussionRoot = Root + @"\Percussion";
+        const string Metronome1Root = Root + @"\RealMetronome1";
+        const string Metronome2Root = Root + @"\RealMetronome2";
+        const string RingRoot = Root + @"\Ring";
+        
 
         public BuiltInAudioSamplePresetCollection()
         {
@@ -23,38 +30,33 @@ namespace WpfMetronome.AdditionalAudioSamples
         
         private Tuple<SampleSource, SampleSource> GetDrumStickSamples()
         {
-            const string root = @"AdditionalAudioSamples\DrumStick";
-            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(root,"hi.wav"));
-            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "low.wav"));
+            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(DrumStickRoot,"hi.wav"));
+            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(DrumStickRoot, "low.wav"));
             return new Tuple<SampleSource, SampleSource>(hiSample,lowSample);
         }
 
         private Tuple<SampleSource, SampleSource> GetPercussionSamples()
         {
-            const string root = @"AdditionalAudioSamples\Percussion";
-            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "hi.wav"));
-            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "low.wav"));
+            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(PercussionRoot, "hi.wav"));
+            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(PercussionRoot, "low.wav"));
             return new Tuple<SampleSource, SampleSource>(hiSample, lowSample);
         }
         private Tuple<SampleSource, SampleSource> GetRealMetronome1Samples()
         {
-            const string root = @"AdditionalAudioSamples\RealMetronome1";
-            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "hi.wav"));
-            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "low.wav"));
+            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(Metronome1Root, "hi.wav"));
+            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(Metronome1Root, "low.wav"));
             return new Tuple<SampleSource, SampleSource>(hiSample, lowSample);
         }
         private Tuple<SampleSource, SampleSource> GetRealMetronome2Samples()
         {
-            const string root = @"AdditionalAudioSamples\RealMetronome2";
-            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "hi.wav"));
-            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "low.wav"));
+            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(Metronome2Root, "hi.wav"));
+            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(Metronome2Root, "low.wav"));
             return new Tuple<SampleSource, SampleSource>(hiSample, lowSample);
         }
         private Tuple<SampleSource, SampleSource> GetRingSamples()
         {
-            const string root = @"AdditionalAudioSamples\Ring";
-            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "hi.wav"));
-            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(root, "low.wav"));
+            var hiSample = SampleSource.CreateFromWaveFile(Path.Combine(RingRoot, "hi.wav"));
+            var lowSample = SampleSource.CreateFromWaveFile(Path.Combine(RingRoot, "low.wav"));
             return new Tuple<SampleSource, SampleSource>(hiSample, lowSample);
         }
 

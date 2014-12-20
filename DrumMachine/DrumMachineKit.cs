@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using DrumMachine.Audio;
 using DrumMachine.Engine.Model;
 using DrumMachine.Engine.Pattern;
 using DrumMachine.Engine.Sample;
+using DrumMachine.Resources.DrumMachine.Audio;
 
 namespace DrumMachine
 {

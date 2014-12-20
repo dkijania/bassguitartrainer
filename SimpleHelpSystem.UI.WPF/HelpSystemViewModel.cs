@@ -21,20 +21,46 @@ namespace SimpleHelpSystem.UI.WPF
 
         private readonly AbstractDocumentLoader<FlowDocument> _abstractDocumentLoader;
 
-        public HelpSystemViewModel(IDocumentPresenter<FlowDocument> presenter,
-            HelpResourcesDescriptor helpResourcesDescriptor)
+        public HelpSystemViewModel(IDocumentPresenter<FlowDocument> presenter)
         {
-
+            var helpResourcesDescriptor = GetHelpResourcesDescriptor();
             Presenter = presenter;
             _abstractDocumentLoader = new DocumentLoader<FlowDocument>(helpResourcesDescriptor, _helpHistory,Presenter);
 
             HistoryForwardCommand = new DelegateCommand(HistoryForward);
             HistoryBackCommand = new DelegateCommand(HistoryBack);
             MenuItems = new ObservableCollection<HelpTreeItem>(helpResourcesDescriptor.DocumentTreeRoot);
-
+            
             BindableSelectedItemBehavior.OnSelectedTreeItemChangedEvent += OnMenuSelectedItemChanged;
-
             _helpHistory.PropertyChanged += HelpHistoryPropertyChanged;
+
+            PresentDefaultPage(helpResourcesDescriptor);
+        }
+
+        private static HelpResourcesDescriptor GetHelpResourcesDescriptor()
+        {
+            var helpResourcesDescriptor = new HelpResourcesDescriptor("HelpSystemResources");
+            var settingsItem = new HelpTreeItem("Settings", "SettingsDocument.xaml");
+            var aboutItem = new HelpTreeItem("About", "AboutDocument.xaml");
+            var components = new HelpTreeItem("Components");
+            components.Children.Add(new HelpTreeItem("Fretboard", @"Component\Fretboard.xaml"));
+            components.Children.Add(new HelpTreeItem("Excercise Panel", @"Component\ExcercisePanel.xaml"));
+            components.Children.Add(new HelpTreeItem("Intervals", @"Component\Intervals.xaml"));
+            components.Children.Add(new HelpTreeItem("Notation Canvas", @"Component\NotationCanvas.xaml"));
+            components.Children.Add(new HelpTreeItem("Notes Panel", @"Component\Notes.xaml"));
+            components.Children.Add(new HelpTreeItem("Player", @"Component\Fretboard.xaml"));
+            
+            helpResourcesDescriptor.DocumentTreeRoot.Add(aboutItem);
+            helpResourcesDescriptor.DocumentTreeRoot.Add(settingsItem);
+            helpResourcesDescriptor.DocumentTreeRoot.Add(components);
+            helpResourcesDescriptor.DefaultItem = aboutItem;
+            return helpResourcesDescriptor;
+        }
+        
+        private void PresentDefaultPage(HelpResourcesDescriptor helpResourcesDescriptor)
+        {
+            var document = _abstractDocumentLoader.LoadAndEnableNavigation(helpResourcesDescriptor.DefaultItem.DocumentUri);
+            Present(document);      
         }
 
         public void HistoryBack()
@@ -58,8 +84,7 @@ namespace SimpleHelpSystem.UI.WPF
         {
              get { return _helpHistory.CanRedo; }
         }
-
-
+        
         public void OnMenuSelectedItemChanged(object newSelectedValue)
         {
             var item = (HelpTreeItem) newSelectedValue;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DrumMachine.Engine.Sample;
 
-namespace Metronome.UI.WPF.AdditionalAudioSamples
+namespace Metronome.Resources.Metronome.AudioSamples
 {
     public interface IAudioSamplesPresetCollection
     {

@@ -4,7 +4,7 @@ using System.ComponentModel;
 using DrumMachine;
 using DrumMachine.Engine.Model;
 using DrumMachine.TimeSignature;
-using Metronome.UI.WPF.AdditionalAudioSamples;
+using Metronome.Resources.Metronome.AudioSamples;
 
 namespace Metronome.UI.WPF
 {

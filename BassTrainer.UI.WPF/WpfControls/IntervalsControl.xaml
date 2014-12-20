@@ -16,7 +16,7 @@
                 <RowDefinition Height="30" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <DataGrid Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Name="intervalsTable"
+            <DataGrid Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Name="intervalsTable"
                                   ItemsSource="{Binding}" IsReadOnly="False" HorizontalAlignment="Left" VerticalAlignment="Center">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Semitones" Binding="{Binding Path=Semitone}" />
@@ -25,8 +25,7 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="Show Selected"
-                                Name="ShowSelectedIntervalsButton" />
+            <Button Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="2" Content="Show Selected" Name="ShowSelectedIntervalsButton" />
         </Grid>
     </DockPanel>
 </UserControl>

@@ -58,10 +58,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionalAudioSamples\BuiltInAudioSamplePresetCollection.cs" />
-    <Compile Include="AdditionalAudioSamples\IAudioSamplesPresetCollection.cs" />
-    <Compile Include="AudioPresetEnum.cs" />
-    <Compile Include="AudioPresets.cs" />
     <Compile Include="BpmModel.cs" />
     <Compile Include="BpmModelView.cs" />
     <Compile Include="CounterDialog.xaml.cs">
@@ -110,6 +106,10 @@
       <Project>{FC512A61-47EB-493C-AF7F-BC357694BFA8}</Project>
       <Name>DrumMachine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Metronome\Metronome.csproj">
+      <Project>{90837A8E-DD39-4F3F-B981-30749FD1DD24}</Project>
+      <Name>Metronome</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WpfExtensions\WpfExtensions.csproj">
       <Project>{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}</Project>
       <Name>WpfExtensions</Name>
@@ -120,38 +120,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AdditionalAudioSamples\DrumStick\hi.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\DrumStick\low.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\Percussion\hi.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\Percussion\low.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\RealMetronome1\hi.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\RealMetronome1\low.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\RealMetronome2\hi.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\RealMetronome2\low.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\Ring\hi.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AdditionalAudioSamples\Ring\low.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Page Include="MetronomeView.xaml">

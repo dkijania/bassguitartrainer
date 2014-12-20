@@ -80,6 +80,10 @@
     <Compile Include="Components\Statistics\IStatisticsGuiManager.cs" />
     <Compile Include="Components\Statistics\StatisticRow.cs" />
     <Compile Include="Components\Statistics\StatisticsComponent.cs" />
+    <Compile Include="Const\BassGuitar\Parameters\BassGuitar4StringTuning.cs" />
+    <Compile Include="Const\BassGuitar\Parameters\BassGuitarTuningId.cs" />
+    <Compile Include="Const\BassGuitar\Parameters\BassGuitarTypeId.cs" />
+    <Compile Include="Const\BassGuitar\Parameters\BassGuitarTypes.cs" />
     <Compile Include="Const\FretBoardOptions.cs" />
     <Compile Include="Const\FretBoardShow.cs" />
     <Compile Include="Const\IFretBoardMapping.cs" />

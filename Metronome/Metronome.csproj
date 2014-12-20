@@ -7,8 +7,8 @@
     <ProjectGuid>{90837A8E-DD39-4F3F-B981-30749FD1DD24}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WpfMetronome</RootNamespace>
-    <AssemblyName>WpfMetronome</AssemblyName>
+    <RootNamespace>Metronome</RootNamespace>
+    <AssemblyName>Metronome</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -50,12 +50,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdditionalAudioSamples\BuiltInAudioSamplePresetCollection.cs" />
-    <Compile Include="AdditionalAudioSamples\IAudioSamplesPresetCollection.cs" />
     <Compile Include="AudioPresetEnum.cs" />
     <Compile Include="AudioPresets.cs" />
     <Compile Include="Bpm.cs" />
     <Compile Include="IMetronomePresenter.cs" />
+    <Compile Include="Resources\Metronome\AudioSamples\BuiltInAudioSamplePresetCollection.cs" />
+    <Compile Include="Resources\Metronome\AudioSamples\IAudioSamplesPresetCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITimeSignatureViewModel.cs" />
@@ -96,34 +96,34 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="AdditionalAudioSamples\DrumStick\hi.wav">
+    <Content Include="Resources\Metronome\AudioSamples\DrumStick\hi.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\DrumStick\low.wav">
+    <Content Include="Resources\Metronome\AudioSamples\DrumStick\low.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\Percussion\hi.wav">
+    <Content Include="Resources\Metronome\AudioSamples\Percussion\hi.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\Percussion\low.wav">
+    <Content Include="Resources\Metronome\AudioSamples\Percussion\low.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\RealMetronome1\hi.wav">
+    <Content Include="Resources\Metronome\AudioSamples\RealMetronome1\hi.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\RealMetronome1\low.wav">
+    <Content Include="Resources\Metronome\AudioSamples\RealMetronome1\low.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\RealMetronome2\hi.wav">
+    <Content Include="Resources\Metronome\AudioSamples\RealMetronome2\hi.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\RealMetronome2\low.wav">
+    <Content Include="Resources\Metronome\AudioSamples\RealMetronome2\low.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\Ring\hi.wav">
+    <Content Include="Resources\Metronome\AudioSamples\Ring\hi.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AdditionalAudioSamples\Ring\low.wav">
+    <Content Include="Resources\Metronome\AudioSamples\Ring\low.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

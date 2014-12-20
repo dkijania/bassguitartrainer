@@ -9,6 +9,11 @@ namespace BassTrainer.MainApp
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            ShutdownMode = ShutdownMode.OnMainWindowClose;
+        }
+
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             var ex = e.Exception;

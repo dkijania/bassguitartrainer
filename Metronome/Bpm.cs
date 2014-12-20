@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using WpfExtensions;
 
-namespace WpfMetronome
+namespace Metronome
 {
     public class Bpm : BindingDataContextBase
     {

@@ -43,7 +43,26 @@ namespace SimpleHelpSystem.UI.WPF
 
         private void LinkRequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
-            Presenter.PresentContent(LoadAndEnableNavigation(e.Uri));
+            var uri = e.Uri;
+            if (IsExternal(uri))
+            {
+                LaunchLinkInBrowser(uri);
+            }
+            else
+            {
+                Presenter.PresentContent(LoadAndEnableNavigation(e.Uri));
+            }
         }
+
+        private bool IsExternal(Uri uri)
+        {
+            return uri.IsAbsoluteUri;
+        }
+
+        private void LaunchLinkInBrowser(Uri uri)
+        {
+            System.Diagnostics.Process.Start(uri.AbsoluteUri);
+        }
+        
     }
 }

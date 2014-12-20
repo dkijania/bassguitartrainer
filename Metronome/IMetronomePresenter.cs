@@ -1,8 +1,7 @@
-﻿using System;
-using DrumMachine.Engine.Pattern;
+﻿using DrumMachine.Engine.Pattern;
 using WpfExtensions;
 
-namespace WpfMetronome
+namespace Metronome
 {
     public interface IMetronomePresenter : ICommandExceptionHandler
     {

@@ -60,15 +60,20 @@ namespace BassTrainer.Core.Components.NotePlayer
         private void SetPlayerAttributes(Settings.Settings settings)
         {
             IsMuted = settings.IsPlayerMuted.Value;
-            ChangeMuteState();
+            SetMuteText();
             Volume = settings.Volume.Value;
         }
 
         public void ChangeMuteState()
         {
             IsMuted = !IsMuted;
-            MuteText = IsMuted ? "Unmute" : "Mute";
+            SetMuteText();
             Settings.Settings.Instance.IsPlayerMuted.SetNewValue(IsMuted);
+        }
+
+        private void SetMuteText()
+        {
+            MuteText = IsMuted ? "Unmute" : "Mute";
         }
 
         public void PlayAgain()
