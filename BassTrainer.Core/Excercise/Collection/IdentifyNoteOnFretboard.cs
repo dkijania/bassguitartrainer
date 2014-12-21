@@ -35,9 +35,8 @@ namespace BassTrainer.Core.Excercise.Collection
             get { return new[] {Excercise.Options.Options.ShowTips, Excercise.Options.Options.PlayNote}; }
         }
 
-        public IdentifyNoteOnFretboard(Settings.Settings settings, IExcerciseOptionGuiManager guiManager,
-                                       IVisibilityManager visibilityManager)
-            : base(settings, guiManager, visibilityManager)
+        public IdentifyNoteOnFretboard(Settings.Settings settings, IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager, IComponentModeManager componentModeManager)
+            : base(settings, guiManager, visibilityManager,componentModeManager)
         {
         }
 

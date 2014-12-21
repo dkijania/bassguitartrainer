@@ -23,8 +23,8 @@ namespace BassTrainer.Core.Excercise.Collection
         }
 
         public FindNoteInScale(Settings.Settings settings, IExcerciseOptionGuiManager guiManager,
-                               IVisibilityManager visibilityManager)
-            : base(settings, guiManager, visibilityManager, new OnlyValidRootsSelectionSetter())
+                               IVisibilityManager visibilityManager,IComponentModeManager componentModeManager)
+            : base(settings, guiManager, visibilityManager,componentModeManager, new OnlyValidRootsSelectionSetter())
         {
         }
 

@@ -24,6 +24,7 @@ namespace BassTrainer.Core.Excercise
         protected Note NoteToFind;
         protected IExcerciseOptionGuiManager GuiManager;
         protected IVisibilityManager VisibilityManager;
+        private readonly IComponentModeManager _componentModeManager;
         protected Options.Options Options = new Options.Options();
         protected MusicNotationComponent MusicNotationComponent;
         protected IResultSerializer ResultSerializer = ComponentsLocator.Instance.ResultSerializer;
@@ -35,18 +36,19 @@ namespace BassTrainer.Core.Excercise
         protected double DelayValue;
 
         protected BaseExcercise(Settings.Settings settings,
-                                IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager)
-            : this(settings, guiManager, visibilityManager, new DefaultSelectionSetter())
+                                IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager,IComponentModeManager componentModeManager)
+            : this(settings, guiManager, visibilityManager,componentModeManager, new DefaultSelectionSetter())
 
         {
         }
 
         protected BaseExcercise(Settings.Settings settings,
                                 IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager,
-                                ISelectionSetter setter)
+                                IComponentModeManager componentModeManager,ISelectionSetter setter)
         {
             SelectionSetter = setter;
             VisibilityManager = visibilityManager;
+            _componentModeManager = componentModeManager;
             Attempts = settings.AttemptsCount.Value;
             DelayValue = settings.DelayTime.Value;
             FretBoardComponent = ComponentsLocator.Instance.FretboardComponent;
@@ -66,7 +68,7 @@ namespace BassTrainer.Core.Excercise
         public virtual void Start(IEnumerable<StringFretPair> pairs)
         {
             BeforeStart();
-            ComponentsLocator.Instance.Mode = ComponentMode.Excercise;
+            _componentModeManager.ApplyMode(ComponentMode.Excercise);
             ReadSettings();
             EnableDefinedComponentsExlusive();
             SetTestItems(pairs);
@@ -160,7 +162,7 @@ namespace BassTrainer.Core.Excercise
         public virtual void Pause()
         {
             BeforePause();
-            ComponentsLocator.Instance.Mode = ComponentMode.Selection;
+            _componentModeManager.ApplyMode(ComponentMode.Selection);
             FretBoardComponent.SelectionManager.SelectItems(StringFretPairs.ToArray());
             IsPaused = true;
             AfterPause();
@@ -169,7 +171,7 @@ namespace BassTrainer.Core.Excercise
         public virtual void Continue(StringFretPair[] pairs)
         {
             BeforeContinue();
-            ComponentsLocator.Instance.Mode = ComponentMode.Excercise;
+            _componentModeManager.ApplyMode(ComponentMode.Excercise);
             EnableDefinedComponentsExlusive();
             SetTestItems(pairs);
             ReadSettings();

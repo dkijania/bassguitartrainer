@@ -16,9 +16,8 @@ namespace BassTrainer.Core.Excercise.Collection
 
          private StringFretPair _curentlySeekPosition;
 
-        public FindNoteOnFretboardFromNotesView(Settings.Settings settings, IExcerciseOptionGuiManager guiManager,
-                                                IVisibilityManager visibilityManager)
-            : base(settings, guiManager, visibilityManager)
+        public FindNoteOnFretboardFromNotesView(Settings.Settings settings, IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager, IComponentModeManager componentModeManager)
+             : base(settings, guiManager, visibilityManager, componentModeManager)
         {
         }
 

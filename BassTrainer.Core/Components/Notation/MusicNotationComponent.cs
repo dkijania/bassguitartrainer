@@ -13,8 +13,8 @@ namespace BassTrainer.Core.Components.Notation
                              Settings.Settings settings)
         {
             _musicNotationEventHandler = musicNotationEventHandler;
-            _musicNotationEventHandler.MusicNotation = _musicNotation;
             _musicNotation = new MusicNotation(wpfMusicNotationGraphicObjectsManager,settings);
+            _musicNotationEventHandler.MusicNotation = _musicNotation;
         }
 
         public void Subscribe(IMusicNotationListener listener)

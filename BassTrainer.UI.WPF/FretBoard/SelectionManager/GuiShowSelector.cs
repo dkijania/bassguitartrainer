@@ -25,7 +25,6 @@ namespace BassTrainer.UI.WPF.FretBoard.SelectionManager
         {
             _fretBoardGuiBuilder.AlwaysRedrawCollection.AddRange(collectionOfStringFretPair);
             _fretBoardGuiBuilder.DrawNotesIfNotExist(collectionOfStringFretPair);
-        
         }
 
         public void UnselectItems(params StringFretPair[] collectionOfStringFretPair)

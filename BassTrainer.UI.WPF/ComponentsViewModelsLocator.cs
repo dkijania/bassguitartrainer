@@ -11,7 +11,7 @@ using BassTrainer.UI.WPF.Statistics;
 
 namespace BassTrainer.UI.WPF
 {
-    public class ComponentsViewModelsLocator
+    public class ComponentsViewModelsLocator : IComponentModeManager
     {
         public IntervalViewModel IntervalViewModel { get; set; }
         public MusicNotationViewModel MusicNotationViewModel { get; set; }
@@ -39,7 +39,14 @@ namespace BassTrainer.UI.WPF
         public void Startup()
         {
             _componentsLocator.Init();
+            RegisterEvents();
             Launcher.RunDefaultExcercise();
+        }
+
+        public void RegisterEvents()
+        {
+            _componentsLocator.DoForAllPropertiesDerivedFrom<Component>(
+                manager => ModeChangedEvent += manager.OnModeChanged);
         }
 
         public void SetNextExcercise(string name)
@@ -57,7 +64,7 @@ namespace BassTrainer.UI.WPF
         public void StopExcerciseAndStartDefault()
         {
             _componentsLocator.RemoveAllEvents();
-            _componentsLocator.Mode = ComponentMode.Info;
+            Mode = ComponentMode.Info;
             Launcher.StopExcerciseAndStartDefault();
         }
 
@@ -70,7 +77,7 @@ namespace BassTrainer.UI.WPF
         public void PauseCurrentExcercise()
         {
             _componentsLocator.RemoveAllEvents();
-            _componentsLocator.Mode = ComponentMode.Selection;
+            Mode = ComponentMode.Selection;
             Launcher.CurrentExcercise.Pause();
         }
 
@@ -82,16 +89,45 @@ namespace BassTrainer.UI.WPF
                 setter.InitSelection(_componentsLocator.FretboardComponent);
             }
         }
-        
-        public ComponentMode Mode
+
+        public event ModeChanged ModeChangedEvent;
+
+        public void OnModeChangedEvent(ComponentMode mode)
         {
-            get { return _componentsLocator.Mode; }
+            var handler = ModeChangedEvent;
+            if (handler != null) handler(mode);
+        }
+
+        public delegate void ModeChanged(ComponentMode mode);
+
+
+        private ComponentMode Mode
+        {
             set
             {
-                _componentsLocator.Mode = value;
-                if (value == ComponentMode.Selection)
-                    InitSelection();
+                _mode = value;
+                StartMode(_mode);
             }
+            get { return _mode; }
+        }
+        private ComponentMode _mode;
+
+        private void StartMode(ComponentMode mode)
+        {
+            OnModeChangedEvent(mode);
+            if (mode == ComponentMode.Selection)
+                InitSelection();
+         
+        }
+
+        public void ApplyMode(ComponentMode mode)
+        {
+            Mode = mode;
+        }
+
+        public bool IsMode(ComponentMode mode)
+        {
+            return Mode.Equals(mode);
         }
     }
 }

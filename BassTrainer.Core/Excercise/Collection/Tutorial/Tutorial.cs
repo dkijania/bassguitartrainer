@@ -13,7 +13,11 @@ namespace BassTrainer.Core.Excercise.Collection.Tutorial
     {
         private readonly NotesToStringFretBoardMapping _fretBoardMapping = NotesToStringFretBoardMapping.Instance;
         private readonly ComponentsLocator _componentsLocator = ComponentsLocator.Instance;
-            
+
+        public Tutorial(IComponentModeManager componentModeManager) : base(componentModeManager)
+        {
+        }
+
 
         public override void BeforeStart()
         {

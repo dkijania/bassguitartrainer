@@ -37,6 +37,7 @@ namespace BassTrainer.UI.WPF.FretBoard.SelectionManager
         {
             foreach (var border in collectionOfStringFretPair.Select(item => FretBoardGuiBuilder.GetBorderForCords(item)))
             {
+                if(border != null)
                 SelectItem(border);
             }
         }

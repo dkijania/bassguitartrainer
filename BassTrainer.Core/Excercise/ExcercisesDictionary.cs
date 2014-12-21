@@ -19,15 +19,15 @@ namespace BassTrainer.Core.Excercise
             get { return _excercises["Tutorial"]; }
         } 
 
-        public ExcercisesDictionary(IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager)
+        public ExcercisesDictionary(IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager,IComponentModeManager componentModeManager)
         {
-            _excercises.Add("Tutorial", new Tutorial());
-            _excercises.Add("Find Note Position", new FindNoteOnFretboard(Settings.Settings.Instance, guiManager,visibilityManager));
-            _excercises.Add("Identify Note On fretboard", new IdentifyNoteOnFretboard(Settings.Settings.Instance, guiManager, visibilityManager));
-            _excercises.Add("Identify Note On fretboard (Notation)", new FindNotationForPosition(Settings.Settings.Instance, guiManager, visibilityManager));
-            _excercises.Add("Identify Note by interval", new IntervalsExcercise(Settings.Settings.Instance, guiManager, visibilityManager));   
-            _excercises.Add("Find Note Position from Notes View", new FindNoteOnFretboardFromNotesView(Settings.Settings.Instance, guiManager, visibilityManager));   
-            _excercises.Add("Identify Note Shown on Notation", new IdentifyNoteOnNotesViewFromNotation(Settings.Settings.Instance, guiManager, visibilityManager));   
+            _excercises.Add("Tutorial", new Tutorial(componentModeManager));
+            _excercises.Add("Find Note Position", new FindNoteOnFretboard(Settings.Settings.Instance, guiManager, visibilityManager, componentModeManager));
+            _excercises.Add("Identify Note On fretboard", new IdentifyNoteOnFretboard(Settings.Settings.Instance, guiManager, visibilityManager, componentModeManager));
+            _excercises.Add("Identify Note On fretboard (Notation)", new FindNotationForPosition(Settings.Settings.Instance, guiManager, visibilityManager, componentModeManager));
+            _excercises.Add("Identify Note by interval", new IntervalsExcercise(Settings.Settings.Instance, guiManager, visibilityManager, componentModeManager));
+            _excercises.Add("Find Note Position from Notes View", new FindNoteOnFretboardFromNotesView(Settings.Settings.Instance, guiManager, visibilityManager, componentModeManager));
+            _excercises.Add("Identify Note Shown on Notation", new IdentifyNoteOnNotesViewFromNotation(Settings.Settings.Instance, guiManager, visibilityManager, componentModeManager));   
         }
 
         public IExcercise this[String key]

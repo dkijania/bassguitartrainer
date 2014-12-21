@@ -13,9 +13,8 @@ namespace BassTrainer.Core.Excercise.Collection
         private StringFretPair _stringFretToFind;
         private MusicNotationComponent _musicNotation;
 
-        public IdentifyNoteOnNotesViewFromNotation(Settings.Settings settings, IExcerciseOptionGuiManager guiManager,
-                                                   IVisibilityManager visibilityManager)
-            : base(settings, guiManager, visibilityManager)
+        public IdentifyNoteOnNotesViewFromNotation(Settings.Settings settings, IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager, IComponentModeManager componentModeManager)
+            : base(settings, guiManager, visibilityManager,componentModeManager)
         {
         }
 

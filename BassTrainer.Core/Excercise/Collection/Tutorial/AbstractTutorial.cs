@@ -10,14 +10,17 @@ namespace BassTrainer.Core.Excercise.Collection.Tutorial
 {
     public abstract class AbstractTutorial : IExcercise
     {
-        protected AbstractTutorial()
+        protected readonly IComponentModeManager ComponentModeManager;
+
+        protected AbstractTutorial(IComponentModeManager componentModeManager)
         {
+            ComponentModeManager = componentModeManager;
             SelectionSetter = new DefaultSelectionSetter();
         }
 
         public void Start(IEnumerable<StringFretPair> pairs)
         {
-            ComponentsLocator.Instance.Mode = ComponentMode.Info;
+            ComponentModeManager.ApplyMode(ComponentMode.Info);
             Start();
         }
 

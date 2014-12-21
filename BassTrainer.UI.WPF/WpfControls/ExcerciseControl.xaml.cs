@@ -30,17 +30,17 @@ namespace BassTrainer.UI.WPF.WpfControls
 
         private void ChooseSelection_Click(object sender, RoutedEventArgs e)
         {
-            if (_locator.Mode != ComponentMode.Selection)
+            if (!_locator.IsMode(ComponentMode.Selection))
             {
                 ExcerciseChooseSelection.Content = "Cancel";
                 ExcercisesTypes.IsEnabled = false;
-                _locator.Mode = ComponentMode.Selection;
+                _locator.ApplyMode(ComponentMode.Selection); 
             }
             else
             {
                 ExcerciseChooseSelection.Content = "Choose Selection";
                 ExcercisesTypes.IsEnabled = true;
-                _locator.Mode = ComponentMode.Info;
+                  _locator.ApplyMode(ComponentMode.Info);
             }
         }
 
@@ -82,7 +82,7 @@ namespace BassTrainer.UI.WPF.WpfControls
 
         private void ExcerciseStart_OnClick(object sender, RoutedEventArgs e)
         {
-            if (ComponentsLocator.Instance.Mode == ComponentMode.Excercise)
+            if (_locator.IsMode(ComponentMode.Excercise))
             {
                 _locator.Launcher.CurrentExcercise.Skip();
                 return;

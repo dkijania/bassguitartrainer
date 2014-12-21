@@ -23,9 +23,8 @@ namespace BassTrainer.Core.Excercise.Collection
             get { return new[] {Excercise.Options.Options.PlayNote}; }
         }
 
-        public FindNotationForPosition(Settings.Settings settings, IExcerciseOptionGuiManager guiManager,
-                                       IVisibilityManager visibilityManager)
-            : base(settings, guiManager, visibilityManager,new DefaultSelectionSetter())
+        public FindNotationForPosition(Settings.Settings settings, IExcerciseOptionGuiManager guiManager, IVisibilityManager visibilityManager, IComponentModeManager componentModeManager)
+            : base(settings, guiManager, visibilityManager,componentModeManager,new DefaultSelectionSetter())
         {
         }
 

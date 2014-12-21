@@ -104,7 +104,7 @@ namespace BassTrainer.UI.WPF
             showManager.VisibilityDictionary.Add(ComponentId.Player, PlayerTab);
             showManager.VisibilityDictionary.Add(ComponentId.Statistic, Statistics);
 
-            var excercisesDictionary = new ExcercisesDictionary(guiOptionManager, showManager);
+            var excercisesDictionary = new ExcercisesDictionary(guiOptionManager, showManager,componentsViewModelsLocator);
 
             var statisticGuiManager = new StatisticGuiManager(Statistic);
             var statisticsManager = new StatisticsComponent(statisticGuiManager, excercisesDictionary);
