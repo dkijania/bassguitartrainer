@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.9</ProductVersion>
+    <ProjectGuid>48edee0b-9e82-4df8-9cd5-9c955a9f4ba7</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>BassGuitarTrainer</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>SourceDir=..\bin\Release</DefineConstants>
+    <WixVariables>
+    </WixVariables>
+    <SuppressAllWarnings>True</SuppressAllWarnings>
+    <Pedantic>False</Pedantic>
+    <VerboseOutput>True</VerboseOutput>
+    <Cultures>en-us</Cultures>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="files.wxs" />
+    <Compile Include="main.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BassTrainer.Core\BassTrainer.Core.csproj">
+      <Name>BassTrainer.Core</Name>
+      <Project>{09e42c2e-fbb5-4cf6-8210-aed129168d0d}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\BassTrainer.MainApp\BassTrainer.MainApp.csproj">
+      <Name>BassTrainer.MainApp</Name>
+      <Project>{950c079f-b9cd-4e85-8fca-e890f7f8e9e9}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\BassTrainer.UI.WPF\BassTrainer.UI.WPF.csproj">
+      <Name>BassTrainer.UI.WPF</Name>
+      <Project>{65169faa-d21d-4d72-bc32-913d4802d229}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\BassTuner.UI.WPF\BassTuner.UI.WPF.csproj">
+      <Name>BassTuner.UI.WPF</Name>
+      <Project>{90157eef-c24b-4107-a4f3-21649c81475e}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumMachine.UI.WPF\DrumMachine.UI.WPF.csproj">
+      <Name>DrumMachine.UI.WPF</Name>
+      <Project>{e476ef72-c530-47ec-8474-4a183b2d5446}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumMachineUnitTests\DrumMachineUnitTests.csproj">
+      <Name>DrumMachineUnitTests</Name>
+      <Project>{6892e3dc-83b1-4b56-b50d-d5014b250a73}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\DrumMachine\DrumMachine.csproj">
+      <Name>DrumMachine</Name>
+      <Project>{fc512a61-47eb-493c-af7f-bc357694bfa8}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\HelpSystemResources\HelpSystemResources.csproj">
+      <Name>HelpSystemResources</Name>
+      <Project>{1ec8bdb4-b82c-4c38-9192-837a3d6443d5}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Metronome.UI.WPF\Metronome.UI.WPF.csproj">
+      <Name>Metronome.UI.WPF</Name>
+      <Project>{7a23e4e1-0f9d-43be-b957-5f9637bf5c91}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Metronome\Metronome.csproj">
+      <Name>Metronome</Name>
+      <Project>{90837a8e-dd39-4f3f-b981-30749fd1dd24}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleHelpSystem.UI.WPF\SimpleHelpSystem.UI.WPF.csproj">
+      <Name>SimpleHelpSystem.UI.WPF</Name>
+      <Project>{b7b3521c-ba6e-41b2-b8f8-72188a7d6502}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleHelpSystem\SimpleHelpSystem.csproj">
+      <Name>SimpleHelpSystem</Name>
+      <Project>{0257e82a-d025-47c9-8533-c54cc3d0cd57}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\WavPlayer\WavPlayer.csproj">
+      <Name>WavPlayer</Name>
+      <Project>{bf9da8e5-d9ad-4115-a146-fd1ba9340ce3}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfExtensions\WpfExtensions.csproj">
+      <Name>WpfExtensions</Name>
+      <Project>{af0744de-d7d7-4599-9294-0faa00ed8e47}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="harvestFiles.bat" />
+    <Content Include="license.rtf" />
+    <Content Include="transform.xslt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <PropertyGroup>
+    <PostBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

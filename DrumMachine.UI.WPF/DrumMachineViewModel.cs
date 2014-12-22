@@ -192,7 +192,7 @@ namespace DrumMachine.UI.WPF
 
         private void UpdatePatternStructure()
         {
-            if (Measures == null || SelectedNoteType == null)
+            if (Measures == 0 || SelectedNoteType == null)
                 return;
 
             _enableOnPropertyChangedEvent = false;

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?define productName="Bass Guitar Trainer" ?>
+<?define productVersion = "1.0.0.0" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="$(var.productName)" Language="1033" Version="$(var.productVersion)"
+           Manufacturer="Dariusz Kijania"
+           UpgradeCode="a9e8be4b-7714-471e-9a92-e0b9da626bf8">
+
+    <Package Id="*" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Icon Id="icon.ico" SourceFile="$(var.SourceDir)\icon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Bass Guitar Trainer is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="Feature" Title="Bass Guitar Trainer" Level="1">
+      <ComponentGroupRef Id="BassGuitarTrainer" />
+      <ComponentRef Id="INSTALLFOLDER_Permission" />
+    </Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <UIRef Id="WixUI_InstallDir" />
+
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+
+    <Property Id="MSIINSTALLPERUSER" Secure="yes" Value="1" />
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- Program Files (x86)-->
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="BassGuitarTrainer" />
+      </Directory>
+    </Directory>
+  </Fragment>
+</Wix>
