@@ -26,6 +26,7 @@ namespace BassTrainer.UI.WPF.AppViewManager
 
         public void SetVisibleExlusive(params ComponentId[] toVisible)
         {
+            ShowAll();
             foreach (
                 var componentIdEnumValue in
                     AllComponents.Where(
