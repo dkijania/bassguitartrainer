@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="250" d:DesignWidth="300">
-    <Grid >
+    <Grid IsEnabled="{Binding IsEnabled}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -16,9 +16,9 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" x:Name="SelectAll" Content="SelectAll"
-                                        Grid.ColumnSpan="2" />
-        <Button Grid.Row="0" Grid.Column="2" x:Name="UnselectAll" Content="UnselectAll"
+        <Button Grid.Row="0" Grid.Column="0" x:Name="SelectAll" Content="{Binding SelectShowAllLabel}"
+                                        Grid.ColumnSpan="2" Command=""/>
+        <Button Grid.Row="0" Grid.Column="2" x:Name="UnselectAll" Content="{Binding UnSelectHideAllLabel}"
                                         Grid.ColumnSpan="2" />
         <TabControl Grid.Row="1" Grid.ColumnSpan="4">
             <TabItem Header="By String">
@@ -34,7 +34,7 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Content="Add" Grid.Column="3" Grid.Row="0" Name="StringRangeButton" />
+                    <Button Content="Add" Grid.Column="3" Grid.Row="0" Name="StringRangeButton" Command="{Binding SelectStringRangeCommand}"/>
                     <Label Grid.Row="1" Grid.Column="0" Content="String:"
                                                    HorizontalAlignment="Right" />
                     <Label Grid.Row="1" Grid.Column="1" Content="Start fret:"
@@ -42,9 +42,9 @@
                     <Label Grid.Row="1" Grid.Column="2" Content="End fret:"
                                                    HorizontalAlignment="Right" />
 
-                    <ComboBox Grid.Column="0" Grid.Row="2" Name="SelectionStringComboBox" />
-                    <ComboBox Grid.Column="1" Grid.Row="2" Name="SelectionStartFret" />
-                    <ComboBox Grid.Column="2" Grid.Row="2" Name="SelectionEndFret" />
+                    <ComboBox Grid.Column="0" Grid.Row="2" Name="SelectionStringComboBox" ItemsSource="{Binding Strings}"  SelectedItem="{Binding SelectedStringName}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="2" Name="SelectionStartFret"  ItemsSource="{Binding Frets}"  SelectedItem="{Binding SelectedStartFret}"/>
+                    <ComboBox Grid.Column="2" Grid.Row="2" Name="SelectionEndFret"  ItemsSource="{Binding Frets}"  SelectedItem="{Binding SelectedEndFret}"/>
                 </Grid>
             </TabItem>
             <TabItem Header="By Scale">
@@ -63,24 +63,24 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Content="Add" Grid.Column="3" Grid.Row="0" Name="ByScaleAdd" />
-                    <CheckBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                    <Button Content="Add" Grid.Column="3" Grid.Row="0" Name="ByScaleAdd" Command="{Binding AddScaleSelectionCommand}"/>
+                    <CheckBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" IsChecked="{Binding EnableAllNotes}"
                                                       Name="AllNotesCheckBox" Content="Use all notes from scale" />
                     <Label Grid.Column="0" Grid.Row="1" Content="Scale Type:" />
                     <Label Grid.Column="1" Grid.Row="1" Content="Root note:" />
 
-                    <ComboBox Grid.Column="0" Grid.Row="2" Name="SelectionScaleType" />
-                    <ComboBox Grid.Column="1" Grid.Row="2" Name="SelectionRootNote" />
+                    <ComboBox Grid.Column="0" Grid.Row="2" Name="SelectionScaleType" ItemsSource="{Binding ScaleTypes}" SelectedItem="{Binding SelectedScaleType}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="2" Name="SelectionRootNote" ItemsSource="{Binding RootNotes}" SelectedItem="{Binding SelectedRootNote}"/>
 
                     <Label Grid.Column="0" Grid.Row="3" Content="Start Fret:" />
                     <Label Grid.Column="1" Grid.Row="3" Content="End fret:" />
                     <Label Grid.Column="2" Grid.Row="3" Content="Position:" />
                     <Label Grid.Column="3" Grid.Row="3" Content="Fingering:" />
 
-                    <ComboBox Grid.Column="0" Grid.Row="4" Name="ScaleStartFret" />
-                    <ComboBox Grid.Column="1" Grid.Row="4" Name="ScaleEndFret" />
-                    <ComboBox Grid.Column="2" Grid.Row="4" Name="SelectionScalePosition" />
-                    <ComboBox Grid.Column="3" Grid.Row="4" Name="SelectionFingeringStyle" />
+                    <ComboBox Grid.Column="0" Grid.Row="4" Name="ScaleStartFret" ItemsSource="{Binding Frets}" SelectedItem="{Binding SelectedScaleStartFret}" IsEnabled="{Binding IsScaleStartFretEnabled}"/>
+                    <ComboBox Grid.Column="1" Grid.Row="4" Name="ScaleEndFret" ItemsSource="{Binding Frets}"  SelectedItem="{Binding SelectedScaleEndFret}" IsEnabled="{Binding IsScaleEndFretEnabled}"/>
+                    <ComboBox Grid.Column="2" Grid.Row="4" Name="SelectionScalePosition" ItemsSource="{Binding ScalePositions}" SelectedItem="{Binding SelectedScalePosition}" IsEnabled="{Binding IsScalePositionEnabled}"/>
+                    <ComboBox Grid.Column="3" Grid.Row="4" Name="SelectionFingeringStyle" ItemsSource="{Binding SelectionFingeringStyles}" SelectedItem="{Binding SelectedScaleFingeringStyle}" IsEnabled="{Binding IsScaleFingeringEnabled}"/>
 
                 </Grid>
             </TabItem>
@@ -90,8 +90,8 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <ToggleButton Grid.Row="0" Content="Apply Octave Coloring" Click="ColorOctaveButton"/>
-                    <ToggleButton Grid.Row="1" Content="Apply Equivalent Note Coloring" Click="ColorEquivalentNotes"/>
+                    <ToggleButton Grid.Row="0" Content="Apply Octave Coloring" IsChecked="{Binding IsColorOctaveEnabled}"/>
+                    <ToggleButton Grid.Row="1" Content="Apply Equivalent Note Coloring" IsChecked="{Binding IsColorEquivalentEnabled}"/>
                 </Grid>
             </TabItem>
         </TabControl>

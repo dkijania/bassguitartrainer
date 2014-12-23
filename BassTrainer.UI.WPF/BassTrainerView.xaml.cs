@@ -88,11 +88,12 @@ namespace BassTrainer.UI.WPF
          
             var guiOptionManager = new ExcerciseOptionGuiManager(ExcerciseControl.ExcerciseOptions);
 
-            var showSelectComponent = new ShowSelectViewComponent(SelectionControl, fretboardManager);
-            var showSelectViewModel = new ShowSelectViewModel(showSelectComponent);
+            var showSelectComponent = new ShowSelectViewComponent(fretboardManager);
+            var showSelectViewModel = new ShowSelectViewModel(showSelectComponent,SelectionControl);
+            SelectionControl.DataContext = showSelectViewModel;
+
             componentLocator.ShowSelectComponent = showSelectComponent;
             componentsViewModelsLocator.ShowSelectViewModel = showSelectViewModel;
-            
             
             ComponentsLocator.Instance.ResultSerializer = new XmlResultSerializer();
          
@@ -130,7 +131,6 @@ namespace BassTrainer.UI.WPF
             var locator = ComponentsViewModelsLocator.Instance;
             ExcerciseControl.SelectionControl = SelectionControl;
             Configure(locator);
-            SelectionControl.FillSelectionControlsWithData();
             ExcerciseControl.FillExcercisesControls(locator.Launcher.ExcercisesDictionary.Keys);
             KeyDown += ((KeyboardEventComponent)locator.KeyboardEventComponent).OnKeyDown;
         }
