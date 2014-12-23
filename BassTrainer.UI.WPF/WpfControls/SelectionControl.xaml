@@ -17,7 +17,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Button Grid.Row="0" Grid.Column="0" x:Name="SelectAll" Content="{Binding SelectShowAllLabel}"
-                                        Grid.ColumnSpan="2" Command=""/>
+                                        Grid.ColumnSpan="2" />
         <Button Grid.Row="0" Grid.Column="2" x:Name="UnselectAll" Content="{Binding UnSelectHideAllLabel}"
                                         Grid.ColumnSpan="2" />
         <TabControl Grid.Row="1" Grid.ColumnSpan="4">

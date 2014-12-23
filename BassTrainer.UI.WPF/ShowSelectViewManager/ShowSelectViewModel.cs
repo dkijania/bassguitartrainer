@@ -141,9 +141,7 @@ namespace BassTrainer.UI.WPF.ShowSelectViewManager
         {
             _selectViewComponent.Clear();
         }
-
-       
-
+        
         private void SetShowTabHeader()
         {
             SetParentTabHeader(ShowHeader);
@@ -203,12 +201,12 @@ namespace BassTrainer.UI.WPF.ShowSelectViewManager
 
         private void ColorOctaveButton(bool value)
         {
-            ComponentsLocator.Instance.FretboardComponent.FretBoard.FretBoardGuiBuilder.ApplyColorForOctaves = value;
+            ComponentsLocator.Instance.FretboardComponent.FretBoard.ApplyColorForOctaves = value;
         }
 
         private void ColorEquivalentNotes(bool value)
         {
-            ComponentsLocator.Instance.FretboardComponent.FretBoard.FretBoardGuiBuilder.ApplyColorForNotes = value;
+            ComponentsLocator.Instance.FretboardComponent.FretBoard.ApplyColorForNotes = value;
         }
 
         public IEnumerable<String> ScaleTypes
@@ -311,7 +309,7 @@ namespace BassTrainer.UI.WPF.ShowSelectViewManager
             set
             {
                 _isColorOctaveEnabled = value;
-                ColorOctaveButton(_isColorEquivalentEnabled);
+                ColorOctaveButton(_isColorOctaveEnabled);
                 OnPropertyChanged();
             }
         }

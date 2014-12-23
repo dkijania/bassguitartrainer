@@ -24,6 +24,7 @@ namespace BassTrainer.Core.Components.Fretboard
         void DrawNotesIfNotExist(StringFretPair[] collectionOfStringFretPair);
         void ForceClearView();
         void RedrawNotes(StringFretPair[] collection);
+        void RedrawNotes();
 
         bool ApplyColorForOctaves { get; set; }
         bool ApplyColorForNotes { get; set; }

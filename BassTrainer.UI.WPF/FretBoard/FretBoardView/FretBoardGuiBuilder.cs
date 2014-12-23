@@ -111,9 +111,14 @@ namespace BassTrainer.UI.WPF.FretBoard.FretBoardView
             DrawNote(clikedPoint);
         }
 
+        public void RedrawNotes()
+        {
+            RedrawNotes(GetCurrentlyShownPosition());
+        }
+
         public void RedrawNotes(StringFretPair[] collection)
         {
-            ClearView();
+            ForceClearView();
             DrawNotes(collection);
         }
 
@@ -234,7 +239,6 @@ namespace BassTrainer.UI.WPF.FretBoard.FretBoardView
             var border = _borderStyleCollection.GetBorderStyle(isCorrect, _settings.CorrectRectanglePreset.Value);
             border.Opacity = transparency;
             _boardGuiCalculator.AddPositionAttributesForBorder(point, border);
-
 
             /*     var style = new Style();
             style.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Colors.White)));
