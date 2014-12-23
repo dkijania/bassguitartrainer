@@ -1,5 +1,4 @@
 ﻿using BassTrainer.Core.Const;
-using BassTrainer.Core.Utils;
 
 namespace BassTrainer.Core.Components.NotesView
 {

@@ -6,7 +6,6 @@ using System.Windows.Controls;
 using BassTrainer.Core.Components.Fretboard;
 using BassTrainer.Core.Components.NotesView;
 using BassTrainer.Core.Const;
-using BassTrainer.Core.Utils;
 using Settings = BassTrainer.Core.Settings.Settings;
 
 namespace BassTrainer.UI.WPF.NotesView

@@ -1,3 +1,4 @@
+using System;
 using BassTrainer.Core.Components.Fretboard;
 using BassTrainer.Core.Const;
 using BassTrainer.Core.Settings;
@@ -9,9 +10,9 @@ namespace BassTrainer.Core.Components.NotesView
     {
         private readonly NotesViewEventHandler _eventHandler;
         private readonly NotesView _notesView;
-     
+
         public NotesViewComponent(INotesViewGuiBuilder guiBuilder, NotesViewEventHandler eventHandler,
-                                Settings.Settings settings,FretboardComponent fretboardComponent)
+            Settings.Settings settings, FretboardComponent fretboardComponent)
         {
             _notesView = new NotesView(guiBuilder);
             _eventHandler = eventHandler;
@@ -36,7 +37,7 @@ namespace BassTrainer.Core.Components.NotesView
 
         public void OnSettingChanged(Settings.Settings settings)
         {
-            if(!settings.FretBoardOptions.LastChangeResult)
+            if (!settings.FretBoardOptions.LastChangeResult)
                 return;
             var fretboardOptions = settings.FretBoardOptions.Value;
             _notesView.HandleShowChange(fretboardOptions);
@@ -51,7 +52,7 @@ namespace BassTrainer.Core.Components.NotesView
         {
             _notesView.EnableButtonsExclusive(notes);
         }
-        
+
         public override void RemoveAllSubscribers()
         {
             _eventHandler.ResetEvents();
@@ -60,13 +61,26 @@ namespace BassTrainer.Core.Components.NotesView
         public override void OnModeChanged(ComponentMode mode)
         {
             _eventHandler.Mode = mode;
-            if (mode == ComponentMode.Excercise)
+
+            switch (mode)
             {
-                RemoveAllSubscribers();
-            }else 
-            {
-                EnableNotesButtons();
+                case ComponentMode.Info:
+                    EnableNotesButtons();
+                    break;
+                case ComponentMode.Selection:
+                    DisableNotesButtons();
+                    break;
+                case ComponentMode.Excercise:
+                    RemoveAllSubscribers();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("mode");
             }
+        }
+
+        public void DisableNotesButtons()
+        {
+            _notesView.DisableAllButtons();
         }
 
         public void ShowButtonExclusive(Note note)

@@ -24,6 +24,10 @@ namespace BassTrainer.Core.Components.Interval
                     ShowExcercisePanel();
                     HideInfoPanel();
                     break;
+                case ComponentMode.Selection:
+                    HideInfoPanel();
+                    HideExcercisePanel();
+                    break;
             }
         }
 
