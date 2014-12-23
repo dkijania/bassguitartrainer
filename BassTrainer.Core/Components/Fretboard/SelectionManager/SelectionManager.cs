@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using BassTrainer.Core.Const;
-using BassTrainer.Core.Utils;
 
 namespace BassTrainer.Core.Components.Fretboard.SelectionManager
 {
@@ -49,8 +48,13 @@ namespace BassTrainer.Core.Components.Fretboard.SelectionManager
         public void SelectItems(string stringName, int startFret, int endFret)
         {
             var lower = Math.Min(startFret, endFret);
-            var higer = Math.Max(startFret, endFret);
-            var itemsToSelect = Enumerable.Range(lower, higer).Select(fretNo => new StringFretPair(stringName, fretNo));
+            var higher = Math.Max(startFret, endFret);
+            var itemsToSelect= new List<StringFretPair>();
+            for (int i = lower; i <= higher; i++)
+            {
+                var item = new StringFretPair(stringName, i);
+                itemsToSelect.Add(item);
+            }
             SelectItems(itemsToSelect.ToArray());
         }
 
