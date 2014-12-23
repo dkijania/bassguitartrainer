@@ -28,14 +28,22 @@ namespace BassTrainer.UI.WPF.Notation
         {
             _canvas.MouseEnter -= CanvasMouseEnter;
             _canvas.MouseLeave -= CanvasMouseLeave;
+            _canvas.MouseMove -= CanvasMouseMove;
             _canvas.MouseDown -= CanvasDrawNote;
         }
 
         public override void RegisterEventsForCanvas()
         {
             _canvas.MouseEnter += CanvasMouseEnter;
+            _canvas.MouseMove += CanvasMouseMove;
             _canvas.MouseLeave += CanvasMouseLeave;
             _canvas.MouseDown += CanvasDrawNote;
+        }
+
+        void CanvasMouseMove(object sender, MouseEventArgs e)
+        {
+            CanvasMouseLeave(null,null);
+            CanvasMouseEnter(null,null);
         }
 
         private void CanvasMouseLeave(object sender, MouseEventArgs e)
