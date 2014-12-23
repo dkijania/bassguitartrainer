@@ -47,10 +47,6 @@ namespace Metronome.UI.WPF
         public void PauseContineMetronome()
         {
             MetronomeViewModel.PlayStopMetronome();
-            if(MetronomeViewModel.IsStopped)
-            {
-                ProgressMessage = "START";
-            }
-        }
+       }
     }
 }

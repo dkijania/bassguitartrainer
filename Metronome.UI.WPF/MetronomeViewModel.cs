@@ -20,6 +20,10 @@ namespace Metronome.UI.WPF
         private bool _showCounter;
         private int _number;
 
+        private const string StartMessage = "START";
+        private const string StopMessage = "STOP";
+
+
         public string ProgressMessage
         {
             get { return _progressMessage; }
@@ -69,15 +73,12 @@ namespace Metronome.UI.WPF
 
         public void OnStartClick()
         {
+            ProgressMessage = StopMessage;
             if (IsFullScreen)
             {
                 MetronomeView.EnableFullScreenMode();
-                ProgressMessage = "START";
             }
-            else
-            {
-                ProgressMessage = "STOP";
-            }
+            
             if (ShowCounterForBeat && !_metronomeModel.IsStopped)
             {
                 UpdatePresenter(1);
@@ -86,11 +87,11 @@ namespace Metronome.UI.WPF
 
         public void OnStopClick()
         {
+            ProgressMessage = StartMessage;
             if (IsFullScreen)
             {
                 MetronomeView.DisableFullScreenMode();
             }
-            ProgressMessage = "START";
             _number = 0;
         }
 
@@ -100,7 +101,7 @@ namespace Metronome.UI.WPF
             _metronomeModel = new MetronomeModel(timeSignature, bpmModelView.Model);
             StopStart = new DelegateCommand(PlayStopMetronome);
             SetAudioPresetCommand = new RelayCommand(_metronomeModel.SetAudioPreset);
-            ProgressMessage = "START";
+            ProgressMessage = StartMessage;
             bpmModelView.PropertyChanged += _metronomeModel.SetTempo;
         }
 
