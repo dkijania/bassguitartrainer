@@ -107,8 +107,7 @@ namespace BassTrainer.Core.Excercise
             if (Options.ShouldplayNote)
                 ComponentsLocator.Instance.PlayerManager.PlayNote(stringFretPairs);
         }
-
-
+        
         public virtual void DisableAllComponents()
         {
             VisibilityManager.HideAll();
@@ -177,6 +176,7 @@ namespace BassTrainer.Core.Excercise
             ReadSettings();
             ClearView();
             RenewSubscriptions();
+            IntroduceSettingsForNotesViewTipsVisibility();
             ContinuteTest();
             IsPaused = false;
             AfterContinue();
