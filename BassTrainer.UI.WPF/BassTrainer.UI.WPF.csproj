@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="AppViewManager\ShowManager.cs" />
     <Compile Include="ComponentsViewModelsLocator.cs" />
+    <Compile Include="Excercises\ExcerciseModelView.cs" />
     <Compile Include="FretBoard\FretboardViewModel.cs" />
     <Compile Include="IComponentsViewModelsLocatorConfiguration.cs" />
     <Compile Include="Intervals\IntervalViewModel.cs" />

@@ -111,11 +111,15 @@ namespace BassTrainer.UI.WPF
             var statisticsManager = new StatisticsComponent(statisticGuiManager, excercisesDictionary);
 
             var statisticsViewModel = new StatisticsViewModel(statisticsManager);
+            componentsViewModelsLocator.Launcher = new ExcerciseLauncher(excercisesDictionary, statisticsManager);
+         
             componentLocator.StatisticsComponent = statisticsManager;
             componentsViewModelsLocator.StatisticViewModel = statisticsViewModel;
             componentLocator.KeyboardEventComponent = new KeyboardEventComponent();
             componentsViewModelsLocator.KeyboardEventComponent = componentLocator.KeyboardEventComponent;
-            componentsViewModelsLocator.Launcher = new ExcerciseLauncher(excercisesDictionary, statisticsManager);
+
+
+            ExcerciseControl.DataContext = new ExcerciseModelView(componentsViewModelsLocator);
             componentsViewModelsLocator.Startup();
         }
         
@@ -129,9 +133,7 @@ namespace BassTrainer.UI.WPF
         private void Init()
         {
             var locator = ComponentsViewModelsLocator.Instance;
-            ExcerciseControl.SelectionControl = SelectionControl;
             Configure(locator);
-            ExcerciseControl.FillExcercisesControls(locator.Launcher.ExcercisesDictionary.Keys);
             KeyDown += ((KeyboardEventComponent)locator.KeyboardEventComponent).OnKeyDown;
         }
 

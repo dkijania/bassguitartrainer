@@ -46,7 +46,7 @@ namespace BassTrainer.Core.Excercise
             excercise.StatisticData = ComponentsLocator.Instance.StatisticsComponent.GetStatisticForExcercise(key);
         }
 
-        public ICollection Keys
+        public IEnumerable<string> Keys
         {
             get { return _excercises.Keys.Skip(1).ToArray(); }
         }

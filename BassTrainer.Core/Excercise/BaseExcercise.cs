@@ -68,6 +68,7 @@ namespace BassTrainer.Core.Excercise
         public virtual void Start(IEnumerable<StringFretPair> pairs)
         {
             BeforeStart();
+            CheckIfThereArePairDefined(pairs);
             _componentModeManager.ApplyMode(ComponentMode.Excercise);
             ReadSettings();
             EnableDefinedComponentsExlusive();
@@ -78,6 +79,15 @@ namespace BassTrainer.Core.Excercise
             IntroduceSettingsForNotesViewTipsVisibility();
             AfterStart();
             NextTest();
+        }
+
+        private void CheckIfThereArePairDefined(IEnumerable<StringFretPair> pairs)
+        {
+            if (pairs == null || !pairs.Any())
+            {
+                throw new ExcerciseException("No Selected Positions");
+            }
+            
         }
 
         public virtual void EnableDefinedComponentsExlusive()
@@ -124,11 +134,7 @@ namespace BassTrainer.Core.Excercise
 
         private void SetTestItems(IEnumerable<StringFretPair> pairs)
         {
-            if (pairs == null || !pairs.Any())
-            {
-                throw new ExcerciseException("No Selected Positions");
-            }
-            StringFretPairs = new List<StringFretPair>(pairs);
+          StringFretPairs = new List<StringFretPair>(pairs);
         }
 
         public virtual void Stop()

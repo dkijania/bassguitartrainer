@@ -22,7 +22,7 @@ namespace BassTrainer.Core.Components.Statistics
         {
             foreach (var excerciseName in excercisesDictionary.Keys)
             {
-                _rows.Add(new StatisticRow(excerciseName.ToString()));
+                _rows.Add(new StatisticRow(excerciseName));
             }
         }
 

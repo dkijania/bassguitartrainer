@@ -25,20 +25,23 @@
                 <RowDefinition Height="150" />
             </Grid.RowDefinitions>
 
-            <DockPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,0,5">
-                <ComboBox Name="ExcercisesTypes" SelectionChanged="ExcercisesTypes_Selected" />
+            <DockPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
+                <ComboBox Name="ExcercisesTypes" ItemsSource="{Binding Excercises}" SelectedItem="{Binding SelectedExcercise}" 
+                          IsEnabled="{Binding IsExcercisesTypesEnabled}" />
+           
             </DockPanel>
 
             <Button Grid.Column="0" Grid.Row="1" Name="ExcerciseChooseSelection"
-                                            Grid.ColumnSpan="2" Content="Choose Selection" Margin="0,1,0,4" Click="ChooseSelection_Click" />
-            <Button Grid.Column="0" Grid.Row="2" Name="ExcerciseStart" Content="Start"
-                                            Click="ExcerciseStart_OnClick" />
-            <Button Grid.Column="1" Grid.Row="2" Name="ExcercisePauseCont" Content="Pause"
-                                            Click="ExcercisePause_OnClick" />
+                                            Grid.ColumnSpan="2" Content="{Binding ExcerciseChooseSelectionContent}" Command="{Binding ChooseSelectionCommand}"
+                    IsEnabled="{Binding IsChooseSelectionEnabled}"/>
+            <Button Grid.Column="0" Grid.Row="2" Name="ExcerciseStart" Content="{Binding ExcerciseStartContent}"
+                                            Command="{Binding ExcerciseStartCommand}" IsEnabled="{Binding IsExcerciseStartEnabled}" />
+            <Button Grid.Column="1" Grid.Row="2" Name="ExcercisePauseCont" Content="{Binding ExcercisePauseContinueContent}"
+                                           Command="{Binding ExcercisePauseCommand}"  IsEnabled="{Binding IsExcercisePauseContEnabled}"/>
             <Button Grid.Column="2" Grid.Row="2" Name="ExcerciseEnd" Content="Stop"
-                                            Click="ExcerciseStop_OnClick" />
+                                            Command="{Binding ExcerciseStopCommand}" IsEnabled="{Binding IsExcerciseEndEnabled}" />
 
-            <GroupBox Header="Options" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4"
+            <GroupBox Header="Options" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="4" IsEnabled="{Binding AreOptionsEnabled}"
                                               Name="ExcerciseOptions">
             </GroupBox>
 
