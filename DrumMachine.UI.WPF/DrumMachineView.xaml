@@ -36,7 +36,7 @@
                     </Grid.RowDefinitions>
                     
                     <Label Grid.Column="0" Grid.Row="0" FontSize="20" >Measures</Label>
-                    <TextBox Grid.Column="0" Grid.Row="1" x:Name="MeasuresCount" Text="{Binding Measures}" TextAlignment="Center" FontSize="30" />
+                    <ComboBox Grid.Column="0" Grid.Row="1" x:Name="MeasuresCount" ItemsSource="{Binding AvailableMeasures}" SelectedItem="{Binding Measures}" FontSize="20" />
 
                     <Label Grid.Column="1" Grid.Row="0" FontSize="20"  Content="{Binding TempoMarker,Mode=TwoWay}"/>
                     <Slider Grid.Column="1" Grid.Row="1" Minimum="{Binding MinimumTempo}" Maximum="{Binding MaximumTempo}" Value="{Binding TempoValue}"/>

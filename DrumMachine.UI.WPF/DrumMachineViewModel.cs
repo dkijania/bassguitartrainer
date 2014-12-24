@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Input;
 using DrumMachine.Engine.Pattern;
 using DrumMachine.TimeSignature;
@@ -85,6 +87,8 @@ namespace DrumMachine.UI.WPF
                     UpdatePatternStructure();
             }
         }
+
+        public IEnumerable<int> AvailableMeasures { get { return Enumerable.Range(1, 20); } } 
 
         public int Measures
         {
