@@ -42,7 +42,7 @@ namespace BassTuner.UI.WPF
 
         private void viewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals("")) ;
+        //    if (e.PropertyName.Equals("")) ;
         }
     }
 }

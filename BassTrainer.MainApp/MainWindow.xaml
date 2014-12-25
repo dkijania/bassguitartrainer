@@ -3,8 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:visualSettings="clr-namespace:BassTrainer.UI.WPF.VisualSettings;assembly=BassTrainer.UI.WPF"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Title="Bass Guitar Trainer" WindowState="Maximized" Height="800" Width="1279"
         Icon=".\icon.png">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <i:InvokeCommandAction  Command="{Binding WindowClosing}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands  x:Name="WindowsCommands">
 

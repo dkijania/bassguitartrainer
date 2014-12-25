@@ -9,6 +9,7 @@ namespace BassTrainer.UI.WPF.SettingsManager.ConfigurationSections
         private const string NoOfTriesElementName = "noOfTries";
         private const string ShowElementName = "showNotes";
         private const string TimeoutExcerciseName = "excerciseTimeout";
+        private const string ShowCorrectAnswerName = "showCorrectAnswer";
 
 
         [ConfigurationProperty(ThemeElementName, IsRequired = true, DefaultValue = "GenericTheme")]
@@ -40,6 +41,13 @@ namespace BassTrainer.UI.WPF.SettingsManager.ConfigurationSections
         {
             get { return (int)this[TimeoutExcerciseName]; }
             set { this[TimeoutExcerciseName] = value; }
+        }
+
+        [ConfigurationProperty(ShowCorrectAnswerName, IsRequired = true, DefaultValue = false)]
+        public bool ShowCorrectAnswer
+        {
+            get { return (bool)this[ShowCorrectAnswerName]; }
+            set { this[ShowCorrectAnswerName] = value; }
         }
 
         public override bool IsReadOnly()

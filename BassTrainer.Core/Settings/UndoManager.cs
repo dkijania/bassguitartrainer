@@ -8,6 +8,7 @@ namespace BassTrainer.Core.Settings
         public bool LastChangeResult
         {
             get { return _lastChangeResult; }
+            set { _lastChangeResult = value; }
         }
 
         public T Value

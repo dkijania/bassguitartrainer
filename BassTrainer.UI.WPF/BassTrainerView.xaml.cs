@@ -117,8 +117,6 @@ namespace BassTrainer.UI.WPF
             componentsViewModelsLocator.StatisticViewModel = statisticsViewModel;
             componentLocator.KeyboardEventComponent = new KeyboardEventComponent();
             componentsViewModelsLocator.KeyboardEventComponent = componentLocator.KeyboardEventComponent;
-
-
             ExcerciseControl.DataContext = new ExcerciseModelView(componentsViewModelsLocator);
             componentsViewModelsLocator.Startup();
         }

@@ -16,6 +16,7 @@ namespace BassTrainer.Core.Settings
         double Volume { get; set; }
         int SpeedRatio { get; set; }
         int Timeout { get; set; }
+        bool ShowCorrectAnswer { get; set; }
         void Save(Settings settings);
         void Read(Settings settings);
     }

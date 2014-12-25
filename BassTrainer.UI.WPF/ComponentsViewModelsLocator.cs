@@ -1,5 +1,6 @@
 ﻿using BassTrainer.Core.Components;
 using BassTrainer.Core.Excercise;
+using BassTrainer.Core.Settings;
 using BassTrainer.Core.Utils.Keyboard;
 using BassTrainer.UI.WPF.FretBoard;
 using BassTrainer.UI.WPF.Intervals;
@@ -39,6 +40,7 @@ namespace BassTrainer.UI.WPF
         public void Startup()
         {
             _componentsLocator.Init();
+            Settings.Instance.ForceUpdateAllFields();
             RegisterEvents();
             Launcher.RunDefaultExcercise();
         }
@@ -99,8 +101,7 @@ namespace BassTrainer.UI.WPF
         }
 
         public delegate void ModeChanged(ComponentMode mode);
-
-
+        
         private ComponentMode Mode
         {
             set
@@ -117,7 +118,6 @@ namespace BassTrainer.UI.WPF
             OnModeChangedEvent(mode);
             if (mode == ComponentMode.Selection)
                 InitSelection();
-         
         }
 
         public void ApplyMode(ComponentMode mode)
