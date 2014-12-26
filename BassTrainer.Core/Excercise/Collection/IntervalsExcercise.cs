@@ -112,8 +112,7 @@ namespace BassTrainer.Core.Excercise.Collection
             {
                 firstItem = _intervalStartNote;
                 _currentlySeekIndex = 1;
-                FretBoardComponent.FretBoard.DrawNote(firstItem);
-            }
+           }
             else
             {
                 firstItem = GetRandomItem();
@@ -121,6 +120,7 @@ namespace BassTrainer.Core.Excercise.Collection
             }
             _intervalsToFind = new[] {firstItem, secondItem};
             ComponentsLocator.Instance.PlayerManager.PlayNote(firstItem, secondItem);
+            ResetTryNo();
         }
 
         protected override void ContinuteTest()
@@ -139,9 +139,11 @@ namespace BassTrainer.Core.Excercise.Collection
                                                          {
                                                              FretBoardComponent.FretBoard.ClearView();
                                                              IntervalComponent.ResetColorForButtonName(row);
-                                                             if (!result && ++TryNo != Attempts) return;
-                                                             NextTest();
-                                                             RegisterResult(result);
+                                                             if (result || ++TryNo == Attempts)
+                                                             {
+                                                                 NextTest();
+                                                                 RegisterResult(result);
+                                                             }
                                                          };
             WaitXAndCheckResult(actionExectutedAfterDelay, 1.0);
         }
