@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="TARGETDIR">
+            <Component Id="cmp5CB10017F97D0CA982B794A50BAED639" Guid="{1C64A420-5637-4DDE-A4FE-ECB249B648F5}">
+                <File Id="fil79A11544CDC828DA1170F90B38AEFB61" KeyPath="yes" Source="$(var.SourceDir)\AmCharts.Windows.QuickCharts.dll" />
+            </Component>
+            <Component Id="cmpA5422F7F1BA359525EE45D4A2DEB8EEE" Guid="{20158443-79F4-4BC1-BABE-85A1FE25090C}">
+                <File Id="filAD689E6E42C5AE19072946C6CB0E1D8B" KeyPath="yes" Source="$(var.SourceDir)\AmCharts.Windows.QuickCharts.xml" />
+            </Component>
+            <Component Id="cmpF574C6C12C7B8024846386F1399B0968" Guid="{68D3F213-7F94-4F1C-89A6-D720F7BB7963}">
+                <File Id="filBCAA941FF0E3056F358F419E5201C702" KeyPath="yes" Source="$(var.SourceDir)\BassNotesMasterUnitTests.dll" />
+            </Component>
+            <Component Id="cmp7B2B5DCE45AC1953FA9FE31B986E2C8A" Guid="{E0E5673A-ABB7-41F9-94F2-34F9376E65BA}">
+                <File Id="fil94046540AEB5D1C7CC88D7F1F22FB919" KeyPath="yes" Source="$(var.SourceDir)\BassNotesMasterUnitTests.pdb" />
+            </Component>
+            <Component Id="cmp4B205B59223263DE2389B72E4EB3D90B" Guid="{3119E851-38A4-4897-AA9B-A0F3240CB5AC}">
+                <File Id="fil467B6211E2868155AB3DBBDB9DB800EC" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.Core.dll" />
+            </Component>
+            <Component Id="cmpC1F25C404626E4DF581C244C5137E1B3" Guid="{8E19956C-F192-4546-9D20-3321A5928D2F}">
+                <File Id="filA5266A9D2C499E6D2C6DC9BA900E25D6" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.Core.pdb" />
+            </Component>
+            <Component Id="cmp806A06289EE215226A6CB0F89F7A5625" Guid="{A7CA4F22-9AC3-4906-A48A-736F03BFA05F}">
+                <File Id="filCA29917984CC3F9388060E06422E6B4D" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.MainApp.exe" />
+            </Component>
+            <Component Id="cmpF072978801918EEACBB86923386C14AE" Guid="{8BCE60A0-D040-4177-9391-EA220E754E2C}">
+                <File Id="fil759ED47ED89C701B3CAE704B895F3CEC" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.MainApp.exe.config" />
+            </Component>
+            <Component Id="cmpC36162179B3C600A292778D2F2E48A26" Guid="{A77D82B6-3CA5-480E-81B2-B6199CD7AC25}">
+                <File Id="fil947F48059108E8B42FAD21FBB40835AF" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.MainApp.pdb" />
+            </Component>
+            <Component Id="cmpFD1F804AC86CF7A056A26D68BC529838" Guid="{571B3447-022B-411E-A34A-950D762F077C}">
+                <File Id="fil2CBA802BA7E1B407CC8A7DE3BC47E6E9" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.MainApp.vshost.exe" />
+            </Component>
+            <Component Id="cmp7EA790329A2360D0698CDCEB3C460421" Guid="{D827B42E-AEFD-447D-8F54-DA92AE2FB23B}">
+                <File Id="filBC17B313E3C2D6A3E7535C257589825E" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.MainApp.vshost.exe.config" />
+            </Component>
+            <Component Id="cmp90A86B0F6224C9C85EE5D205E29C2B84" Guid="{D8AB71B7-0E0C-464F-A54D-C207AE461F1A}">
+                <File Id="filBAC376ADB59E4ED50F3729DBBE8FE819" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.MainApp.vshost.exe.manifest" />
+            </Component>
+            <Component Id="cmp5439EE490C073E4AB4E41EFC1FD6655F" Guid="{72DF5662-45D6-495A-A19F-4CAFFD7B8B28}">
+                <File Id="fil45E34A1C0EE386C91AAD922F3097A9D4" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.UI.WPF.dll" />
+            </Component>
+            <Component Id="cmpBA02C31778CBB5B8D7B40594999EDEE8" Guid="{83517667-0718-4C6B-985E-85050C48E16B}">
+                <File Id="fil25F4FF46AAF73219DE67C97FB27EB1D6" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.UI.WPF.pdb" />
+            </Component>
+            <Component Id="cmp4B0930294AABC595FD930B337000CD61" Guid="{19AD1FE0-0177-4F0A-843C-29F4313B3FD1}">
+                <File Id="fil35FDDE7EB5A3CF81B5569C8F483293F2" KeyPath="yes" Source="$(var.SourceDir)\BassTuner.UI.WPF.dll" />
+            </Component>
+            <Component Id="cmpBB70F40B784DBF26BC246BFD88A55962" Guid="{800F4DD8-43DA-4E5A-B51B-8F7DB84D3AE2}">
+                <File Id="filEE472E03C6589BDFD6177044C1040630" KeyPath="yes" Source="$(var.SourceDir)\BassTuner.UI.WPF.pdb" />
+            </Component>
+            <Component Id="cmp4563D958862CCEEF0BFEA12CCA035FE9" Guid="{601C467A-583B-48DC-9230-0FD20F1A75A9}">
+                <File Id="filDDEC4FD9EEB2BF915BF3BA4D4E777104" KeyPath="yes" Source="$(var.SourceDir)\DrumMachine.dll" />
+            </Component>
+            <Component Id="cmp561D8CFE7C949B515AEDBEC83CD6AE5D" Guid="{6056984E-57CE-43C9-873E-08AE253AC36E}">
+                <File Id="fil240ADCB0C4A3F8F77D8B6EDE247721E4" KeyPath="yes" Source="$(var.SourceDir)\DrumMachine.pdb" />
+            </Component>
+            <Component Id="cmpE5B86422BBD2E67D0BD13299EF65E59A" Guid="{000C350F-DDE0-4895-A587-25EB0E6C3ADB}">
+                <File Id="filBEB9E2D291874AE740F2A7DB21D5BAFA" KeyPath="yes" Source="$(var.SourceDir)\DrumMachine.UI.WPF.dll" />
+            </Component>
+            <Component Id="cmpBCA9027D3FD32F68037BA2979D3B18AD" Guid="{60E0A9F8-8419-465C-8B22-D210151C63FD}">
+                <File Id="fil7A6CC9C6000B55D6FA92276478EFD222" KeyPath="yes" Source="$(var.SourceDir)\DrumMachine.UI.WPF.pdb" />
+            </Component>
+            <Component Id="cmp23D6B184EF444095E40D8B966A1CF55D" Guid="{2D89A3E3-38C7-463D-A0FE-1893C5F3DAB9}">
+                <File Id="filCEA21456803BBF3292FEBDD7735D9DB0" KeyPath="yes" Source="$(var.SourceDir)\HelpSystemResources.dll" />
+            </Component>
+            <Component Id="cmpA82E4C0FD71679E97A698E937E33E58B" Guid="{A8522B31-F54A-47ED-BACE-ED788843E88E}">
+                <File Id="filAD1A2AF907E9D59B1E8A800E597BFABE" KeyPath="yes" Source="$(var.SourceDir)\HelpSystemResources.pdb" />
+            </Component>
+            <Component Id="cmp65EE44211A6708445F53F85A40DDD3CE" Guid="{D7C440B8-F416-489D-8748-8113A365EDF6}">
+                <File Id="filFF30E8F567B24DB602BAF8F70EF5C097" KeyPath="yes" Source="$(var.SourceDir)\icon.ico" />
+            </Component>
+            <Component Id="cmpEBCF0D0A4FC6E01EB62B28713DC91F16" Guid="{992FC714-4CC3-4DBA-AADC-11635863DB51}">
+                <File Id="fil0885A673E61C20CCCC217C83F1E1A4BD" KeyPath="yes" Source="$(var.SourceDir)\MahApps.Metro.dll" />
+            </Component>
+            <Component Id="cmpEB1461C2934BBECE7F160ECC9EDD2FEA" Guid="{7318EE0D-534F-4B63-B262-206B270356C5}">
+                <File Id="fil1163072D9C4E4BEBE7E7D8B23BDEC7EE" KeyPath="yes" Source="$(var.SourceDir)\MahApps.Metro.xml" />
+            </Component>
+            <Component Id="cmpDF4534DFEBA135EE7D0EC9ECAF11BB33" Guid="{898EF8A4-3F48-4A84-8828-45C9616087F6}">
+                <File Id="filB58D273E66D6161A31365F9261AFBD79" KeyPath="yes" Source="$(var.SourceDir)\Metronome.dll" />
+            </Component>
+            <Component Id="cmpCEA29DEFE7274804CF50282D606C9566" Guid="{0C6BC746-545B-4E51-B937-E93130C293EF}">
+                <File Id="fil9E0EE114679EECB3B9AD19D8264648A9" KeyPath="yes" Source="$(var.SourceDir)\Metronome.pdb" />
+            </Component>
+            <Component Id="cmp6C2F74078F4565CDA04F5C92D1FD319E" Guid="{9E22C14B-EC87-4BC8-B495-F6A66E6A43D9}">
+                <File Id="fil29F64EC086A2AF25A3210E83006458DA" KeyPath="yes" Source="$(var.SourceDir)\Metronome.UI.WPF.dll" />
+            </Component>
+            <Component Id="cmp74FE1F8E8845F5B8579B14882BD189D4" Guid="{1E0AEEE6-E317-41CC-B24E-86D5AD83BF1A}">
+                <File Id="fil8FA3B36521D0661A25B176F571A9DC2E" KeyPath="yes" Source="$(var.SourceDir)\Metronome.UI.WPF.pdb" />
+            </Component>
+            <Component Id="cmp5BBD5225B3ECE6771371A8262942E2DB" Guid="{D583F37F-B828-4278-9C87-D659F6F956E0}">
+                <File Id="fil87826C1D87F39757B6344136F91B6E73" KeyPath="yes" Source="$(var.SourceDir)\NAudio.dll" />
+            </Component>
+            <Component Id="cmp8FEDC46021720BF62404D4297D0E3B3D" Guid="{C5362BF2-92A6-4551-B556-5C21EF8ED932}">
+                <File Id="fil6FA72100654AA3B1C5BE2587DD0D5B39" KeyPath="yes" Source="$(var.SourceDir)\NAudio.xml" />
+            </Component>
+            <Component Id="cmp26E687D2D0EDAB5A2A2EE402B81678E4" Guid="{A96E5CA9-4811-45C0-9E91-797C407FED43}">
+                <File Id="fil5964A18868167B6BA8D76D48697EE10E" KeyPath="yes" Source="$(var.SourceDir)\nunit.framework.dll" />
+            </Component>
+            <Component Id="cmpAA09755FBFB2917D8D9E6602DC4B6A7D" Guid="{40269BDB-E7AB-45BB-B0EA-F4327DD87C45}">
+                <File Id="fil4F6E5B861CCF94817560A6433BAF0284" KeyPath="yes" Source="$(var.SourceDir)\nunit.framework.xml" />
+            </Component>
+            <Component Id="cmp249B7D8A052D191F2BDDACD295ACDAFB" Guid="{76E0B166-0973-4507-BFD1-C2FE95800923}">
+                <File Id="fil82C05DAC9BF8856CBEA8CC46E1C1C897" KeyPath="yes" Source="$(var.SourceDir)\save.xml" />
+            </Component>
+            <Component Id="cmpD686229BC3DA1B0EE1F51EB8D325234D" Guid="{E3541BD5-6D5C-4DF2-8389-1924D8EC793C}">
+                <File Id="fil4FFD3131A44D3EA9C49C2F3C6EC8C391" KeyPath="yes" Source="$(var.SourceDir)\SimpleHelpSystem.dll" />
+            </Component>
+            <Component Id="cmpE9220170F34DD7F44F5E746135E9D5A7" Guid="{BF2300C0-D5FD-4986-82E2-BE0A168D2F7D}">
+                <File Id="filC8DC1B76290E1A31F61D530143A0EB0E" KeyPath="yes" Source="$(var.SourceDir)\SimpleHelpSystem.pdb" />
+            </Component>
+            <Component Id="cmp34BAD36396CA9F52F30B72DBDDD18149" Guid="{0C5F04B4-964E-4CD5-8EE9-56142C9ED2FB}">
+                <File Id="fil7FAE03D2B571C37AC759378FA7A052DE" KeyPath="yes" Source="$(var.SourceDir)\SimpleHelpSystem.UI.WPF.dll" />
+            </Component>
+            <Component Id="cmpC0DD03BA71125FFB60E3F57094C97045" Guid="{3ED92636-B245-4313-866B-ED5A1A9BC4C0}">
+                <File Id="fil86175AFA8F0239523EB0D5315270B63F" KeyPath="yes" Source="$(var.SourceDir)\SimpleHelpSystem.UI.WPF.pdb" />
+            </Component>
+            <Component Id="cmp6420500FF1ABC06969E348ACB0B55D77" Guid="{60B1DC21-3082-471A-AD50-B798E8C918E5}">
+                <File Id="filA545F6C5C51315B4671A7FE6553F80CE" KeyPath="yes" Source="$(var.SourceDir)\System.Windows.Interactivity.dll" />
+            </Component>
+            <Component Id="cmp720562E7042934E6805DBC5706DB988D" Guid="{2468ECAC-22A7-49A8-8F68-00B2245F2743}">
+                <File Id="filA5304129D2370ABE2B091994AE689EE2" KeyPath="yes" Source="$(var.SourceDir)\WavPlayer.dll" />
+            </Component>
+            <Component Id="cmp79F847EDC133EF29185EE210C1666A79" Guid="{AED99789-0698-47A6-8C57-CE177876A60F}">
+                <File Id="fil19A4D9E5E07462F331722E7A0839D848" KeyPath="yes" Source="$(var.SourceDir)\WavPlayer.pdb" />
+            </Component>
+            <Component Id="cmp0430BE39D67FA76DC4944C1377AA3E64" Guid="{7784CF4D-0D0F-422E-B960-595573C74EA2}">
+                <File Id="fil7A272E553B76729003A4CED5223F0DEB" KeyPath="yes" Source="$(var.SourceDir)\WpfExtensions.dll" />
+            </Component>
+            <Component Id="cmp281F84538BA294369FED70F9E5775EC2" Guid="{BBC494D6-9814-482A-95EA-ED1EE6D07E17}">
+                <File Id="fil441A17B568E317169B638F95917B0F32" KeyPath="yes" Source="$(var.SourceDir)\WpfExtensions.pdb" />
+            </Component>
+            <Directory Id="dirF7618158CE8FEC39DAC1DD18D359DD11" Name="de">
+                <Component Id="cmpC818AA58898C1918C6CEC1A3D7259DC6" Guid="{A2F2E317-C763-4BE0-BFF8-51C439589A28}">
+                    <File Id="fil58584193ABDE2610880AE18F442659FA" KeyPath="yes" Source="$(var.SourceDir)\de\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir9901A63403F617629D713CCDD5F76555" Name="en">
+                <Component Id="cmp74ECD645D51366788BE4C927018786EF" Guid="{7802E197-D270-41A4-866E-36CAC4A2F3BF}">
+                    <File Id="fil08F7F524BE285D997DB5BC5DEAEAE82E" KeyPath="yes" Source="$(var.SourceDir)\en\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir63A634F9A8BE5EC5B8B7424D6A18E4C4" Name="es">
+                <Component Id="cmp9F7B14463AE1AB942ED83DC374A7F052" Guid="{77A33D1E-D62E-47D9-A86A-0F9DBA9B5988}">
+                    <File Id="filA44307B73B0874F5648488CEEC6AD5DB" KeyPath="yes" Source="$(var.SourceDir)\es\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir1424604976AE3158AC7908CE5FE4118E" Name="fr">
+                <Component Id="cmpAE8F265E06B7B311BA09E444833B59B7" Guid="{879AE463-1836-460E-967C-55D088EE82E8}">
+                    <File Id="fil6D4BDC0B69882FB9B370F0BC70362E56" KeyPath="yes" Source="$(var.SourceDir)\fr\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dirFCEE6B4345A27586A07C0608D2A46020" Name="it">
+                <Component Id="cmpA90B42440CCB0E677927B96F0A0B1082" Guid="{FB9881D5-ACE8-47C5-ACAD-803961AE1789}">
+                    <File Id="fil8D851F839EBD028A49BF550BD6B1B377" KeyPath="yes" Source="$(var.SourceDir)\it\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir4BAF3ACC1308889E29E86346A3C9852C" Name="ja">
+                <Component Id="cmpEDA216DA3A5B8885E3390522FC0BF03B" Guid="{BECFADA7-0198-4F0B-86F8-EC994C6EFC46}">
+                    <File Id="fil166F06427CB5521C1A5024FE28D9847E" KeyPath="yes" Source="$(var.SourceDir)\ja\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir3F45E3C3D1C6EF4E90C4421900E566D7" Name="ko">
+                <Component Id="cmp48FA0C77FEA5A38E70E72279C618C798" Guid="{3E6972CE-D119-4EBB-BF85-05DD96323058}">
+                    <File Id="fil490F0A70453C36335B51EAC27C15407B" KeyPath="yes" Source="$(var.SourceDir)\ko\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir5A6163BDEE95B3E2028E25F6E281CDF2" Name="Resources">
+                <Directory Id="dir7F746FF41AE29E4948D49732FB5D3D4C" Name="DrumMachine">
+                    <Directory Id="dir4EC53A97CFB378A929C8B5E51C0EADED" Name="Audio">
+                        <Directory Id="dir09E0E67CF3A41711043DDE794DCA0A89" Name="Samples">
+                            <Component Id="cmp090DC16619221DAD984A053D074E88E2" Guid="{E682A62F-73EB-42DE-B74A-73A1E63B5EE6}">
+                                <File Id="fil5A1D03CFDF7A156E869BA113ED41524A" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\closed-hat-trimmed.wav" />
+                            </Component>
+                            <Component Id="cmp7020B8607FFE2B3E0A225657FDDAACF9" Guid="{2D72B361-FFFC-4901-9240-295EF4218C07}">
+                                <File Id="fil494ABA2467B6773513B41943CD8E4C82" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\crash-trimmed.wav" />
+                            </Component>
+                            <Component Id="cmpF975B4A70C6115101EED1B0E2AE92E1F" Guid="{7B865604-EE8E-4696-80D1-F910E067DAB7}">
+                                <File Id="fil58D119583DAB8D60E0E8A67EB1AA76D0" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\Hi-Mid Tom.wav" />
+                            </Component>
+                            <Component Id="cmpDCF4B4E913890736DE221A81D27A54E8" Guid="{C1E1AB9C-4574-4C66-9FAC-8CFF658683DD}">
+                                <File Id="filFC29751FEBA092EEBDF5570235CE7BDB" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\High Floor Tom.wav" />
+                            </Component>
+                            <Component Id="cmp42C9815F2F62FBE2CFB12B0CEBF881BA" Guid="{16A14CCD-0A9A-49E1-A782-6E6B8E7F1731}">
+                                <File Id="fil00E70BEEE2D0F279A8F30799994142B6" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\High Tom.wav" />
+                            </Component>
+                            <Component Id="cmpEFB8A6A78D7C76E1E2773C20F897DD86" Guid="{F1E03090-911F-4B21-9138-366758DE635D}">
+                                <File Id="filF82C65D4A7527C4967A39E19C6B65DCE" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\kick-trimmed.wav" />
+                            </Component>
+                            <Component Id="cmp73090F7ACBF46E8A347917485CC3143C" Guid="{E4A15590-907F-45BF-B51D-5966955801D3}">
+                                <File Id="fil1F4B8B8038CBF37615B104BC5BAD46BD" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\Low Floor Tom.wav" />
+                            </Component>
+                            <Component Id="cmpA2906CE80A4C61C1FBA4E5132D352D19" Guid="{5C5AEBA7-A112-4ECA-8CA3-B6DE84D8166A}">
+                                <File Id="fil822147DC024FB5395ED84A9223203D16" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\Low Tom.wav" />
+                            </Component>
+                            <Component Id="cmp415850BA27C35839BC49BFC8BD469794" Guid="{7F6A5332-0728-4C6C-A2A3-917DBEB75159}">
+                                <File Id="fil6C68B76370AEDA744F690384A05A37DE" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\Low-Mid Tom.wav" />
+                            </Component>
+                            <Component Id="cmpA1277D784F72289212D6AF13E7FCD016" Guid="{034F03D1-3B8B-40E7-A32A-88A56E9EAC26}">
+                                <File Id="fil2B1B014A038C9469F59D2A236A3AE577" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\open-hat-trimmed.wav" />
+                            </Component>
+                            <Component Id="cmpF37D6E2E4BDFF7BF331F20DE4C69D973" Guid="{57C344D5-EA9C-42CD-B7E2-D07842DE357B}">
+                                <File Id="fil713FF62BCAD476A1BA5F2AF98198F4CA" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Audio\Samples\snare-trimmed.wav" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                    <Directory Id="dir922A2CA1917AC1D5AEC0DDD0D31FE615" Name="Patterns">
+                        <Component Id="cmpEF5E6ABF1D8CDA91DD2225DC2C5E4D21" Guid="{1810580E-6ABB-45FE-B531-A2645ABABA1F}">
+                            <File Id="fil7C0B77CFB6A889D547005AC776DF3D88" KeyPath="yes" Source="$(var.SourceDir)\Resources\DrumMachine\Patterns\SamplePattern.txt" />
+                        </Component>
+                    </Directory>
+                </Directory>
+                <Directory Id="dir18AC64512DF2E64FCCA4FD197994A8B7" Name="Images">
+                    <Component Id="cmp6498B3BD1806F4EB4B4E9EFF595AAF05" Guid="{32D6A812-BCB3-487B-A703-19EE0A7CE213}">
+                        <File Id="filECEF1ECBD70E04860CBC4D70A42B8E63" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\bassClef.png" />
+                    </Component>
+                    <Component Id="cmpDF964C7A7E5CD2E0B2372E129B6B602A" Guid="{A003B370-7449-4B05-B80E-FCCADA0387C3}">
+                        <File Id="filE485780C32FF97AA0A91F0C33327ADC2" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\error.png" />
+                    </Component>
+                    <Component Id="cmpA34A58DDCEC470E4D0429355CFB7EA5F" Guid="{4F6C0C5F-7AE0-41C2-9DE6-2D69088BAC7C}">
+                        <File Id="filB8A6EDDACFDDAD4EC52CFB3ED1E83511" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\flat.png" />
+                    </Component>
+                    <Component Id="cmp52C35A5630C15B96BF33A2EC37A9E9F7" Guid="{18231235-9DAE-450D-AF87-5B7EFC1109AB}">
+                        <File Id="filEBF6FF8815D3DB365B4D07BA5F4DFAD2" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\fretboard.jpg" />
+                    </Component>
+                    <Component Id="cmp844E507EC4BC073D0B8F10330F7948C8" Guid="{AA57162E-72D3-4B36-A87A-6210F99E19A4}">
+                        <File Id="filD22F99C948733843CD843D3EA22B8B23" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\FretboardBassWNutFLAT.gif" />
+                    </Component>
+                    <Component Id="cmpCBCF8F62E867D025304D1D2DF1ED1C92" Guid="{D0966EE8-914B-4833-ABBD-7C6BA409F716}">
+                        <File Id="fil29E18AA3F2248D701F1C237ED24A5DA1" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\quarterNote.png" />
+                    </Component>
+                    <Component Id="cmpB97E82347DDA4E5F9F2C06E74AEDDDDF" Guid="{DD22CC03-FB74-411D-AD45-0DD0BFD203CF}">
+                        <File Id="fil2CBEBDA0B2BA0508AD7B33A1E6335294" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\quarterNoteWithStemDownward.png" />
+                    </Component>
+                    <Component Id="cmp5BBBABD506A06726C8684A7C84FF6835" Guid="{EC5D970A-EA8A-4144-85D6-FCB410F6A6A6}">
+                        <File Id="filE43D701F9A3DADF18199179458D94400" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\sharp.png" />
+                    </Component>
+                    <Component Id="cmp929C82E0BBFDDCB55048C50D4CAFFC5B" Guid="{2DB302BC-ABAF-4D14-9FD1-9636B090C1D7}">
+                        <File Id="filBECB10CB9CCE08A85635526E2BB9CA77" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\wrongFlat.png" />
+                    </Component>
+                    <Component Id="cmp98334C564585073EDC8D9B6F8D51446E" Guid="{38CC3375-BDB7-4BB7-9AF9-B48C7C1155D5}">
+                        <File Id="fil6CFC40D2A4C69819FC8602B7E0340E34" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\WrongQuarterNote.png" />
+                    </Component>
+                    <Component Id="cmp1F79065E795ABD81B9EC518F2B24B75B" Guid="{AD848AE3-D4EC-4388-A4AB-EC1D4045CE19}">
+                        <File Id="fil8C829FA95652655A89051D220B6D4DAD" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\WrongQuarterNoteWithStemDownward.png" />
+                    </Component>
+                    <Component Id="cmp47AE2E6349C1F50753776B63F31E5FB2" Guid="{7E1E8B0E-99A8-4C58-A9E8-93EF95380F77}">
+                        <File Id="fil0D4D9EA8840B23D41FF816F84640E7D9" KeyPath="yes" Source="$(var.SourceDir)\Resources\Images\wrongSharp.png" />
+                    </Component>
+                </Directory>
+                <Directory Id="dir65EA3AB818E5274B8BBBB5164096915A" Name="Metronome">
+                    <Directory Id="dir8D23F8A5D226DCD793CFB90559C5FECE" Name="AudioSamples">
+                        <Directory Id="dirAB2765DC4947C3D5D7BF8472BA3307BF" Name="DrumStick">
+                            <Component Id="cmpFCAC5935980029C6896A0BE3359C59A8" Guid="{5CA29DF6-DDFC-44F4-85D7-DB3620EEAC05}">
+                                <File Id="fil84247BC64AEC182308BF529ACF5725AC" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\DrumStick\hi.wav" />
+                            </Component>
+                            <Component Id="cmpEABAC5C489FFDD6CB9F22215AAA1F67C" Guid="{15158FFF-9FB0-46B0-A0CD-EA147B427946}">
+                                <File Id="fil1CA3BD6A01B3D51112FD977027F0D406" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\DrumStick\low.wav" />
+                            </Component>
+                        </Directory>
+                        <Directory Id="dir3379C00A360DECF7307467F1CBD7E317" Name="Percussion">
+                            <Component Id="cmp7A4AECBADC2EA3699545C18E06C5B2EF" Guid="{C75E92FC-AAC7-451F-980D-5A1E567CFE54}">
+                                <File Id="fil48120ED779F2B52C8FB27D318ABC1CCC" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\Percussion\hi.wav" />
+                            </Component>
+                            <Component Id="cmp5F36ABEF04FA8DE11D3E3AE606EB1537" Guid="{4C65A5FE-4322-442C-81DE-6B4EA5370B8F}">
+                                <File Id="fil85AABF1800F014B86425B20D178BE578" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\Percussion\low.wav" />
+                            </Component>
+                        </Directory>
+                        <Directory Id="dir7E6046819E188C539DB26450797B4BEE" Name="RealMetronome1">
+                            <Component Id="cmp79CDCAA433E3DF5E71D25266282116FC" Guid="{B96AF1F9-4BA5-4C71-BE15-7F4E595DD9BA}">
+                                <File Id="fil4D3F771CAE8E3FA3EBD352FBD7453BE0" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\RealMetronome1\hi.wav" />
+                            </Component>
+                            <Component Id="cmp6180F18B64845F11053D0411238318B7" Guid="{43D15648-B4F9-408B-BDD9-4DE23A97B80D}">
+                                <File Id="fil464AEB4E7F1713CAC6B3C58586177FB4" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\RealMetronome1\low.wav" />
+                            </Component>
+                        </Directory>
+                        <Directory Id="dir2089A5577C871650A0CA115D033C7A42" Name="RealMetronome2">
+                            <Component Id="cmp7483920CEB788C08F80913B3FFEBED1D" Guid="{D1A38924-8DE7-45F4-BE01-DDA6CA8FCF62}">
+                                <File Id="fil6E22AE0CCC3792504373EF7DB83198D5" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\RealMetronome2\hi.wav" />
+                            </Component>
+                            <Component Id="cmp2242282B7D71DB9C9FB9B5D41B028190" Guid="{9378AFA8-6E9E-4481-ABEF-DE4641758258}">
+                                <File Id="filF942463FEC507AD1349B7B5AB1859461" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\RealMetronome2\low.wav" />
+                            </Component>
+                        </Directory>
+                        <Directory Id="dirDF14184356A6086E5EE4156DFC3E9FDB" Name="Ring">
+                            <Component Id="cmpA1B81362A7F2516335441718652202C0" Guid="{B945B60E-1005-4166-B309-2E35B0D547EE}">
+                                <File Id="fil0A44802CE231E8E8D685D546BF646869" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\Ring\hi.wav" />
+                            </Component>
+                            <Component Id="cmp97F0101B1392D95A5001670A9CC22611" Guid="{C8FE1FC6-A1E8-48C4-A2BB-80687A6182CA}">
+                                <File Id="fil1372F247088E81CFE18C124B2D769C9A" KeyPath="yes" Source="$(var.SourceDir)\Resources\Metronome\AudioSamples\Ring\low.wav" />
+                            </Component>
+                        </Directory>
+                    </Directory>
+                </Directory>
+                <Directory Id="dirE8EA3EB6BF57C13633B72C64FE60799D" Name="Sounds">
+                    <Component Id="cmp95930D83EFE29DCE6B117189D8BBF9A0" Guid="{E8DCE484-3694-42EE-9800-60F3BE82DB68}">
+                        <File Id="fil74867FCBF7A9A737344C20DC7B92411F" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\A#1.wav" />
+                    </Component>
+                    <Component Id="cmp0DB0BA0AFC7D9AAA320B9F280651D8CF" Guid="{1DE7B58C-A23D-4E48-AA42-5AEBEDB0AB0A}">
+                        <File Id="filB73359F75A83F159B5344F353EB1A5BF" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\A#2.wav" />
+                    </Component>
+                    <Component Id="cmp1AA211DF884A23679E47F5A55051CA1E" Guid="{90E58901-9F28-4C53-B466-55B5716B80D2}">
+                        <File Id="fil6196D712AC6539E8F9CD5D76620D5404" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\A1.wav" />
+                    </Component>
+                    <Component Id="cmp8B22349C84A955B6C131754FBA4BB200" Guid="{C54E6E66-5DA9-4531-B6B5-134799191C7A}">
+                        <File Id="filD54A36F36E46BDF7E756E72F7111A437" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\A2.wav" />
+                    </Component>
+                    <Component Id="cmp6F0A5C430E0B010A9124A906ACB66887" Guid="{D6529768-DF98-4E5F-BFCA-56F2245C79E6}">
+                        <File Id="fil19B78807FBE9EE70D43213881C45B071" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\B1.wav" />
+                    </Component>
+                    <Component Id="cmp05DEE38822C47EC89AE9C598DE5DB9C1" Guid="{33075C26-86F5-498D-803C-876CAA031077}">
+                        <File Id="fil8C8E822824D560414ACB777AF192112A" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\B2.wav" />
+                    </Component>
+                    <Component Id="cmp2F55FFE7DE97788EE919F7462E97972F" Guid="{B0A6A56E-C647-4692-89B0-BB266C427342}">
+                        <File Id="fil3D9659C6F30FE0CDBD5E3EFF06C27B73" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\C#2.wav" />
+                    </Component>
+                    <Component Id="cmpADC601D3A71A68A2F513D419AE2F0499" Guid="{AD9B903B-2053-4D87-B59F-21322111FA6A}">
+                        <File Id="fil0D9875793A04522ACABA3B2ACF39484F" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\C#3.wav" />
+                    </Component>
+                    <Component Id="cmp15C01692E317E2894D8116B18DAF29CB" Guid="{8BBE7AA1-B2B0-4517-A73A-D4AB439E02E8}">
+                        <File Id="filC2DC7D099D6214E3E2B019F805B88DFC" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\C2.wav" />
+                    </Component>
+                    <Component Id="cmpEE9812B8F9D75519D1E93AFF90BA82B5" Guid="{E46E92C1-88AC-41AD-9A2D-F4451B9695BD}">
+                        <File Id="filE61BB2D97D2A0A667D0B4CF6DC2F4487" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\C3.wav" />
+                    </Component>
+                    <Component Id="cmpF749C42CDBFA986127B81A68C19B8257" Guid="{244F6F2B-A7F6-4C17-84C3-50EDA734DA89}">
+                        <File Id="fil4F1905271B9D6CF6A58CB2C4E4B5E446" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\D#2.wav" />
+                    </Component>
+                    <Component Id="cmpAD5317112B21F143DB7679A652ABE7AC" Guid="{8228C269-B9EB-4C03-A7A7-6EEB4E410C21}">
+                        <File Id="filBD1807DFA091261F07BEDF90D2C35CF5" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\D#3.wav" />
+                    </Component>
+                    <Component Id="cmp463AA684D1FCF9134837923A02451CB7" Guid="{B656BE9B-5AFB-4451-977C-3CD738AF29F6}">
+                        <File Id="filD19BE4A6F9E5FE91A6B77EDD042A927E" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\D2.wav" />
+                    </Component>
+                    <Component Id="cmp65FD80BADF54207BE367FE63C93AB124" Guid="{4E85B382-374A-4EDA-AD71-39FD0D0D3798}">
+                        <File Id="fil41D8745DA1261D0296709011EB8C3CA0" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\D3.wav" />
+                    </Component>
+                    <Component Id="cmpAC721B6D5639ABCEAA3EFAF9BF3FB55A" Guid="{8D44ED8D-07CC-45CA-B11C-A6A26533C38B}">
+                        <File Id="filC3B1B66B5CA4A5E0D83BE961E914A4B0" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\E1.wav" />
+                    </Component>
+                    <Component Id="cmp50BCC5675471F4B2FC4FD5BA2074B22C" Guid="{FF46A1FC-B07B-4BBA-8AED-3D83A7671E11}">
+                        <File Id="fil6D885EDFC4C87E39ABDE1BB572121198" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\E2.wav" />
+                    </Component>
+                    <Component Id="cmp06A6AFE29E6C4FD6A838D1322F9BB676" Guid="{AEEF8525-FB0E-41B2-A82A-FD369625D163}">
+                        <File Id="filA6A034A309979AC787A29D6582EAC96E" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\E3.wav" />
+                    </Component>
+                    <Component Id="cmp996E01A04BDE94A4AF0AB071C36F2943" Guid="{8730DB5A-E700-429B-A19E-9CBBCBF7AEAB}">
+                        <File Id="fil066AD1ACC5251E93F67FDE871E2E04C2" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\F#1.wav" />
+                    </Component>
+                    <Component Id="cmpAF4DD0B400F6A34CBC2870E3060EDBC0" Guid="{818BB176-6B6D-478D-9922-B45A0D183FD3}">
+                        <File Id="filBF27A9462E869F1A03944FFCE089C2AF" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\F#2.wav" />
+                    </Component>
+                    <Component Id="cmp59337F4759F49E31885BDFBA63719519" Guid="{B4257E08-0616-49C8-92ED-9ABA6355523B}">
+                        <File Id="fil5B92743E29EDD8A9E4840C5D8514866A" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\F#3.wav" />
+                    </Component>
+                    <Component Id="cmp0AEF9894E2EC0010F7F891B3C2FF2959" Guid="{4D184AD5-49EA-456F-8A8E-A0BAB6FCD12C}">
+                        <File Id="filED5DFDAA7E14F479D71A42C6CB3F9C25" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\F1.wav" />
+                    </Component>
+                    <Component Id="cmpDE3B10F6D9CD171F81DBDB8AA9EE49F1" Guid="{2741C094-DAFE-4330-8506-B849167BF3F6}">
+                        <File Id="fil7B887DC2281133DB98300F62B0134415" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\F2.wav" />
+                    </Component>
+                    <Component Id="cmpCE7BEC35BDABF6156D1C09C64A041ACA" Guid="{DA008AE5-6DDB-44CB-B01F-CA803073B2D2}">
+                        <File Id="filD808C215EC0375462DC6A44B43ADA888" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\F3.wav" />
+                    </Component>
+                    <Component Id="cmp2D94D18DAB32EDAE431EF6DAAAE25BA5" Guid="{02A92773-F8F0-47A8-9D87-317F9A0A19E0}">
+                        <File Id="fil5E0100078CCB0A32A8E471F492B064A8" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\G#1.wav" />
+                    </Component>
+                    <Component Id="cmpDDC162B5797F9F524A351ABBE4AB131B" Guid="{3C7CC97D-806F-4F64-A461-86F67770C87A}">
+                        <File Id="fil123E27C1AE3A9AE7FC0A811F4A02E9E8" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\G#2.wav" />
+                    </Component>
+                    <Component Id="cmp7A4397CF70B8A74EE223179D886234AD" Guid="{AE1FB872-EAA1-4CB4-A19B-8B59981514E3}">
+                        <File Id="fil5221551734D416447CC2C3A955C0474E" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\G1.wav" />
+                    </Component>
+                    <Component Id="cmp55B23174FCB40E1170DBF5E985C5727B" Guid="{85B11AC4-3A06-4187-8212-59FBE9EBD0E7}">
+                        <File Id="fil6986C3E99E5FE1473A9E2F56740AEA77" KeyPath="yes" Source="$(var.SourceDir)\Resources\Sounds\G2.wav" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="dir0DF44C6AAA034D1DA7FB5C126F730566" Name="ru">
+                <Component Id="cmp20AEE4316235BBBBF4375F6CB7F99436" Guid="{86A7F3F9-E58C-4AF2-8C5B-8B6BDC076A3D}">
+                    <File Id="fil415FE918C5919F0A899821C6CFBC6737" KeyPath="yes" Source="$(var.SourceDir)\ru\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir827E768E8FAD19EE7610193A7741CC10" Name="zh-Hans">
+                <Component Id="cmp4A47D8C94FF54E69DAFEF5D6856E5A49" Guid="{D6F3AAA2-2B4D-41A7-A44E-FBC76C9BAD15}">
+                    <File Id="filFA6D826059DD9522CE8DF3B4D8CA39FA" KeyPath="yes" Source="$(var.SourceDir)\zh-Hans\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir60793078BF73FA4CCBF305630D99D730" Name="zh-Hant">
+                <Component Id="cmpBAF73E714FD4FBBF32ADE412B12AC057" Guid="{7325D4F6-E819-42C7-9FC3-2134A49D3789}">
+                    <File Id="fil3BD84D5400094407052B27167EA0D94A" KeyPath="yes" Source="$(var.SourceDir)\zh-Hant\System.Windows.Interactivity.resources.dll" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="BassGuitarTrainer">
+            <ComponentRef Id="cmp5CB10017F97D0CA982B794A50BAED639" />
+            <ComponentRef Id="cmpA5422F7F1BA359525EE45D4A2DEB8EEE" />
+            <ComponentRef Id="cmpF574C6C12C7B8024846386F1399B0968" />
+            <ComponentRef Id="cmp7B2B5DCE45AC1953FA9FE31B986E2C8A" />
+            <ComponentRef Id="cmp4B205B59223263DE2389B72E4EB3D90B" />
+            <ComponentRef Id="cmpC1F25C404626E4DF581C244C5137E1B3" />
+            <ComponentRef Id="cmp806A06289EE215226A6CB0F89F7A5625" />
+            <ComponentRef Id="cmpF072978801918EEACBB86923386C14AE" />
+            <ComponentRef Id="cmpC36162179B3C600A292778D2F2E48A26" />
+            <ComponentRef Id="cmpFD1F804AC86CF7A056A26D68BC529838" />
+            <ComponentRef Id="cmp7EA790329A2360D0698CDCEB3C460421" />
+            <ComponentRef Id="cmp90A86B0F6224C9C85EE5D205E29C2B84" />
+            <ComponentRef Id="cmp5439EE490C073E4AB4E41EFC1FD6655F" />
+            <ComponentRef Id="cmpBA02C31778CBB5B8D7B40594999EDEE8" />
+            <ComponentRef Id="cmp4B0930294AABC595FD930B337000CD61" />
+            <ComponentRef Id="cmpBB70F40B784DBF26BC246BFD88A55962" />
+            <ComponentRef Id="cmp4563D958862CCEEF0BFEA12CCA035FE9" />
+            <ComponentRef Id="cmp561D8CFE7C949B515AEDBEC83CD6AE5D" />
+            <ComponentRef Id="cmpE5B86422BBD2E67D0BD13299EF65E59A" />
+            <ComponentRef Id="cmpBCA9027D3FD32F68037BA2979D3B18AD" />
+            <ComponentRef Id="cmp23D6B184EF444095E40D8B966A1CF55D" />
+            <ComponentRef Id="cmpA82E4C0FD71679E97A698E937E33E58B" />
+            <ComponentRef Id="cmp65EE44211A6708445F53F85A40DDD3CE" />
+            <ComponentRef Id="cmpEBCF0D0A4FC6E01EB62B28713DC91F16" />
+            <ComponentRef Id="cmpEB1461C2934BBECE7F160ECC9EDD2FEA" />
+            <ComponentRef Id="cmpDF4534DFEBA135EE7D0EC9ECAF11BB33" />
+            <ComponentRef Id="cmpCEA29DEFE7274804CF50282D606C9566" />
+            <ComponentRef Id="cmp6C2F74078F4565CDA04F5C92D1FD319E" />
+            <ComponentRef Id="cmp74FE1F8E8845F5B8579B14882BD189D4" />
+            <ComponentRef Id="cmp5BBD5225B3ECE6771371A8262942E2DB" />
+            <ComponentRef Id="cmp8FEDC46021720BF62404D4297D0E3B3D" />
+            <ComponentRef Id="cmp26E687D2D0EDAB5A2A2EE402B81678E4" />
+            <ComponentRef Id="cmpAA09755FBFB2917D8D9E6602DC4B6A7D" />
+            <ComponentRef Id="cmp249B7D8A052D191F2BDDACD295ACDAFB" />
+            <ComponentRef Id="cmpD686229BC3DA1B0EE1F51EB8D325234D" />
+            <ComponentRef Id="cmpE9220170F34DD7F44F5E746135E9D5A7" />
+            <ComponentRef Id="cmp34BAD36396CA9F52F30B72DBDDD18149" />
+            <ComponentRef Id="cmpC0DD03BA71125FFB60E3F57094C97045" />
+            <ComponentRef Id="cmp6420500FF1ABC06969E348ACB0B55D77" />
+            <ComponentRef Id="cmp720562E7042934E6805DBC5706DB988D" />
+            <ComponentRef Id="cmp79F847EDC133EF29185EE210C1666A79" />
+            <ComponentRef Id="cmp0430BE39D67FA76DC4944C1377AA3E64" />
+            <ComponentRef Id="cmp281F84538BA294369FED70F9E5775EC2" />
+            <ComponentRef Id="cmpC818AA58898C1918C6CEC1A3D7259DC6" />
+            <ComponentRef Id="cmp74ECD645D51366788BE4C927018786EF" />
+            <ComponentRef Id="cmp9F7B14463AE1AB942ED83DC374A7F052" />
+            <ComponentRef Id="cmpAE8F265E06B7B311BA09E444833B59B7" />
+            <ComponentRef Id="cmpA90B42440CCB0E677927B96F0A0B1082" />
+            <ComponentRef Id="cmpEDA216DA3A5B8885E3390522FC0BF03B" />
+            <ComponentRef Id="cmp48FA0C77FEA5A38E70E72279C618C798" />
+            <ComponentRef Id="cmp090DC16619221DAD984A053D074E88E2" />
+            <ComponentRef Id="cmp7020B8607FFE2B3E0A225657FDDAACF9" />
+            <ComponentRef Id="cmpF975B4A70C6115101EED1B0E2AE92E1F" />
+            <ComponentRef Id="cmpDCF4B4E913890736DE221A81D27A54E8" />
+            <ComponentRef Id="cmp42C9815F2F62FBE2CFB12B0CEBF881BA" />
+            <ComponentRef Id="cmpEFB8A6A78D7C76E1E2773C20F897DD86" />
+            <ComponentRef Id="cmp73090F7ACBF46E8A347917485CC3143C" />
+            <ComponentRef Id="cmpA2906CE80A4C61C1FBA4E5132D352D19" />
+            <ComponentRef Id="cmp415850BA27C35839BC49BFC8BD469794" />
+            <ComponentRef Id="cmpA1277D784F72289212D6AF13E7FCD016" />
+            <ComponentRef Id="cmpF37D6E2E4BDFF7BF331F20DE4C69D973" />
+            <ComponentRef Id="cmpEF5E6ABF1D8CDA91DD2225DC2C5E4D21" />
+            <ComponentRef Id="cmp6498B3BD1806F4EB4B4E9EFF595AAF05" />
+            <ComponentRef Id="cmpDF964C7A7E5CD2E0B2372E129B6B602A" />
+            <ComponentRef Id="cmpA34A58DDCEC470E4D0429355CFB7EA5F" />
+            <ComponentRef Id="cmp52C35A5630C15B96BF33A2EC37A9E9F7" />
+            <ComponentRef Id="cmp844E507EC4BC073D0B8F10330F7948C8" />
+            <ComponentRef Id="cmpCBCF8F62E867D025304D1D2DF1ED1C92" />
+            <ComponentRef Id="cmpB97E82347DDA4E5F9F2C06E74AEDDDDF" />
+            <ComponentRef Id="cmp5BBBABD506A06726C8684A7C84FF6835" />
+            <ComponentRef Id="cmp929C82E0BBFDDCB55048C50D4CAFFC5B" />
+            <ComponentRef Id="cmp98334C564585073EDC8D9B6F8D51446E" />
+            <ComponentRef Id="cmp1F79065E795ABD81B9EC518F2B24B75B" />
+            <ComponentRef Id="cmp47AE2E6349C1F50753776B63F31E5FB2" />
+            <ComponentRef Id="cmpFCAC5935980029C6896A0BE3359C59A8" />
+            <ComponentRef Id="cmpEABAC5C489FFDD6CB9F22215AAA1F67C" />
+            <ComponentRef Id="cmp7A4AECBADC2EA3699545C18E06C5B2EF" />
+            <ComponentRef Id="cmp5F36ABEF04FA8DE11D3E3AE606EB1537" />
+            <ComponentRef Id="cmp79CDCAA433E3DF5E71D25266282116FC" />
+            <ComponentRef Id="cmp6180F18B64845F11053D0411238318B7" />
+            <ComponentRef Id="cmp7483920CEB788C08F80913B3FFEBED1D" />
+            <ComponentRef Id="cmp2242282B7D71DB9C9FB9B5D41B028190" />
+            <ComponentRef Id="cmpA1B81362A7F2516335441718652202C0" />
+            <ComponentRef Id="cmp97F0101B1392D95A5001670A9CC22611" />
+            <ComponentRef Id="cmp95930D83EFE29DCE6B117189D8BBF9A0" />
+            <ComponentRef Id="cmp0DB0BA0AFC7D9AAA320B9F280651D8CF" />
+            <ComponentRef Id="cmp1AA211DF884A23679E47F5A55051CA1E" />
+            <ComponentRef Id="cmp8B22349C84A955B6C131754FBA4BB200" />
+            <ComponentRef Id="cmp6F0A5C430E0B010A9124A906ACB66887" />
+            <ComponentRef Id="cmp05DEE38822C47EC89AE9C598DE5DB9C1" />
+            <ComponentRef Id="cmp2F55FFE7DE97788EE919F7462E97972F" />
+            <ComponentRef Id="cmpADC601D3A71A68A2F513D419AE2F0499" />
+            <ComponentRef Id="cmp15C01692E317E2894D8116B18DAF29CB" />
+            <ComponentRef Id="cmpEE9812B8F9D75519D1E93AFF90BA82B5" />
+            <ComponentRef Id="cmpF749C42CDBFA986127B81A68C19B8257" />
+            <ComponentRef Id="cmpAD5317112B21F143DB7679A652ABE7AC" />
+            <ComponentRef Id="cmp463AA684D1FCF9134837923A02451CB7" />
+            <ComponentRef Id="cmp65FD80BADF54207BE367FE63C93AB124" />
+            <ComponentRef Id="cmpAC721B6D5639ABCEAA3EFAF9BF3FB55A" />
+            <ComponentRef Id="cmp50BCC5675471F4B2FC4FD5BA2074B22C" />
+            <ComponentRef Id="cmp06A6AFE29E6C4FD6A838D1322F9BB676" />
+            <ComponentRef Id="cmp996E01A04BDE94A4AF0AB071C36F2943" />
+            <ComponentRef Id="cmpAF4DD0B400F6A34CBC2870E3060EDBC0" />
+            <ComponentRef Id="cmp59337F4759F49E31885BDFBA63719519" />
+            <ComponentRef Id="cmp0AEF9894E2EC0010F7F891B3C2FF2959" />
+            <ComponentRef Id="cmpDE3B10F6D9CD171F81DBDB8AA9EE49F1" />
+            <ComponentRef Id="cmpCE7BEC35BDABF6156D1C09C64A041ACA" />
+            <ComponentRef Id="cmp2D94D18DAB32EDAE431EF6DAAAE25BA5" />
+            <ComponentRef Id="cmpDDC162B5797F9F524A351ABBE4AB131B" />
+            <ComponentRef Id="cmp7A4397CF70B8A74EE223179D886234AD" />
+            <ComponentRef Id="cmp55B23174FCB40E1170DBF5E985C5727B" />
+            <ComponentRef Id="cmp20AEE4316235BBBBF4375F6CB7F99436" />
+            <ComponentRef Id="cmp4A47D8C94FF54E69DAFEF5D6856E5A49" />
+            <ComponentRef Id="cmpBAF73E714FD4FBBF32ADE412B12AC057" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>
