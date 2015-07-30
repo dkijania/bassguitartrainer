@@ -14,13 +14,13 @@ namespace DrumMachine.UI.WPF
         private DrumMachineKit _drumMachineKit;
         private readonly IPatternTilesManipulator _tilesManipulator;
         private readonly FileDrumPatternConverter _fileDrumPatternConverter;
-        private readonly UIDrumPatternConverter _uiDrumPatternConverter;
+        private readonly UiDrumPatternConverter _uiDrumPatternConverter;
 
         public DrumMachineModel(IPatternTilesManipulator tilesManipulator)
         {
             _tilesManipulator = tilesManipulator;
             _fileDrumPatternConverter = new FileDrumPatternConverter(_tilesManipulator);
-            _uiDrumPatternConverter = new UIDrumPatternConverter();
+            _uiDrumPatternConverter = new UiDrumPatternConverter();
         }
 
         //TODO: add control for volume

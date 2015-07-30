@@ -12,7 +12,6 @@ namespace Metronome.UI.WPF.Demo
         public MainWindow()
         {
             InitializeComponent();
-            MetronomeView.MetroWindow = this;
         }
 
       

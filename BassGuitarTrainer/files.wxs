@@ -55,9 +55,6 @@
       <Component Id="cmp5BBD5225B3ECE6771371A8262942E2DB" Guid="{F53187C8-674F-4DBA-BB1D-FAA494BE26F9}">
         <File Id="fil87826C1D87F39757B6344136F91B6E73" KeyPath="yes" Source="$(var.SourceDir)\NAudio.dll" />
       </Component>
-      <Component Id="cmp249B7D8A052D191F2BDDACD295ACDAFB" Guid="{B1F6C9FE-0C93-4D5E-94BC-8D6309EEFD7F}">
-        <File Id="fil82C05DAC9BF8856CBEA8CC46E1C1C897" KeyPath="yes" Source="$(var.SourceDir)\save.xml" />
-      </Component>
       <Component Id="cmpD686229BC3DA1B0EE1F51EB8D325234D" Guid="{C1686484-DB04-4513-B52B-05FB499A394E}">
         <File Id="fil4FFD3131A44D3EA9C49C2F3C6EC8C391" KeyPath="yes" Source="$(var.SourceDir)\SimpleHelpSystem.dll" />
       </Component>
@@ -354,7 +351,6 @@
       <ComponentRef Id="cmpDF4534DFEBA135EE7D0EC9ECAF11BB33" />
       <ComponentRef Id="cmp6C2F74078F4565CDA04F5C92D1FD319E" />
       <ComponentRef Id="cmp5BBD5225B3ECE6771371A8262942E2DB" />
-      <ComponentRef Id="cmp249B7D8A052D191F2BDDACD295ACDAFB" />
       <ComponentRef Id="cmpD686229BC3DA1B0EE1F51EB8D325234D" />
       <ComponentRef Id="cmp34BAD36396CA9F52F30B72DBDDD18149" />
       <ComponentRef Id="cmp6420500FF1ABC06969E348ACB0B55D77" />

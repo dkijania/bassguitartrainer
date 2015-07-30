@@ -7,11 +7,11 @@ namespace DrumMachine.UI.WPF.Pattern
     {
         int GetMaximumSpanValue();
         int GetMinimumSpanValue();
-      
+
         void SetColumnsCount(int count, int note);
         void AddBar();
         void RemoveBar();
-        void FillDrumPattern(DrumPattern drumPattern, UIDrumPatternConverter uiDrumPatternConverter);
+        void FillDrumPattern(DrumPattern drumPattern, UiDrumPatternConverter uiDrumPatternConverter);
         IPatternHighlighter PatternHighlighter { get; }
         int BarsCount { get; }
         event DrumMachineTile.OnSelect OnSelectEvent;
@@ -21,7 +21,7 @@ namespace DrumMachine.UI.WPF.Pattern
         void ResetBarsCount();
         void Clear();
         void ResetUi();
-        void ImportToUi(DrumPattern drumPattern, UIDrumPatternConverter uiDrumPatternConverter);
+        void ImportToUi(DrumPattern drumPattern, UiDrumPatternConverter uiDrumPatternConverter);
         void SetColumnsSpan(int note);
         void AddCell(int row, int column, int columnSpan, bool isSelected = false);
 

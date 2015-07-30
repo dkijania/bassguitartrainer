@@ -1,89 +1,86 @@
-﻿using System.Linq;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using DrumMachine.Pattern.DrumMachineTile;
 
 namespace DrumMachine.UI.WPF.Pattern
 {
-    public class SelectableBorder : Border, IDrumMachineTilePresenter
+    public class SelectableBorder : Border
     {
-        public DrumMachineTile Model { get; private set; }
+        private readonly BorderDecorator _borderDecorator;
+        private readonly DrumMachineTile _drumMachineTile;
 
-        protected static int ColorIndex = -1;
-
-        protected static Color[] AvailableColors =
+        public SelectableBorder() : this(false)
         {
-            Colors.Yellow,
-            Colors.YellowGreen,
-            Colors.DeepSkyBlue,
-            Colors.Blue,
-            Colors.BlueViolet,
-            Colors.Purple,
-            Colors.Magenta,
-            Colors.MediumVioletRed,
-            Colors.Red,
-            Colors.OrangeRed,
-            Colors.Orange
-        };
+        }
 
-        private readonly SolidColorBrush _notSelectedBush = new SolidColorBrush(Colors.WhiteSmoke);
-        private readonly SolidColorBrush _selectedBrush = new SolidColorBrush(AvailableColors[SelectableColorIndex]);
-
-        public SelectableBorder(int row, int column, DrumMachineTile.OnSelect onSelectEventHandler,
-            DrumMachineTile.IgnoreMouseClick ignoreMouseClick, bool isSelected)
+        public SelectableBorder(bool initialState)
         {
-            Model = new DrumMachineTile(row, column, onSelectEventHandler, ignoreMouseClick, isSelected, this);
-            SetSelected(isSelected);
-            MouseUp += MouseUpEventHandler;
-            Background = _notSelectedBush;
+            IsSelected = initialState;
+            _borderDecorator = new BorderDecorator();
+            Background = _borderDecorator.GetBrushForState(IsSelected);
+            CornerRadius = new CornerRadius(10);
             BorderBrush = new SolidColorBrush {Color = Colors.Black};
             Margin = new Thickness(2);
+            MouseUp += MouseUpEventHandler;
+        }
+
+        public SelectableBorder(int row, int column)
+            : this()
+        {
+            _drumMachineTile = new DrumMachineTile(row, column);
+        }
+
+        public SelectableBorder(int row, int column, bool isSelected)
+            : this(isSelected)
+        {
+            _drumMachineTile = new DrumMachineTile(row, column);
+        }
+
+
+        public SelectableBorder(int row, int column, DrumMachineTile.OnSelect onOnSelectEvent,
+            DrumMachineTile.IgnoreMouseClick onIgnoreMouseEvent, bool isSelected) : this(row, column,isSelected)
+        {
+            _drumMachineTile.OnSelectEvent += onOnSelectEvent;
+            _drumMachineTile.OnIgnoreMouseClick += onIgnoreMouseEvent;
+        }
+
+        public bool IsSelected { get; set; }
+
+        public event DrumMachineTile.OnSelect OnSelectEvent
+        {
+            add { _drumMachineTile.OnSelectEvent += value; }
+            remove { _drumMachineTile.OnSelectEvent -= value; }
         }
 
         public void MouseUpEventHandler(object sender, MouseButtonEventArgs e)
         {
-            if (!Model.InvokeIgnoreMouseClick())
+            if (!_drumMachineTile.InvokeOnIgnoreMouseClick())
             {
-                Model.IsSelected = !Model.IsSelected;
-                SetSelected(Model.IsSelected);
+                ChangeSelectionState(!IsSelected);
             }
-            Model.InvokeOnSelectEvent(Model.IsSelected);
-        }
-
-        protected static int SelectableColorIndex
-        {
-            get { return ++ColorIndex%AvailableColors.Count(); }
-        }
-
-        public bool IsSelected
-        {
-            get { return Model.IsSelected; }
-            set { Model.IsSelected = value; }
-        }
-
-        public void SetSelected(bool isSelected)
-        {
-            if (isSelected)
-                Select();
-            else
-                Unselect();
-        }
-
-        public void Select()
-        {
-            Background = _selectedBrush;
+            _drumMachineTile.InvokeOnSelectEvent(_drumMachineTile.Row, _drumMachineTile.Column, IsSelected);
         }
 
         public void Unselect()
         {
-            Background = _notSelectedBush;
+            ChangeSelectionState(false);
         }
 
-        public int GetValueFor(DependencyProperty columnSpanProperty)
+        public void Select()
         {
-            return (int) GetValue(columnSpanProperty);
+            ChangeSelectionState(true);
+        }
+
+        private void ChangeSelectionState(bool newState)
+        {
+            IsSelected = newState;
+            AdjustBackgroundForSelectionState();
+        }
+
+        private void AdjustBackgroundForSelectionState()
+        {
+            Background = _borderDecorator.GetBrushForState(IsSelected);
         }
     }
 }

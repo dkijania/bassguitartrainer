@@ -8,7 +8,7 @@ using DrumMachine.Engine.Pattern;
 
 namespace DrumMachine.UI.WPF.Pattern.Converters
 {
-    public class UIDrumPatternConverter
+    public class UiDrumPatternConverter
     {
         public int RowsCount { get; set; }
         public int ColumnsCount { get; set; }
@@ -82,7 +82,7 @@ namespace DrumMachine.UI.WPF.Pattern.Converters
 
         public void FillDrumPattern(DrumPattern drumPattern)
         {
-            var tiles = ElementCollection.OfType<DrumMachineTile>();
+            var tiles = ElementCollection.OfType<SelectableBorder>();
             foreach (var row in Enumerable.Range(0, RowsCount))
             {
                 var drumPatternIndex = 0;
@@ -118,22 +118,22 @@ namespace DrumMachine.UI.WPF.Pattern.Converters
 
         private bool IsProperDrumPatternCell(UIElement element)
         {
-            return element is DrumMachineTile;
+            return element is SelectableBorder;
         }
 
-        private byte GetPatternValue(IEnumerable<DrumMachineTile> tiles, int column, int row)
+        private byte GetPatternValue(IEnumerable<SelectableBorder> tiles, int column, int row)
         {
             var tile = GetTileForCoordinates(tiles, column, row);
             if (tile == null) return DrumPattern.NoHit;
             return tile.IsSelected ? DrumPattern.Hit : DrumPattern.NoHit;
         }
 
-        private DrumMachineTile GetTileForCoordinates(IEnumerable<DrumMachineTile> tiles, int column, int row)
+        private SelectableBorder GetTileForCoordinates(IEnumerable<SelectableBorder> tiles, int column, int row)
         {
             return tiles.FirstOrDefault(e => Grid.GetColumn(e) == column && Grid.GetRow(e) == row);
         }
 
-        private int GetSpanValue(IEnumerable<DrumMachineTile> tiles, int column, int row)
+        private int GetSpanValue(IEnumerable<SelectableBorder> tiles, int column, int row)
         {
             var tile = GetTileForCoordinates(tiles, column, row);
             return (int) tile.GetValue(Grid.ColumnSpanProperty);

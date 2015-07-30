@@ -153,7 +153,7 @@ namespace DrumMachine.UI.WPF
             else if (IsJoinModeEnabled)
                 _model.JoinCell(row, column);
             else if (isSelected)
-                _model.PlaySound(row);
+               _model.PlaySound(row);
         }
 
         private bool _tilesManipulator_IgnoreMouseEvent()

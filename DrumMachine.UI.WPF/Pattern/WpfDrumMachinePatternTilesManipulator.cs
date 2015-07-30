@@ -2,9 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using DrumMachine.Engine.Pattern;
-using DrumMachine.Pattern;
-using DrumMachine.Pattern.Converters;
-using DrumMachine.Pattern.DrumMachineTile;
 using DrumMachine.Resources.DrumMachine.Audio;
 using DrumMachine.UI.WPF.Pattern.Converters;
 
@@ -16,7 +13,7 @@ namespace DrumMachine.UI.WPF.Pattern
         public const int MinimumSpanValue = 4;
         private const int Span = MaximumSpanValue;
         
-        //private readonly uiIuiDrumPatternConverter _uiIuiDrumPatternConverter = new uiIuiDrumPatternConverter();
+        private readonly UiDrumPatternConverter _uiIuiDrumPatternConverter = new UiDrumPatternConverter();
         private readonly Grid _patternGrid;
         private readonly GridLength _delimeterColumnWidth = new GridLength(35);
         private readonly GridLength _tileColumnWidth = new GridLength(2);
@@ -43,7 +40,7 @@ namespace DrumMachine.UI.WPF.Pattern
 
         public void Clear()
         {
-            var tiles = _patternGrid.Children.OfType<DrumMachineTile>();
+            var tiles = _patternGrid.Children.OfType<SelectableBorder>();
             foreach (var drumMachineTile in tiles)
             {
                 drumMachineTile.Unselect();
@@ -294,7 +291,7 @@ namespace DrumMachine.UI.WPF.Pattern
             }
         }
         
-        public void FillDrumPattern(DrumPattern drumPattern, IUIDrumPatternConverter uiIuiDrumPatternConverter)
+        public void FillDrumPattern(DrumPattern drumPattern, UiDrumPatternConverter uiIuiDrumPatternConverter)
         {
             ((UiDrumPatternConverter)uiIuiDrumPatternConverter).ColumnsCount = _patternGrid.ColumnDefinitions.Count;
             ((UiDrumPatternConverter)uiIuiDrumPatternConverter).RowsCount = _patternGrid.RowDefinitions.Count;
@@ -302,7 +299,7 @@ namespace DrumMachine.UI.WPF.Pattern
             uiIuiDrumPatternConverter.FillDrumPattern(drumPattern);
         }
 
-        public void ImportToUi(DrumPattern drumPattern, IUIDrumPatternConverter uiIuiDrumPatternConverter)
+        public void ImportToUi(DrumPattern drumPattern, UiDrumPatternConverter uiIuiDrumPatternConverter)
         {
             ResetUi();
             var splittedPartsCollection = uiIuiDrumPatternConverter.FillPatternGrid(drumPattern);
@@ -331,6 +328,10 @@ namespace DrumMachine.UI.WPF.Pattern
             }
             
         }
-        
+
+        public void FillDrumPattern(DrumPattern drumPattern)
+        {
+            _uiIuiDrumPatternConverter.FillDrumPattern(drumPattern);
+        }
     }
 }

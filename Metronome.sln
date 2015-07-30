@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metronome", "Metronome\Metronome.csproj", "{90837A8E-DD39-4F3F-B981-30749FD1DD24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metronome.UI.WPF", "Metronome.UI.WPF\Metronome.UI.WPF.csproj", "{7A23E4E1-0F9D-43BE-B957-5F9637BF5C91}"
@@ -13,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfExtensions", "WpfExtensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DrumMachine.UI.WPF", "DrumMachine.UI.WPF\DrumMachine.UI.WPF.csproj", "{E476EF72-C530-47EC-8474-4A183B2D5446}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WavPlayer", "WavPlayer\WavPlayer.csproj", "{1673B8B5-3F16-471D-A373-C8BEB638FD47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WavPlayer", "WavPlayer\WavPlayer.csproj", "{BF9DA8E5-D9AD-4115-A146-FD1BA9340CE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +47,10 @@ Global
 		{E476EF72-C530-47EC-8474-4A183B2D5446}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E476EF72-C530-47EC-8474-4A183B2D5446}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E476EF72-C530-47EC-8474-4A183B2D5446}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1673B8B5-3F16-471D-A373-C8BEB638FD47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9DA8E5-D9AD-4115-A146-FD1BA9340CE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9DA8E5-D9AD-4115-A146-FD1BA9340CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9DA8E5-D9AD-4115-A146-FD1BA9340CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9DA8E5-D9AD-4115-A146-FD1BA9340CE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

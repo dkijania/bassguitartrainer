@@ -1,4 +1,5 @@
 using System;
+using System.Windows;
 using BassTrainer.Core.Utils;
 
 namespace BassTrainer.Core.Const
@@ -18,6 +19,11 @@ namespace BassTrainer.Core.Const
             : this((FretBoardOptions.StringName) Enum.Parse(typeof(FretBoardOptions.StringName), stringName), fretNo)
         {
       
+        }
+
+        public StringFretPair(Point point)
+            : this((FretBoardOptions.StringName)point.Y, (int)point.X)
+        {
         }
 
         public StringFretPair(int stringNo, int fretNo)
