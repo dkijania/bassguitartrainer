@@ -1,0 +1,43 @@
+﻿Notes buttons
+
+1. After clicking note button
+
+Interval
+
+Fixed 1. Multipe clicking Interval will cause adding new rectangles instead of overiding . 
+Fixed 2. No clear button in intervals
+3. Add option from which interval sound should start lower or higher
+4.  root should be selected to different color than intervals
+
+Show
+
+Fixed 1. Changing show modifies selection
+2. Show by scale is not accurate for major D alternative 
+
+Excercies
+
+Won't fix 1. Octave coloring should be disabled when excercise is on
+Fixed 2. Identify Note on fretboard and Identify Note on fretboard (Notation) - changing selection does not affect next excercise
+Fixed 3. Identify Note on fretboard (Notation) skip does not clear last excercise
+Fixeed 4. Hide note label for pressed position does not work in "Find Note position from Notes View"
+
+Drum machine
+
+1. add slider to drum pattern view
+
+Player
+
+Fixed 1. Check if replay button works for multiple intervals sounds
+2. Force to enable player when excercise requires it
+
+Statistics
+
+1. Should contains last results
+
+Find note position
+1. PLayer not showing when user click Play note (during pause)
+ 
+      Indentify Note By Interval
+Fixed 1. Clicking Pause and continue is crashing application 
+
+
