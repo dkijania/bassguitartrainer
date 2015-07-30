@@ -7,13 +7,12 @@ namespace DrumMachine.UI.WPF.Pattern
     {
         int GetMaximumSpanValue();
         int GetMinimumSpanValue();
-
+        int BarsCount { get; }
+        IPatternHighlighter PatternHighlighter { get; }
         void SetColumnsCount(int count, int note);
         void AddBar();
         void RemoveBar();
         void FillDrumPattern(DrumPattern drumPattern, UiDrumPatternConverter uiDrumPatternConverter);
-        IPatternHighlighter PatternHighlighter { get; }
-        int BarsCount { get; }
         event DrumMachineTile.OnSelect OnSelectEvent;
         event DrumMachineTile.IgnoreMouseClick IgnoreMouseEvent;
         void SplitCell(int row, int column);

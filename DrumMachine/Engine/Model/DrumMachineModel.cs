@@ -44,7 +44,7 @@ namespace DrumMachine.Engine.Model
         {
             if (_waveOut != null)
             {
-                this._patternSequencer = null;
+                _patternSequencer = null;
                 _waveOut.Dispose();
                 _waveOut = null;
             }
@@ -65,10 +65,10 @@ namespace DrumMachine.Engine.Model
             {
                 if (_tempo != value)
                 {
-                    this._tempo = value;
-                    if (this._patternSequencer != null)
+                    _tempo = value;
+                    if (_patternSequencer != null)
                     {
-                        this._patternSequencer.Tempo = value;
+                        _patternSequencer.Tempo = value;
                     }
                 }
             }

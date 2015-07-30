@@ -2,11 +2,26 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using DrumMachine.Engine.Pattern;
 
 namespace DrumMachine.UI.WPF.Pattern
 {
     public class SelectableBorder : Border
     {
+        private class GraphicalProperties
+        {
+            public readonly Thickness Margin = new Thickness(2);
+            public readonly SolidColorBrush BorderBrush = new SolidColorBrush { Color = Colors.Black };
+            public readonly CornerRadius CornerRadius = new CornerRadius(10);
+
+            public void Apply(Border border)
+            {
+                border.CornerRadius = CornerRadius;
+                border.BorderBrush = BorderBrush;
+                border.Margin = Margin;
+            }
+        }
+        
         private readonly BorderDecorator _borderDecorator;
         private readonly DrumMachineTile _drumMachineTile;
 
@@ -18,11 +33,15 @@ namespace DrumMachine.UI.WPF.Pattern
         {
             IsSelected = initialState;
             _borderDecorator = new BorderDecorator();
-            Background = _borderDecorator.GetBrushForState(IsSelected);
-            CornerRadius = new CornerRadius(10);
-            BorderBrush = new SolidColorBrush {Color = Colors.Black};
-            Margin = new Thickness(2);
+            ApplyGraphicalProperties();
             MouseUp += MouseUpEventHandler;
+        }
+
+        private void ApplyGraphicalProperties()
+        {
+            var graphicalProperties = new GraphicalProperties();
+            graphicalProperties.Apply(this);
+            Background = _borderDecorator.GetBrushForState(IsSelected);
         }
 
         public SelectableBorder(int row, int column)
@@ -39,7 +58,7 @@ namespace DrumMachine.UI.WPF.Pattern
 
 
         public SelectableBorder(int row, int column, DrumMachineTile.OnSelect onOnSelectEvent,
-            DrumMachineTile.IgnoreMouseClick onIgnoreMouseEvent, bool isSelected) : this(row, column,isSelected)
+            DrumMachineTile.IgnoreMouseClick onIgnoreMouseEvent, bool isSelected) : this(row, column, isSelected)
         {
             _drumMachineTile.OnSelectEvent += onOnSelectEvent;
             _drumMachineTile.OnIgnoreMouseClick += onIgnoreMouseEvent;
@@ -82,5 +101,6 @@ namespace DrumMachine.UI.WPF.Pattern
         {
             Background = _borderDecorator.GetBrushForState(IsSelected);
         }
+        
     }
 }

@@ -24,7 +24,7 @@ namespace DrumMachine.UI.WPF.Pattern.Converters
             for (var i = 0; i < array.GetLength(0); i++)
             {
                 var row = GetRow(array, i);
-                fillSplittedParts(i, 0, row, splittedParts);
+                FillSplittedParts(i, 0, row, splittedParts);
             }
             return splittedParts;
         }
@@ -42,7 +42,7 @@ namespace DrumMachine.UI.WPF.Pattern.Converters
             return row;
         } 
 
-        private void fillSplittedParts(int rowId, int startIndex, List<byte> row, List<DrumPatternPart> splittedParts)
+        private void FillSplittedParts(int rowId, int startIndex, List<byte> row, List<DrumPatternPart> splittedParts)
         {
             var bar = CalculateBarNo(startIndex);
             if ((!ContainsHit(row) || HitOnlyOnFirst(row)) && !IsLongerThanBarLimit(row))
@@ -51,8 +51,8 @@ namespace DrumMachine.UI.WPF.Pattern.Converters
                 return;
             }
             var center = (int) Math.Floor((double) (row.Count/2));
-            fillSplittedParts(rowId, startIndex, row.Take(center).ToList(), splittedParts);
-            fillSplittedParts(rowId, center + startIndex, row.Skip(center).ToList(), splittedParts);
+            FillSplittedParts(rowId, startIndex, row.Take(center).ToList(), splittedParts);
+            FillSplittedParts(rowId, center + startIndex, row.Skip(center).ToList(), splittedParts);
         }
 
         private bool IsLongerThanBarLimit(List<byte> row)

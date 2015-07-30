@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Windows;
 using System.Windows.Media;
 
 namespace DrumMachine.UI.WPF.Pattern
@@ -41,5 +42,6 @@ namespace DrumMachine.UI.WPF.Pattern
         {
             return state ? SelectedBrush : NotSelectedBrush;
         }
+
     }
 }

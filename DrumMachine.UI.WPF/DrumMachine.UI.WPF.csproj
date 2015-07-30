@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DrumMachineModel.cs" />
-    <Compile Include="DrumMachineTileBuilder.cs" />
     <Compile Include="DrumMachineView.xaml.cs">
       <DependentUpon>DrumMachineView.xaml</DependentUpon>
     </Compile>

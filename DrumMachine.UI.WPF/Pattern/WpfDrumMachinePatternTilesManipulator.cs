@@ -293,9 +293,9 @@ namespace DrumMachine.UI.WPF.Pattern
         
         public void FillDrumPattern(DrumPattern drumPattern, UiDrumPatternConverter uiIuiDrumPatternConverter)
         {
-            ((UiDrumPatternConverter)uiIuiDrumPatternConverter).ColumnsCount = _patternGrid.ColumnDefinitions.Count;
-            ((UiDrumPatternConverter)uiIuiDrumPatternConverter).RowsCount = _patternGrid.RowDefinitions.Count;
-            ((UiDrumPatternConverter)uiIuiDrumPatternConverter).ElementCollection = _patternGrid.Children;
+            uiIuiDrumPatternConverter.ColumnsCount = _patternGrid.ColumnDefinitions.Count;
+            uiIuiDrumPatternConverter.RowsCount = _patternGrid.RowDefinitions.Count;
+            uiIuiDrumPatternConverter.ElementCollection = _patternGrid.Children;
             uiIuiDrumPatternConverter.FillDrumPattern(drumPattern);
         }
 
@@ -316,11 +316,11 @@ namespace DrumMachine.UI.WPF.Pattern
 
         public void AddCell(int row, int column, int columnSpan, bool isSelected = false)
         {
-            AddRequiredAmountOfColumns(column, columnSpan);
+            AddRequiredAmountOfColumns(columnSpan);
             AddElementToGrid(row, columnSpan, column, _patternGrid,isSelected);
         }
 
-        private void AddRequiredAmountOfColumns(int column, int columnSpan)
+        private void AddRequiredAmountOfColumns(int columnSpan)
         {
             for (int i = 0; i < columnSpan; i++)
             {

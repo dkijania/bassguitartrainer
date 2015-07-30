@@ -13,7 +13,6 @@ namespace DrumMachine.Engine.Model
         private readonly DrumPattern _pattern;
         private readonly WaveFormat _waveFormat;
         
-
         public OnBeatHit OnBeatHitEvent;
 
         public delegate void OnBeatHit(DrumPattern drumPattern);
@@ -32,7 +31,6 @@ namespace DrumMachine.Engine.Model
         }
 
       
-
         public virtual WaveFormat WaveFormat
         {
             get { return _waveFormat; }
@@ -42,7 +40,7 @@ namespace DrumMachine.Engine.Model
         {
            var  abstractBeatNotifier =  new MusicSampleProvider(_sampleSources.ElementAt(note));
            abstractBeatNotifier.OnBeat += AbstractBeatNotifierOnOnBeat;
-            return abstractBeatNotifier;
+           return abstractBeatNotifier;
         }
 
         private void AbstractBeatNotifierOnOnBeat()

@@ -37,7 +37,6 @@
             get { return _isSelected; }
         }
 
-
         public int Bar
         {
             get { return _bar; }
