@@ -123,7 +123,6 @@ namespace BassTrainer.UI.WPF
         
         public BassTrainerView()
         {
-            new WpfGraphicResourceAdder();
             InitializeComponent();
             Init();
         }

@@ -30,7 +30,14 @@ namespace BassTrainer.Core.Resources
             UnmutedIcon,
             LayoutFile,
             DefaultLayoutFile,
-            FretboardImage
+            FretboardImage,
+            TileCog,
+            TileDrums,
+            TileInfo,
+            TileMetronome,
+            TileTrainer,
+            TileTuning
+
         }
 
         public void AddNamedResource(ResourceId key, String value)

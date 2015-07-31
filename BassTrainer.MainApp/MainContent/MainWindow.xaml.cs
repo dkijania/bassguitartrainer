@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows;
 using BassTrainer.Core.Settings;
+using BassTrainer.UI.WPF.Resources;
 using BassTrainer.UI.WPF.SettingsManager;
 using MahApps.Metro.Controls;
 
-namespace BassTrainer.MainApp
+namespace BassTrainer.MainApp.MainContent
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -14,6 +15,7 @@ namespace BassTrainer.MainApp
         public MainWindow()
         {
             InitializeConfiguration();
+            InitializeResources();
             InitializeComponent();
             try
             {
@@ -23,6 +25,11 @@ namespace BassTrainer.MainApp
             {
                 ShowErrorAndExit(ex);
             }
+        }
+
+        private void InitializeResources()
+        {
+            new WpfGraphicResourceAdder();
         }
 
         private void InitializeConfiguration()

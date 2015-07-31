@@ -25,9 +25,9 @@
       <Component Id="cmp7EA790329A2360D0698CDCEB3C460421" Guid="{8ECA477C-01ED-452F-A91D-DFE26B302BA9}">
         <File Id="filBC17B313E3C2D6A3E7535C257589825E" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.MainApp.vshost.exe.config" />
       </Component>
-      <Component Id="cmp90A86B0F6224C9C85EE5D205E29C2B84" Guid="{67DAEDA3-15B4-4936-A87C-62ECE379E2BB}">
+      <!--<Component Id="cmp90A86B0F6224C9C85EE5D205E29C2B84" Guid="{67DAEDA3-15B4-4936-A87C-62ECE379E2BB}">
         <File Id="filBAC376ADB59E4ED50F3729DBBE8FE819" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.MainApp.vshost.exe.manifest" />
-      </Component>
+      </Component>-->
       <Component Id="cmp5439EE490C073E4AB4E41EFC1FD6655F" Guid="{143838E4-6D24-4B2B-A1C7-B6F1B58EA1D7}">
         <File Id="fil45E34A1C0EE386C91AAD922F3097A9D4" KeyPath="yes" Source="$(var.SourceDir)\BassTrainer.UI.WPF.dll" />
       </Component>
@@ -341,7 +341,7 @@
       <ComponentRef Id="cmpF072978801918EEACBB86923386C14AE" />
       <ComponentRef Id="cmpFD1F804AC86CF7A056A26D68BC529838" />
       <ComponentRef Id="cmp7EA790329A2360D0698CDCEB3C460421" />
-      <ComponentRef Id="cmp90A86B0F6224C9C85EE5D205E29C2B84" />
+    <!--  <ComponentRef Id="cmp90A86B0F6224C9C85EE5D205E29C2B84" />-->
       <ComponentRef Id="cmp5439EE490C073E4AB4E41EFC1FD6655F" />
       <ComponentRef Id="cmp4B0930294AABC595FD930B337000CD61" />
       <ComponentRef Id="cmp4563D958862CCEEF0BFEA12CCA035FE9" />

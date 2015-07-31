@@ -1,18 +1,17 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
-using BassTrainer.Core.Settings;
+using BassTrainer.MainApp.MainMenu;
 using BassTrainer.UI.WPF;
-using BassTrainer.UI.WPF.SettingsManager;
 using BassTuner.UI.WPF;
 using DrumMachine.UI.WPF;
 using Metronome.UI.WPF;
 using SimpleHelpSystem.UI.WPF;
 using WpfExtensions;
 
-namespace BassTrainer.MainApp
+namespace BassTrainer.MainApp.MainContent
 {
-    internal class MainAppViewModel : BindingDataContextBase
+    internal class MainAppViewModel : BindingDataContextBase, IMainAppViewModel
     {
         private bool _isSettingsOpened;
 
@@ -20,6 +19,7 @@ namespace BassTrainer.MainApp
         private readonly MetronomeView _metronomeView;
         private readonly HelpView _helpView;
         private readonly DrumMachineView _drumMachineView;
+        private readonly MainScreen _mainScreenView;
                 
         //Not implemented yet. Disabled in xaml
         private readonly BassTunerView _bassTunerView; 
@@ -28,11 +28,12 @@ namespace BassTrainer.MainApp
         public ICommand ShowDrumMachine { get; private set; }
         public ICommand ShowOptions { get; private set; }
         public ICommand ShowHelp { get; private set; }
-        public ICommand ShowMain { get; private set; }
+        public ICommand ShowTrainer { get; private set; }
+        public ICommand ShowMainMenu { get; private set; }
         public ICommand ShowBassTuner { get; private set; }
     
         public ObservableCollection<FrameworkElement> MainContentItems { get; private set; }
-
+        
         public MainAppViewModel()
         {
              MainContentItems = new ObservableCollection<FrameworkElement>();
@@ -41,12 +42,14 @@ namespace BassTrainer.MainApp
             _helpView = new HelpView();
             _drumMachineView = new DrumMachineView();
             _bassTunerView = new BassTunerView();
-            
+            _mainScreenView = new MainScreen {DataContext = new MainScreenViewModel(this)};
+
             ShowHelp = new DelegateCommand(OpenHelp);
             ShowMetronome = new DelegateCommand(OpenMetronome);
             ShowOptions = new DelegateCommand(OpenOptions);
             ShowDrumMachine = new DelegateCommand(OpenDrumMachine);
-            ShowMain = new DelegateCommand(OpenTrainer);
+            ShowTrainer = new DelegateCommand(OpenTrainer);
+            ShowMainMenu = new DelegateCommand(OpenMainMenu);
             ShowBassTuner = new DelegateCommand(OpenBassTuner);
             OpenDefaultView();
         }
@@ -61,42 +64,47 @@ namespace BassTrainer.MainApp
             }
         }
         
-        private void OpenDefaultView()
+        public void OpenDefaultView()
         {
-            OpenTrainer();
+            OpenMainMenu();
         }
 
+        public void OpenMainMenu()
+        {
+            MainContentItems.Clear();
+            MainContentItems.Add(_mainScreenView);
+        }
 
-        private void OpenBassTuner()
+        public void OpenBassTuner()
         {
             MainContentItems.Clear();
             MainContentItems.Add(_bassTunerView);
         }
-      
-        private void OpenDrumMachine()
+
+        public void OpenDrumMachine()
         {
             MainContentItems.Clear();
             MainContentItems.Add(_drumMachineView);
         }
 
-        private void OpenTrainer()
+        public void OpenTrainer()
         {
             MainContentItems.Clear();
             MainContentItems.Add(_bassTrainerContent);
         }
-        
-        private void OpenHelp()
+
+        public void OpenHelp()
         {
             MainContentItems.Clear();
             MainContentItems.Add(_helpView);
         }
 
-        private void OpenOptions()
+        public void OpenOptions()
         {
             IsSettingsOpened = !IsSettingsOpened;
         }
 
-        private void OpenMetronome()
+        public void OpenMetronome()
         {
             MainContentItems.Clear();
             MainContentItems.Add(_metronomeView);

@@ -7,6 +7,10 @@ namespace BassTrainer.UI.WPF.Resources
         public WpfGraphicResourceAdder()
         {
             var resourcesManager = ResourcesManager.Instance;
+            resourcesManager.AddNamedResource(ResourcesManager.ResourceId.TileDrums, "Resources/MenuTiles/drums.jpg");
+            resourcesManager.AddNamedResource(ResourcesManager.ResourceId.TileMetronome, "Resources/MenuTiles/metronome.jpg");
+            resourcesManager.AddNamedResource(ResourcesManager.ResourceId.TileTrainer, "Resources/MenuTiles/string.jpg");
+            resourcesManager.AddNamedResource(ResourcesManager.ResourceId.TileTuning, "Resources/MenuTiles/tuning.jpg");
             resourcesManager.AddNamedResource(ResourcesManager.ResourceId.BassClefImage,"Resources/Images/bassClef.png");
             resourcesManager.AddNamedResource(ResourcesManager.ResourceId.ErrorImage,"Resources/Images/error.png");
             resourcesManager.AddNamedResource(ResourcesManager.ResourceId.SharpNoteImage,"Resources/Images/sharp.png");
