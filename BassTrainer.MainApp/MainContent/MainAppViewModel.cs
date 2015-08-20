@@ -49,7 +49,7 @@ namespace BassTrainer.MainApp.MainContent
             ShowTrainer = new DelegateCommand(OpenTrainer);
             ShowMainMenu = new DelegateCommand(OpenMainMenu);
             ShowBassTuner = new DelegateCommand(OpenBassTuner);
-            OpenBassTuner();
+            OpenDefaultView();
         }
         
         public bool IsSettingsOpened
