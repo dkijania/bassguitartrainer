@@ -145,6 +145,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="defines.wxi" />
     <Content Include="harvestFiles.bat" />
     <Content Include="license.rtf" />
     <Content Include="transform.xslt">
