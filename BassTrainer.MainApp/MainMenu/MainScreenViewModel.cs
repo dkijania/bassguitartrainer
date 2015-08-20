@@ -16,6 +16,7 @@ namespace BassTrainer.MainApp.MainMenu
         public ICommand OpenMetronomeCommand { get; private set; }
         public ICommand OpenSettingsCommand { get; private set; }
         public ICommand OpenHelpCommand { get; private set; }
+        public ICommand OpenTuningCommand { get; private set; }
         
         public MainScreenViewModel(IMainAppViewModel appViewModel)
         {
@@ -24,6 +25,7 @@ namespace BassTrainer.MainApp.MainMenu
             OpenMetronomeCommand = new DelegateCommand(appViewModel.OpenMetronome);
             OpenSettingsCommand = new DelegateCommand(appViewModel.OpenOptions);
             OpenHelpCommand = new DelegateCommand(appViewModel.OpenHelp);
+            OpenTuningCommand = new DelegateCommand(appViewModel.OpenBassTuner);
         }
     }
 }

@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Animation;
+using BassTrainer.Core.Const;
+using WpfExtensions;
 
 namespace BassTuner.UI.WPF
 {
@@ -10,39 +13,60 @@ namespace BassTuner.UI.WPF
     /// </summary>
     public partial class BassTunerView : UserControl
     {
+        private const String StoryBoardName = "Storyboard";
+
         public BassTunerView()
         {
             InitializeComponent();
             var viewModel = new BassTunerViewModel();
             DataContext = viewModel;
             viewModel.PropertyChanged += viewModel_PropertyChanged;
-            FillListOfPossibleInstruments(viewModel.InstrumentsTypes,InstrumentsTypes,viewModel.SetActiveInstrumentTypeCommand);
-     //       FillListOfPossibleInstruments(viewModel.InstrumentTuning,InstrumentsTunings,viewModel.ShowTuningReferenceSounds);
+            InstrumentsTypes.FillWithComponents(viewModel.InstrumentsTypes,
+                viewModel.SetActiveInstrumentTypeCommand,
+                CreateButtonWithContent);
         }
 
-        private void FillListOfPossibleInstruments(IEnumerable<String> instrumentsTypes, Panel wrapPanel,ICommand buttonCommand)
+        private static Control CreateButtonWithContent(ICommand command, object content)
         {
-            foreach (var instrumentsType in instrumentsTypes)
-            {
-                wrapPanel.Children.Add(CreateButtonWithContent(instrumentsType,buttonCommand));
-            }
-        }
-        
-        private Button CreateButtonWithContent(string content,ICommand command)
-        {
-            return new Button
+            var button = new Button
             {
                 Content = content,
                 Height = 40,
                 FontSize = 15,
-                Command = command
+                Command = command,
+                CommandParameter = content
             };
+            return button;
         }
-
-
+        
         private void viewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-        //    if (e.PropertyName.Equals("")) ;
+            var viewModel = sender as BassTunerViewModel;
+            if (e.PropertyName.Equals("CurrentlyActiveInstrumentTuning"))
+            {
+                FillIntrumentsTuningNotes(viewModel.CurrentlyActiveInstrumentTuning.Notes, viewModel.PlayNoteCommand);
+            }
+            if (e.PropertyName.Equals("LastPlayedNote"))
+            {
+                StartAnimation(viewModel.LastPlayedNote);
+           }
+        }
+
+        private void StartAnimation(Note note)
+        {
+            StartAnimationFor(x => x.Content.ToString().Equals(note.ToString()), StoryBoardName);
+        }
+
+        private void StartAnimationFor(Func<Button, bool> expression, String storyBoardName)
+        {
+            var sb = FindResource(storyBoardName) as Storyboard;
+            var button = InstrumentsTunings.FindButton(expression);
+            button.StartStoryboardAnimation(sb);
+        }
+
+        private void FillIntrumentsTuningNotes(IEnumerable notes,ICommand command)
+        {
+            InstrumentsTunings.FillWithComponents(notes,command, CreateButtonWithContent);
         }
     }
 }

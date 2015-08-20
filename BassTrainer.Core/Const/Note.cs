@@ -127,8 +127,6 @@ namespace BassTrainer.Core.Const
             }
         }
 
-        
-
         public object Clone()
         {
             return new Note(SharpOrRegularRepresenation+OctaveNumber);

@@ -117,16 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Next" xml:space="preserve">
-    <value>Next</value>
+  <data name="Mute" xml:space="preserve">
+    <value>Mute</value>
   </data>
-  <data name="Previous" xml:space="preserve">
-    <value>Prev</value>
+  <data name="NotePrintDelimieter" xml:space="preserve">
+    <value />
   </data>
-  <data name="Start" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="Stop" xml:space="preserve">
-    <value>Stop</value>
+  <data name="UnMute" xml:space="preserve">
+    <value>UnMute</value>
   </data>
 </root>

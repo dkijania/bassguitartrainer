@@ -1,19 +1,18 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using BassTrainer.Core.Const.BassGuitar.Parameters.Tuning;
 
 namespace BassTrainer.Core.Const.BassGuitar.Parameters
 {
-    public class BassGuitar4StringTuning : ReadOnlyDictionary<BassGuitarTuningId, string>
+    public class BassGuitar4StringTuning : List<TuningSounds>
     {
         public BassGuitar4StringTuning()
-            : base(FillDictionary())
+            : base(FillList())
         {
         }
 
-        private static Dictionary<BassGuitarTuningId, string> FillDictionary()
+        private static IEnumerable<TuningSounds> FillList()
         {
-            var dict = new Dictionary<BassGuitarTuningId, string> { { BassGuitarTuningId.Standard, "Standard" } };
-            return dict;
+            return new List<TuningSounds> { new TuningSounds("Standard", new Note("E1"),new Note("A1"),new Note("D2"),new Note("G2")) };
         }
     }
 }

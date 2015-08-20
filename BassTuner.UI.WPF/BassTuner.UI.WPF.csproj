@@ -37,6 +37,10 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio, Version=1.7.1.17, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NAudio.1.7.1\lib\net35\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -70,7 +74,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -89,6 +93,10 @@
     <ProjectReference Include="..\BassTrainer.Core\BassTrainer.Core.csproj">
       <Project>{09E42C2E-FBB5-4CF6-8210-AED129168D0D}</Project>
       <Name>BassTrainer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WavPlayer\WavPlayer.csproj">
+      <Project>{BF9DA8E5-D9AD-4115-A146-FD1BA9340CE3}</Project>
+      <Name>WavPlayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\WpfExtensions\WpfExtensions.csproj">
       <Project>{AF0744DE-D7D7-4599-9294-0FAA00ED8E47}</Project>

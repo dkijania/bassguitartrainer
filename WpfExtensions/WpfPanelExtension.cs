@@ -1,6 +1,9 @@
 using System;
+using System.Collections;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace WpfExtensions
 {
@@ -19,5 +22,21 @@ namespace WpfExtensions
                     myVisual.Children.Remove(ucCurrentChild);
             }
         }
+        
+        public static void FillWithComponents(this Panel panel,IEnumerable items, ICommand command,
+            Func<ICommand, object, Control> createComponentWithBinding)
+        {
+            panel.Children.Clear();
+            foreach (var item in items)
+            {
+                panel.Children.Add(createComponentWithBinding.Invoke(command, item));
+            }
+        }
+
+        public static Control FindButton(this Panel panel, Func<Button, bool> expression)
+        {
+            return panel.Children.OfType<Button>().First(expression);
+        }
+        
     }
 }

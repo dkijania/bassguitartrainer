@@ -20,8 +20,6 @@ namespace BassTrainer.MainApp.MainContent
         private readonly HelpView _helpView;
         private readonly DrumMachineView _drumMachineView;
         private readonly MainScreen _mainScreenView;
-                
-        //Not implemented yet. Disabled in xaml
         private readonly BassTunerView _bassTunerView; 
      
         public ICommand ShowMetronome { get; private set; }
@@ -51,7 +49,7 @@ namespace BassTrainer.MainApp.MainContent
             ShowTrainer = new DelegateCommand(OpenTrainer);
             ShowMainMenu = new DelegateCommand(OpenMainMenu);
             ShowBassTuner = new DelegateCommand(OpenBassTuner);
-            OpenDefaultView();
+            OpenBassTuner();
         }
         
         public bool IsSettingsOpened

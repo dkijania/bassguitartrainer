@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BassTuner.UI.WPF.Properties {
+namespace BassTrainer.Core.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace BassTuner.UI.WPF.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BassTuner.UI.WPF.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BassTrainer.Core.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,29 @@ namespace BassTuner.UI.WPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Next.
+        ///   Looks up a localized string similar to Mute.
         /// </summary>
-        public static string Next {
+        public static string Mute {
             get {
-                return ResourceManager.GetString("Next", resourceCulture);
+                return ResourceManager.GetString("Mute", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prev.
+        ///   Looks up a localized string similar to .
         /// </summary>
-        public static string Previous {
+        public static string NotePrintDelimieter {
             get {
-                return ResourceManager.GetString("Previous", resourceCulture);
+                return ResourceManager.GetString("NotePrintDelimieter", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start.
+        ///   Looks up a localized string similar to UnMute.
         /// </summary>
-        public static string Start {
+        public static string UnMute {
             get {
-                return ResourceManager.GetString("Start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Stop.
-        /// </summary>
-        public static string Stop {
-            get {
-                return ResourceManager.GetString("Stop", resourceCulture);
+                return ResourceManager.GetString("UnMute", resourceCulture);
             }
         }
     }

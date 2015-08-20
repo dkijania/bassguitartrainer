@@ -38,6 +38,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IWavPlayer.cs" />
+    <Compile Include="LoopStream.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WavPlayer.cs" />
   </ItemGroup>

@@ -5,7 +5,7 @@
         xmlns:visualSettings="clr-namespace:BassTrainer.UI.WPF.VisualSettings;assembly=BassTrainer.UI.WPF"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Title="Bass Guitar Trainer" WindowState="Maximized" 
-        Icon=".\Resources\Icon\icon.png">
+        Icon="..\Resources\Icon\icon.png">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closing">
             <i:InvokeCommandAction  Command="{Binding WindowClosing}" />
@@ -14,10 +14,9 @@
 
     <controls:MetroWindow.RightWindowCommands>
         <controls:WindowCommands  x:Name="WindowsCommands">
-
             <Button Content="Start" Name="Start" Command="{Binding ShowMainMenu}" />
             <Button Content="Trainer" Name="Trainer" Command="{Binding ShowTrainer}" />
-            <!--    <Button Content="Tuner" Name="Tuner" Command="{Binding ShowBassTuner}" />-->
+            <Button Content="Tuner" Name="Tuner" Command="{Binding ShowBassTuner}" />
             <Button Content="Drum Machine" Name="DrumMachine" Command="{Binding ShowDrumMachine}" />
             <Button Content="Metronome" Name="Metronome" Command="{Binding ShowMetronome}" />
             <Button Content="Options" Name="Options" Command="{Binding ShowOptions}" />
