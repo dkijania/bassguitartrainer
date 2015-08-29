@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using BassTrainer.Core.Components.Fretboard;
-using BassTrainer.Core.Components.Interval.Data;
 using BassTrainer.Core.Const;
+using BassTrainer.Core.Const.Intervals;
 using BassTrainer.Core.Utils;
 
 namespace BassTrainer.Core.Components.Interval

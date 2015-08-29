@@ -43,7 +43,6 @@
     <Compile Include="Components\Component.cs" />
     <Compile Include="Components\ComponentId.cs" />
     <Compile Include="Components\ComponentMode.cs" />
-    <Compile Include="Components\ComponentModeManager.cs" />
     <Compile Include="Components\ComponentsLocator.cs" />
     <Compile Include="Components\ComponentsLocatorException.cs" />
     <Compile Include="Components\Fretboard\AlwaysRedrawCollection.cs" />
@@ -62,8 +61,6 @@
     <Compile Include="Components\Fretboard\SelectionManager\SelectionManager.cs" />
     <Compile Include="Components\Fretboard\SelectionManager\StringFretSelectionManager.cs" />
     <Compile Include="Components\IComponentModeChangeListener.cs" />
-    <Compile Include="Components\Interval\Data\IntervalData.cs" />
-    <Compile Include="Components\Interval\Data\IntervalRow.cs" />
     <Compile Include="Components\Interval\IExcerciseIntervalListener.cs" />
     <Compile Include="Components\Interval\IIntervalListener.cs" />
     <Compile Include="Components\Interval\IntervalCalculator.cs" />
@@ -91,6 +88,8 @@
     <Compile Include="Const\BassGuitar\Parameters\BassGuitarTypeId.cs" />
     <Compile Include="Const\BassGuitar\Parameters\BassGuitarTypes.cs" />
     <Compile Include="Const\BassGuitar\Parameters\Tuning\TuningSounds.cs" />
+    <Compile Include="Const\Intervals\IntervalData.cs" />
+    <Compile Include="Const\Intervals\IntervalRow.cs" />
     <Compile Include="Const\FretBoardOptions.cs" />
     <Compile Include="Const\FretBoardShow.cs" />
     <Compile Include="Const\IFretBoardMapping.cs" />

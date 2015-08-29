@@ -15,12 +15,12 @@ namespace BassTrainer.UI.WPF.ShowSelectViewManager
 {
     public class ShowSelectViewModel : BindingDataContextBase
     {
-        private const string ShowHeader = "Show";
-        private const string SelectHeader = "Select";
-        private const string ShowLabel = "ShowAll";
-        private const string HideLabel = "HideAll";
-        private const string SelectLabel = "SelectAll";
-        private const string UnselectLabel = "UnselectAll";
+        private string _showHeader;
+        private string _selectHeader;
+        private string _showLabel;
+        private string _hideLabel;
+        private string _selectLabel;
+        private string _unselectLabel;
         
         private readonly ShowSelectViewComponent _selectViewComponent;
         private readonly SelectionControl _selectionControl;
@@ -55,13 +55,26 @@ namespace BassTrainer.UI.WPF.ShowSelectViewManager
         
         public ShowSelectViewModel(ShowSelectViewComponent selectViewComponent, SelectionControl selectionControl)
         {
+            InitializeLabels();
             _selectViewComponent = selectViewComponent;
             _selectionControl = selectionControl;
             _selectViewComponent.ComponentModeChangedEvent += ComponentModeChangedEvent;
             SelectStringRangeCommand = new DelegateCommand(SelectStringRange);
             AddScaleSelectionCommand = new DelegateCommand(AddScaleSelection);
             FillSelectionControlsWithData();
+            
         }
+
+        private void InitializeLabels()
+        {
+            _showHeader = Properties.Resources.Show;
+            _selectHeader=Properties.Resources.Select;
+            _showLabel=Properties.Resources.ShowAll;
+            _hideLabel=Properties.Resources.HideAll;
+            _selectLabel=Properties.Resources.SelectAll;
+            _unselectLabel = Properties.Resources.UnselectAll;
+        }
+
 
         public void FillSelectionControlsWithData()
         {
@@ -97,8 +110,8 @@ namespace BassTrainer.UI.WPF.ShowSelectViewManager
         {
             IsEnabled = true;
             SetSelectTabHeader();
-            SelectShowAllLabel = SelectLabel;
-            UnSelectHideAllLabel = UnselectLabel;
+            SelectShowAllLabel = _selectLabel;
+            UnSelectHideAllLabel = _unselectLabel;
             _selectionControl.SelectAll.Click += SelectAllClick;
             _selectionControl.UnselectAll.Click += UnselectAllClick;
         }
@@ -107,8 +120,8 @@ namespace BassTrainer.UI.WPF.ShowSelectViewManager
         {
             IsEnabled = true;
             SetShowTabHeader();
-            SelectShowAllLabel = ShowLabel;
-            UnSelectHideAllLabel = HideLabel;
+            SelectShowAllLabel = _showLabel;
+            UnSelectHideAllLabel = _hideLabel;
             _selectionControl.SelectAll.Click += ShowAllClick;
             _selectionControl.UnselectAll.Click += HideAllClick;
         }
@@ -144,12 +157,12 @@ namespace BassTrainer.UI.WPF.ShowSelectViewManager
         
         private void SetShowTabHeader()
         {
-            SetParentTabHeader(ShowHeader);
+            SetParentTabHeader(_showHeader);
         }
 
         private void SetSelectTabHeader()
         {
-            SetParentTabHeader(SelectHeader);
+            SetParentTabHeader(_selectHeader);
         }
 
         private void SetParentTabHeader(string label)

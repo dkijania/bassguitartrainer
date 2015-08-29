@@ -47,7 +47,7 @@ namespace BassTrainer.Core.Const
 
         public Note(Note noteAsString, NotesInfo.Accidentals accidentals)
         {
-            if(!noteAsString.IsNatural())
+            if (!noteAsString.IsNatural())
             {
                 ParseString(noteAsString.SharpOrRegularRepresenation + noteAsString.OctaveNumber);
                 return;
@@ -69,7 +69,7 @@ namespace BassTrainer.Core.Const
 
         public string WithoutAccidental
         {
-           get { return SharpOrRegularRepresenation.Replace(SharpSuffix, String.Empty); } 
+            get { return SharpOrRegularRepresenation.Replace(SharpSuffix, String.Empty); }
         }
 
         public bool EqualsWithoutAccidentals(Note other)
@@ -85,8 +85,32 @@ namespace BassTrainer.Core.Const
         public override string ToString()
         {
             return IsNatural()
-                       ? SharpOrRegularRepresenation
-                       : String.Format(@"{0}{1}{2}", SharpOrRegularRepresenation, PrintDelimeter, BemolRepresenation);
+                ? SharpOrRegularRepresenation
+                : GetMixedRepresentation();
+        }
+
+        private string GetMixedRepresentation()
+        {
+            return String.Format(@"{0}{1}{2}", SharpOrRegularRepresenation, PrintDelimeter, BemolRepresenation);
+        }
+
+        public string ToString(FretBoardShow show, bool addOctaveNumber)
+        {
+            var representation = GetRepresentation(show);
+            return addOctaveNumber ? representation + OctaveNumber : representation;
+        }
+
+        private string GetRepresentation(FretBoardShow show)
+        {
+            switch (show)
+            {
+                case FretBoardShow.Flats:
+                    return BemolRepresenation;
+                case FretBoardShow.Sharps:
+                    return SharpOrRegularRepresenation;
+                default:
+                    return ToString();
+            }
         }
 
         public bool EqualsOrHigherThan(Note other)
@@ -129,7 +153,7 @@ namespace BassTrainer.Core.Const
 
         public object Clone()
         {
-            return new Note(SharpOrRegularRepresenation+OctaveNumber);
+            return new Note(SharpOrRegularRepresenation + OctaveNumber);
         }
     }
 }

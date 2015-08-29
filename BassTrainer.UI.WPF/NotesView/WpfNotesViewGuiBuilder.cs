@@ -144,22 +144,7 @@ namespace BassTrainer.UI.WPF.NotesView
 
         private string FormatDependingOnShowSettings(Note text, bool withOctaveNumber)
         {
-            var octaveNumberAsString = string.Empty;
-            if (withOctaveNumber)
-                octaveNumberAsString = text.OctaveNumber == 0
-                                           ? string.Empty
-                                           : text.OctaveNumber.ToString(CultureInfo.InvariantCulture);
-
-            switch (Settings.Instance.FretBoardOptions.Value.Show)
-            {
-                case FretBoardShow.Sharps:
-                    return text.SharpOrRegularRepresenation + octaveNumberAsString;
-                case FretBoardShow.Flats:
-                    return text.BemolRepresenation + octaveNumberAsString;
-                default:
-                    return text.SharpOrRegularRepresenation + octaveNumberAsString + Note.PrintDelimeter +
-                           text.BemolRepresenation + octaveNumberAsString;
-            }
+            return text.ToString(Settings.Instance.FretBoardOptions.Value.Show,withOctaveNumber);
         }
     }
 }

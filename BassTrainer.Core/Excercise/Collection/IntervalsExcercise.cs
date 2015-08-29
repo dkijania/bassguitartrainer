@@ -4,8 +4,8 @@ using System.Linq;
 using BassTrainer.Core.Components;
 using BassTrainer.Core.Components.Fretboard;
 using BassTrainer.Core.Components.Interval;
-using BassTrainer.Core.Components.Interval.Data;
 using BassTrainer.Core.Const;
+using BassTrainer.Core.Const.Intervals;
 using BassTrainer.Core.Excercise.Options;
 using BassTrainer.Core.Utils;
 

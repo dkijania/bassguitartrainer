@@ -1,10 +1,10 @@
 using BassTrainer.Core.Components;
 using BassTrainer.Core.Components.Fretboard;
 using BassTrainer.Core.Components.Interval;
-using BassTrainer.Core.Components.Interval.Data;
 using BassTrainer.Core.Components.Notation;
 using BassTrainer.Core.Components.NotesView;
 using BassTrainer.Core.Const;
+using BassTrainer.Core.Const.Intervals;
 
 namespace BassTrainer.Core.Excercise.Collection.Tutorial
 {

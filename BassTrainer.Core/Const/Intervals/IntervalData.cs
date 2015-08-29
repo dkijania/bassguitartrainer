@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BassTrainer.Core.Components.Interval.Data
+namespace BassTrainer.Core.Const.Intervals
 {
     public class IntervalData
     {

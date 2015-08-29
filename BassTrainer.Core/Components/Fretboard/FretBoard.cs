@@ -152,6 +152,7 @@ namespace BassTrainer.Core.Components.Fretboard
             set
             {
                 _fretBoardGuiBuilder.ApplyColorForOctaves = value;
+                _fretBoardGuiBuilder.ApplyColorForNotes = !value;
                 _fretBoardGuiBuilder.RedrawNotes();
             }
         }
@@ -162,6 +163,7 @@ namespace BassTrainer.Core.Components.Fretboard
             set
             {
                 _fretBoardGuiBuilder.ApplyColorForNotes = value;
+                _fretBoardGuiBuilder.ApplyColorForOctaves = !value;
                 _fretBoardGuiBuilder.RedrawNotes();
             }
         }

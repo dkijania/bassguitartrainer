@@ -2,7 +2,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using BassTrainer.Core.Components.Interval;
-using BassTrainer.Core.Components.Interval.Data;
+using BassTrainer.Core.Const.Intervals;
 
 namespace BassTrainer.UI.WPF.Intervals
 {

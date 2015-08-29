@@ -1,4 +1,4 @@
-namespace BassTrainer.Core.Components.Interval.Data
+namespace BassTrainer.Core.Const.Intervals
 {
     public class IntervalRow
     {

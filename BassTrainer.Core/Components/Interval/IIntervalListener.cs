@@ -1,4 +1,4 @@
-using BassTrainer.Core.Components.Interval.Data;
+using BassTrainer.Core.Const.Intervals;
 
 namespace BassTrainer.Core.Components.Interval
 {

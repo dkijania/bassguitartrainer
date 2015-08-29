@@ -239,15 +239,6 @@ namespace BassTrainer.UI.WPF.FretBoard.FretBoardView
             var border = _borderStyleCollection.GetBorderStyle(isCorrect, _settings.CorrectRectanglePreset.Value);
             border.Opacity = transparency;
             _boardGuiCalculator.AddPositionAttributesForBorder(point, border);
-
-            /*     var style = new Style();
-            style.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Colors.White)));
-            var eventTrigger = new Trigger {Property = Border.IsMouseOverProperty, Value = true};
-            eventTrigger.Setters.Add(new Setter(Border.BackgroundProperty, new SolidColorBrush(Colors.BurlyWood)));
-
-            style.Triggers.Add(eventTrigger);
-            border.Style = style;
-         */
             return border;
         }
 
